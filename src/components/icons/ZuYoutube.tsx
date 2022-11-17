@@ -1,9 +1,9 @@
 import { SVGProps } from "react";
 /* eslint-disable prettier/prettier */
 type Props = {
-  size?: number,
-  color?: string,
-  className?: string
+  size?: number;
+  color?: string;
+  className?: string;
 } & SVGProps<SVGSVGElement>;
 const SvgZuYoutube = ({ size, color, className, ...props }: Props) => {
   return (
