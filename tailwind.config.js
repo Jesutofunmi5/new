@@ -33,6 +33,7 @@ module.exports = {
         },
         pine: "#005C39",
         blue: "#0096DB",
+        black: "#041723",
         citrus: "#F26D21",
         background: "#F7F7F7"
       }
