@@ -1,7 +1,10 @@
 import ContainerView from "./ContainerView";
+import { Landing } from "components";
 
-import type { FC } from "react";
-
-export const ContactContainer: FC = () => {
-  return <ContainerView title="Contact Page" />;
+export const ContactContainer = () => {
+  return (
+    <Landing>
+      <ContainerView title="Contact Page" />
+    </Landing>
+  );
 };

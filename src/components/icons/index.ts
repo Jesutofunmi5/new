@@ -1,0 +1,13 @@
+export { default as ZuDown } from "./ZuDown";
+export { default as ZuEmail } from "./ZuEmail";
+export { default as ZuFacebook } from "./ZuFacebook";
+export { default as ZuFlagUnitedKingdom } from "./ZuFlagUnitedKingdom";
+export { default as ZuLinkedin } from "./ZuLinkedin";
+export { default as ZuLocation } from "./ZuLocation";
+export { default as ZuPhone } from "./ZuPhone";
+export { default as ZuPinetrest } from "./ZuPinetrest";
+export { default as ZuSnapchat } from "./ZuSnapchat";
+export { default as ZuTiktok } from "./ZuTiktok";
+export { default as ZuTwitter } from "./ZuTwitter";
+export { default as ZuWhatsapp } from "./ZuWhatsapp";
+export { default as ZuYoutube } from "./ZuYoutube";
