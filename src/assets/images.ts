@@ -11,5 +11,6 @@ export const user3 = `${USERS}/user3.png`;
 export const logo = `${LOGO}/logo.png`;
 export const logoIcon = `${LOGO}/logo_icon.png`;
 
+export const authBackground = `${BACKGROUND}/auth.png`;
 export const heroBackground = `${BACKGROUND}/hero.png`;
 export const contactBackground = `${BACKGROUND}/contact.png`;
