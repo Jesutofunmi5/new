@@ -12,16 +12,18 @@ interface Props {
 }
 const AuthLayout = ({ children }: Props) => {
   return (
-    <div className="relative w-full h-screen flex">
+    <div className="relative w-full min-h-screen lg:h-screen flex">
       <div className="flex items-center justify-between absolute top-0 left-0 right-0 pt-10 px-5 md:px-10 lg:px-20 z-20">
         <Link to={HOME}>
           <img src={ZUimages.logo} alt="logo" className="" />
         </Link>
       </div>
-      <div className="w-2/5 bg-green-100">
-        <img src={ZUimages.authBackground} className="w-full h-full" />
+      <div className="relative hidden lg:flex w-2/5 h-full items-center bg-green-100">
+        <div className="w-full h-full absolute pt-20 -left-10 xl:-left-20">
+          <img src={ZUimages.authBackground} className="w-full h-full" />
+        </div>
       </div>
-      <div className="relative w-3/5 h-full pt-20 px-5 md:px-10 lg:px-20 flex">
+      <div className="relative w-full lg:w-3/5 h-full pt-20 px-5 md:px-10 lg:px-20 flex">
         <div className="absolute top-10 right-5 md:right-10 lg:right-20 z-20">
           <Dropdown
             button={
