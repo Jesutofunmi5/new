@@ -15,3 +15,14 @@ export const logoIcon = `${LOGO}/logo_icon.png`;
 export const authBackground = `${BACKGROUND}/auth.gif`;
 export const heroBackground = `${BACKGROUND}/hero.png`;
 export const contactBackground = `${BACKGROUND}/contact.png`;
+export const youngManVector = `${BACKGROUND}/youngman_vector.png`;
+export const youngManWithVector = `${BACKGROUND}/youngman_vector_merged.png`;
+
+const SVG_PATH = "/svg";
+const DOTS = `${SVG_PATH}`;
+const ICONS = `${SVG_PATH}/icons`;
+
+export const dots = `${DOTS}/dots.svg`;
+export const zuMoneyCoins = `${ICONS}/zu_money_coins.svg`;
+export const zuAthletics = `${ICONS}/zu_athletics.svg`;
+export const zuArchery = `${ICONS}/zu_archery_target.svg`;
