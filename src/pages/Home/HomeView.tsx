@@ -12,30 +12,32 @@ const HomeView = () => {
         className="relative top-0 w-full h-screen flex items-center justify-between bg-black text-white overflow-hidden"
         style={{ backgroundImage: `url('${ZUimages.heroBackground}')` }}
       >
-        <div className="relative flex-col mt-100 ml-35 mb-0 text-white padding-20">
-          <h1 className="text-justify my-4 text-4xl ml-20 md:text-[60px] text-white">
-            Connect Simply, <br /> Engage{" "}
-            <span className="font-bold text-[#50C878]">Powerfully.</span>
-          </h1>
-
-          <h5 className="text-justify my-4 ml-20 ">
-            The end-to-end video engagement platform <br />
-            enabling organizations to create meetings <br />
-            and webinars at scale.
-          </h5>
-          <Link to={SIGNUP}>
-            <div className="w-100 h-auto   p-2 ml-20 bg-[#50C878] text-center justify-center">
-              GET STARTED!
-            </div>
-          </Link>
-        </div>
-
-        <div className="mt-60">
-          <img src={ZUimages.youngManWithVector} className="" />
-        </div>
-
         {/* Hero contents */}
-        <div className="absolute inset-0 bg-[#1C1C1E] opacity-10" />
+        <div className="absolute inset-0 bg-[#1C1C1E] opacity-80" />
+
+        <div className="relative w-full flex items-center justify-between">
+          <div className="relative flex-col mt-100 ml-35 mb-0 text-white padding-20">
+            <h1 className="text-justify my-4 text-4xl ml-20 md:text-[60px] text-white">
+              Connect Simply, <br /> Engage{" "}
+              <span className="font-bold text-primary">Powerfully.</span>
+            </h1>
+
+            <h5 className="text-justify my-4 ml-20 ">
+              The end-to-end video engagement platform <br />
+              enabling organizations to create meetings <br />
+              and webinars at scale.
+            </h5>
+            <Link to={SIGNUP}>
+              <div className="w-full h-auto p-2 ml-20 bg-primary text-center justify-center">
+                GET STARTED!
+              </div>
+            </Link>
+          </div>
+
+          <div className="mt-60">
+            <img src={ZUimages.youngManWithVector} className="" />
+          </div>
+        </div>
       </div>
 
       <div className="bg-white flex-col h-96 ">
