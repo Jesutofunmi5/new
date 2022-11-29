@@ -17,6 +17,9 @@ export const heroBackground = `${BACKGROUND}/hero.png`;
 export const contactBackground = `${BACKGROUND}/contact.png`;
 export const youngManVector = `${BACKGROUND}/youngman_vector.png`;
 export const youngManWithVector = `${BACKGROUND}/youngman_vector_merged.png`;
+export const purpleElipse = `${BACKGROUND}/purple_elipse.png`;
+export const yellowElipse = `${BACKGROUND}/yellow_elipse.png`;
+export const greenElipse = `${BACKGROUND}/green_elipse.png`;
 
 const SVG_PATH = "/svg";
 const DOTS = `${SVG_PATH}`;

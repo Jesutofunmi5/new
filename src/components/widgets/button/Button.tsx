@@ -36,7 +36,9 @@ const Button = ({
       <Link
         to={to}
         className={`${
-          variant === "full" ? "bg-primary text-white " : "border-2 border-primary text-primary"
+          variant === "full"
+            ? "bg-primary text-white "
+            : "border-2 border-primary text-primary hover:bg-[#E9A218] hover:text-black"
         } ${className}  rounded-[6px] px-5 py-2 `}
       >
         {children}
