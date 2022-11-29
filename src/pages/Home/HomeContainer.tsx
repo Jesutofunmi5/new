@@ -1,7 +1,10 @@
 import HomeView from "./HomeView";
+import { Landing } from "components";
 
-import type { FC } from "react";
-
-export const HomeContainer: FC = () => {
-  return <HomeView title="Home Page" />;
+export const HomeContainer = () => {
+  return (
+    <Landing>
+      <HomeView />
+    </Landing>
+  );
 };

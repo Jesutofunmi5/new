@@ -1,3 +1,2 @@
-// exports all component module files from here
-
-export {};
+export * from "./navbar";
+export * from "./footer";
