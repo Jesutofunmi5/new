@@ -1,3 +1,3 @@
 // exports all utility files from here
 
-export {};
+export * from "./formatErrorResponse";
