@@ -1,10 +1,10 @@
-import { Authsign } from "components";
+import { Auth } from "components";
 import SignupView from "./SignupView";
 
 export const SignupContainer = () => {
   return (
-    <Authsign>
+    <Auth>
       <SignupView />
-    </Authsign>
+    </Auth>
   );
 };
