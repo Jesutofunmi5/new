@@ -1,29 +1,50 @@
-const ForgetPasswordView = () => {
+import { Button, Input } from "components";
+
+interface Props {
+  handleChange: (e: any) => void;
+  handleSubmit: (e: any) => void;
+  error: {
+    email: string;
+  };
+  details?: {
+    email: string;
+  };
+}
+
+const ForgetPasswordView = ({ handleSubmit, handleChange, error }: Props) => {
   return (
-    <div className="w-full">
-      <h4 className="mb-4 font-bold text-2xl py-2 px-3">Forget Password</h4>
-      <p className="text-normal py-2 px-3">
-        Enter the email you used to create your account so we can send you instructions on how to
-        reset your password.
-      </p>
-      <form className="px-5 pt-6 pb-8 mb-4">
-        <div className="mb-4 mt-10">
-          <label className="block text-gray-700 text-md font-bold mb-2">Email</label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-10 focus:outline-none focus:shadow-outline"
-            type="text"
-            placeholder="email@domain.com"
+    <div className="w-full lg:w-2/3 mt-20 space-y-20">
+      <div className="w-full space-y-1">
+        <h4 className="font-bold">Forget Password</h4>
+        <p className="text-lg text-gray-200 capitalize">
+          Enter the email you used to create your account so we can send you instructions on how to
+          reset your password.
+        </p>
+      </div>
+      <form onSubmit={handleSubmit} className="space-y-5">
+        <div>
+          <label htmlFor="email" className="block text-lg text-gray-200">
+            Email address*
+          </label>
+          <Input
+            required
+            size="lg"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter email address"
+            onChange={handleChange}
+            className="w-full"
           />
+          <p className="text-red text-base ">{error.email}</p>
         </div>
-        <button
-          className="shadow leading-8  bg-green-500 hover:bg-green-400 mb-4 w-full focus:shadow-outline focus:outline-none text-white py-2 px-4 rounded"
-          type="button"
-        >
+
+        <Button type="submit" size="lg" className="w-full bg-green">
           Send
-        </button>
-        <button className="bg-transparent leading-8 hover:bg-blue-500 text-blue-700 w-full py-2 px-4 border border-green-500 text-green-500 hover:border-green-400 rounded">
+        </Button>
+        <Button size="lg" variant="outline" className="w-full">
           Back To Login
-        </button>
+        </Button>
       </form>
     </div>
   );
