@@ -12,6 +12,7 @@ const HomeView = () => {
         style={{ backgroundImage: `url('${ZUimages.heroBackground}')` }}
       >
         <div className="absolute inset-0 bg-[#1C1C1E] opacity-10" />
+
         <div className="relative flex-col mt-100 ml-35  text-white padding-20 ">
           <h1 className="text-justify my-4 text-4xl ml-20 md:text-[60px] text-white">
             Connect Simply, <br /> Engage
