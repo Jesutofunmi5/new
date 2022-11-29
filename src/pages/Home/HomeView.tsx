@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { ZUimages } from "assets";
-import { HOME } from "routes/CONSTANTS";
+import { SIGNUP } from "routes/CONSTANTS";
 
 const HomeView = () => {
   return (
@@ -11,10 +11,11 @@ const HomeView = () => {
         className="relative top-0 w-full h-screen flex items-center justify-between bg-black text-white overflow-hidden"
         style={{ backgroundImage: `url('${ZUimages.heroBackground}')` }}
       >
+        <div className="absolute inset-0 bg-[#1C1C1E] opacity-10" />
         <div className="relative flex-col mt-100 ml-35  text-white padding-20 ">
           <h1 className="text-justify my-4 text-4xl ml-20 md:text-[60px] text-white">
-            Connect Simply, <br /> Engage{" "}
-            <span className="font-bold text-[#50C878]">Powerfully.</span>
+            Connect Simply, <br /> Engage
+            <span className="font-bold text-[#50C878]"> Powerfully.</span>
           </h1>
 
           <h5 className="text-justify my-4 ml-20 ">
@@ -22,7 +23,7 @@ const HomeView = () => {
             enabling organizations to create meetings <br />
             and webinars at scale.
           </h5>
-          <Link to={HOME}>
+          <Link to={SIGNUP}>
             <div className="w-100 h-auto   p-2 ml-20 bg-[#50C878] text-center justify-center cursor:pointer">
               GET STARTED!
             </div>
@@ -34,7 +35,6 @@ const HomeView = () => {
         </div>
 
         {/* Hero contents */}
-        <div className="absolute inset-0 bg-[#1C1C1E] opacity-10" />
       </div>
 
       <div className="bg-white flex-col height-200vh ">
