@@ -1,9 +1,11 @@
 export { default as ZuAddEmoji } from "./ZuAddEmoji";
+export { default as ZuAngleLeft } from "./ZuAngleLeft";
 export { default as ZuAngleLeftSquare } from "./ZuAngleLeftSquare";
 export { default as ZuAngleRightSquare } from "./ZuAngleRightSquare";
 export { default as ZuAngleUp } from "./ZuAngleUp";
 export { default as ZuArcheryTarget } from "./ZuArcheryTarget";
 export { default as ZuArrowLeft } from "./ZuArrowLeft";
+export { default as ZuArrowRight } from "./ZuArrowRight";
 export { default as ZuAthletics } from "./ZuAthletics";
 export { default as ZuBackward } from "./ZuBackward";
 export { default as ZuBan } from "./ZuBan";

@@ -1,3 +1,3 @@
 // exports all config files from here
 
-export {};
+export { env as default } from "./environment.config";
