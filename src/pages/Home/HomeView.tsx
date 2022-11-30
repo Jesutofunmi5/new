@@ -5,7 +5,7 @@ import { SIGNUP } from "routes/CONSTANTS";
 
 const HomeView = () => {
   return (
-    <div className="text-lg space-y-5">
+    <div className="text-lg ">
       {/* Hero Section */}
       <div
         className="relative top-0 w-full h-screen flex items-center justify-between bg-black text-white overflow-hidden"
@@ -14,6 +14,8 @@ const HomeView = () => {
         <div className="absolute inset-0 bg-[#1C1C1E] opacity-10" />
 
         <div className="relative flex-col mt-100 ml-35  text-white padding-20 ">
+          <br />
+          <br />
           <h1 className="text-justify my-4 text-4xl ml-20 md:text-[60px] text-white">
             Connect Simply, <br /> Engage
             <span className="font-bold text-[#50C878]"> Powerfully.</span>
@@ -37,13 +39,13 @@ const HomeView = () => {
 
         {/* Hero contents */}
       </div>
-
       <div className="bg-white flex-col height-200vh ">
-        <div className="flex flex-row items-justify space-between items-center mt-12">
+        <div className="flex flex-row items-justify space-between items-center">
           <div className="relative mr-48 ">
             <img src={ZUimages.dots} className=""></img>
           </div>
           <div className="relative flex-col mr-48">
+            <br />
             <h3 className="">
               Achieve more with <br />
               the Zumaridi Video <br />
@@ -58,7 +60,7 @@ const HomeView = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-row space-around items-center mt-6 ">
+        <div className="flex flex-row space-around items-center ">
           <div className="flex-col ml-48  item-center">
             <img src={ZUimages.yellowElipse} className="ml-6 "></img>
             <img src={ZUimages.zuAthletics} className="ml-6  z-10 -my-10"></img>
@@ -111,8 +113,30 @@ const HomeView = () => {
         <br />
         <br />
         <br />
+        <div className="bg-[#C7E8D2] flex-col w-full h-100vh text-center items-center h-">
+          <br />
+          <br />
+          <h3 className="">
+            <strong>Software Integrations</strong>
+          </h3>
+          <br />
+          <p>
+            Amet minim mollit non deserunt ullamco est sit aliqua <br /> dolor do amet sint. Velit
+            officia consequat duis enim
+            <br />
+            <br />
+          </p>
+          <h6 className="underline underline-offset-8 text-[#07AA3D] my-16">Explore All Apps</h6>
+
+          <img src={ZUimages.socialIcons} className="ml-[430px] "></img>
+        </div>
       </div>
     </div>
   );
 };
 export default HomeView;
+
+//  <div>
+//    <img src={ZUimages.socialIconsBackground}></img>
+//    <img src={ZUimages.socialIcons}></img>
+//  </div>;
