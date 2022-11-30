@@ -18,7 +18,7 @@ export const forgotPassword = async ({ email }: { email: string }) => {
   }
 };
 
-export const resetPassword = async ({ token, password }: { token: string; password: string }) => {
+export const resetPassword = async ({ token, password }: { token?: string; password: string }) => {
   try {
     const data = await fetch({
       url: RESET_PASSWORD,

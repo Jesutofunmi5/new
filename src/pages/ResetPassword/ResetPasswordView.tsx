@@ -1,32 +1,66 @@
-const ResetPasswordView = () => {
+import { Button, Input } from "components";
+
+interface Props {
+  handleChange: (e: any) => void;
+  handleSubmit: (e: any) => void;
+  error: {
+    password?: string;
+    confirmPassword?: string;
+  };
+  details?: {
+    password?: string;
+    confirmPassword?: string;
+  };
+}
+
+const ResetPasswordView = ({ handleChange, handleSubmit, error }: Props) => {
   return (
-    <div className="w-full">
-      <h4 className="mb-4 font-bold text-2xl py-2 px-3">Reset Password</h4>
-      <p className="text-normal py-2 px-3">Choose A New Password For Your Account</p>
-      <form className="px-5 pt-6 pb-8 mb-4">
-        <div className="mb-4 mt-10">
-          <label className="block text-gray-700 text-md font-bold mb-2">Password</label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-9 focus:outline-none focus:shadow-outline"
-            type="text"
+    <div className="w-full lg:w-2/3 lg:mt-20 space-y-20">
+      <div className="w-full space-y-1">
+        <h4 className="font-bold">Reset Password</h4>
+        <p className="text-lg text-gray-200 capitalize">Choose A New Password For Your Account</p>
+      </div>
+      <form onSubmit={handleSubmit} className="space-y-5">
+        <div>
+          <label htmlFor="email" className="block text-lg text-gray-200">
+            Password
+          </label>
+          <Input
+            required
+            size="lg"
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Your password"
+            onChange={handleChange}
+            className="w-full"
           />
+          <p className="text-red text-base ">{error?.password}</p>
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-md font-bold mb-2">Confirm Password</label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-9 focus:outline-none focus:shadow-outline"
-            type="text"
+
+        <div>
+          <label htmlFor="email" className="block text-lg text-gray-200">
+            Confirm Password
+          </label>
+          <Input
+            required
+            size="lg"
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Confirm password"
+            onChange={handleChange}
+            className="w-full"
           />
+          <p className="text-red text-base ">{error?.confirmPassword}</p>
         </div>
-        <button
-          className="shadow leading-8  bg-green-500 hover:bg-green-400 mb-4 w-full focus:shadow-outline focus:outline-none text-white py-2 px-4 rounded"
-          type="button"
-        >
+
+        <Button type="submit" size="lg" className="w-full bg-green">
           Resend Email
-        </button>
-        <button className="bg-transparent leading-8 hover:bg-blue-500 text-blue-700 w-full py-2 px-4 border border-green-500 text-green-500 hover:border-green-400 rounded">
+        </Button>
+        <Button size="lg" variant="outline" className="w-full">
           Back To Login
-        </button>
+        </Button>
       </form>
     </div>
   );
