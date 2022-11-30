@@ -8,18 +8,23 @@ interface Props {
   handleChange: (e: any) => void;
   handleSubmit: (e: any) => void;
   error: {
-    email: string;
-    fullname: string;
-    password: string;
+    email?: string;
+    fullname?: string;
+    password?: string;
   };
-  details?: {
-    email: string;
-    fullname: string;
-    password: string;
-  };
+  googleLogin: () => void;
+  microsoftLogin: () => void;
+  linkedLogin: () => void;
 }
 
-const SignupViewwithForm = ({ handleSubmit, handleChange, error }: Props) => {
+const SignupViewwithForm = ({
+  handleSubmit,
+  handleChange,
+  googleLogin,
+  linkedLogin,
+  microsoftLogin,
+  error
+}: Props) => {
   return (
     <div className="w-full">
       <Link
@@ -108,13 +113,22 @@ const SignupViewwithForm = ({ handleSubmit, handleChange, error }: Props) => {
           <h6 className="text-lg capitalize text-center">Register with social Accounts</h6>
 
           <div className="w-full flex items-center justify-center space-x-5">
-            <button className="w-12 h-12 flex items-center justify-center rounded-md shadow-lg bg-white">
+            <button
+              onClick={googleLogin}
+              className="w-12 h-12 flex items-center justify-center rounded-md shadow-lg bg-white"
+            >
               <img src={ZUimages.gmail} className="w-6 h-6" alt="linkedin" />
             </button>
-            <button className="w-12 h-12 flex items-center justify-center rounded-md shadow-lg bg-white">
+            <button
+              onClick={microsoftLogin}
+              className="w-12 h-12 flex items-center justify-center rounded-md shadow-lg bg-white"
+            >
               <img src={ZUimages.micro} className="w-6 h-6" alt="linkedin" />
             </button>
-            <button className="w-12 h-12 flex items-center justify-center rounded-md shadow-lg bg-white">
+            <button
+              onClick={linkedLogin}
+              className="w-12 h-12 flex items-center justify-center rounded-md shadow-lg bg-white"
+            >
               <img src={ZUimages.link} className="w-6 h-6" alt="linkedin" />
             </button>
           </div>

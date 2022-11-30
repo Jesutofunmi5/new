@@ -4,7 +4,7 @@ interface Props {
   handleChange: (e: any) => void;
   handleSubmit: (e: any) => void;
   error: {
-    email: string;
+    email?: string;
   };
   details?: {
     email: string;
@@ -13,7 +13,7 @@ interface Props {
 
 const ForgetPasswordView = ({ handleSubmit, handleChange, error }: Props) => {
   return (
-    <div className="w-full lg:w-2/3 mt-20 space-y-20">
+    <div className="w-full lg:w-2/3 lg:mt-20 space-y-20">
       <div className="w-full space-y-1">
         <h4 className="font-bold">Forget Password</h4>
         <p className="text-lg text-gray-200 capitalize">
@@ -24,7 +24,7 @@ const ForgetPasswordView = ({ handleSubmit, handleChange, error }: Props) => {
       <form onSubmit={handleSubmit} className="space-y-5">
         <div>
           <label htmlFor="email" className="block text-lg text-gray-200">
-            Email address*
+            Email
           </label>
           <Input
             required
@@ -36,7 +36,7 @@ const ForgetPasswordView = ({ handleSubmit, handleChange, error }: Props) => {
             onChange={handleChange}
             className="w-full"
           />
-          <p className="text-red text-base ">{error.email}</p>
+          <p className="text-red text-base ">{error?.email}</p>
         </div>
 
         <Button type="submit" size="lg" className="w-full bg-green">
