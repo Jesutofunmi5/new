@@ -3,7 +3,15 @@ import axios from "axios";
 
 import env from "configs";
 import authHeader from "./auth-header";
-import { LOGIN, LOGIN_SUCCESS_URL, LOG_OUT, REGISTER, ZUMARIDI_USER_DATA } from "./CONSTANTS";
+import {
+  FORGOT_PASSWORD,
+  LOGIN,
+  LOGIN_SUCCESS_URL,
+  LOG_OUT,
+  REGISTER,
+  RESET_PASSWORD,
+  ZUMARIDI_USER_DATA
+} from "./CONSTANTS";
 
 export const signin = async ({ email, password }: { email: string; password: string }) => {
   return await axios
@@ -43,8 +51,8 @@ export const loginSuccess = async () => {
 };
 
 export const register = async (details: {
-  firstname: string;
-  lastname: string;
+  firstName: string;
+  lastName: string;
   email: string;
   password: string;
   refId?: string;
@@ -69,4 +77,14 @@ export const logout = async () => {
     .catch((err) => {
       console.log("logout err", err);
     });
+};
+
+export const forgotPassword = async (details: { email: string }) => {
+  const response = await axios.post(`${env.API_BASE_URL}/${FORGOT_PASSWORD}`, details);
+  return response.data;
+};
+
+export const resetPassword = async (details: { token?: string; password: string }) => {
+  const response = await axios.patch(`${env.API_BASE_URL}/${RESET_PASSWORD}`, details);
+  return response.data;
 };

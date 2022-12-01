@@ -8,11 +8,16 @@ import { ZuDown, ZuFlagUnitedKingdom } from "components/icons";
 import type { ReactNode } from "react";
 
 interface Props {
+  reverse?: boolean;
   children: ReactNode;
 }
-const AuthLayout = ({ children }: Props) => {
+const AuthLayout = ({ children, reverse = false }: Props) => {
   return (
-    <div className="relative w-full min-h-screen lg:h-screen flex">
+    <div
+      className={`${
+        reverse ? "flex-row-reverse" : "flex-row"
+      } relative w-full min-h-screen lg:h-screen flex`}
+    >
       <div className="flex items-center justify-between absolute top-0 left-0 right-0 pt-10 px-5 md:px-10 lg:px-20 z-20">
         <Link to={HOME}>
           <img src={ZUimages.logo} alt="logo" className="" />

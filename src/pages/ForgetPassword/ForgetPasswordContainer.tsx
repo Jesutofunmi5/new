@@ -1,28 +1,30 @@
+import * as Yup from "yup";
 import { useFormik } from "formik";
 
 import { Auth } from "components";
+import { useAppDispatch, useAppSelector } from "hooks";
+import { forgotPassword } from "redux/slices/auth.slice";
 import ForgetPasswordView from "./ForgetPasswordView";
-// import { forgotPasswordSchema } from "validations";
 
 export const ForgetPasswordContainer = () => {
+  const dispatch = useAppDispatch();
+  const { isLoading } = useAppSelector((state) => state.auth);
   const formik = useFormik({
     initialValues: {
       email: ""
     },
-    // validate: forgotPasswordSchema,
-    onSubmit: (data) => {
-      console.log("data: ", data);
+    validationSchema: Yup.object().shape({
+      email: Yup.string().email("Invalid email address").required("Email is required")
+    }),
+    onSubmit: (details) => {
+      console.log("data: ", details);
+      void dispatch(forgotPassword(details));
     }
   });
 
   return (
     <Auth>
-      <ForgetPasswordView
-        error={formik.errors}
-        details={formik.values}
-        handleChange={formik.handleChange}
-        handleSubmit={formik.handleSubmit}
-      />
+      <ForgetPasswordView loading={isLoading} formik={formik} />
     </Auth>
   );
 };

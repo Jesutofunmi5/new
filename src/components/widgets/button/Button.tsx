@@ -31,19 +31,7 @@ const Button = ({
         return "p-1 h-10";
     }
   };
-  if (to !== undefined)
-    return (
-      <Link
-        to={to}
-        className={`${
-          variant === "full" ? "bg-primary text-white " : "border-2 border-primary text-primary"
-        } ${className}  rounded-[6px] px-5 py-2 `}
-      >
-        {children}
-      </Link>
-    );
-
-  return (
+  const Button = () => (
     <button
       className={`${getSize(size)} ${
         variant === "full" ? "bg-primary text-white " : "border-2 border-primary text-primary"
@@ -53,6 +41,15 @@ const Button = ({
       {children}
     </button>
   );
+
+  if (to !== undefined)
+    return (
+      <Link to={to}>
+        <Button />
+      </Link>
+    );
+
+  return <Button />;
 };
 
 export default Button;
