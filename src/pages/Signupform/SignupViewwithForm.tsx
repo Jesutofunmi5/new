@@ -1,29 +1,25 @@
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+import { FormikProps } from "formik";
 import { Link } from "react-router-dom";
 
 import { ZUimages } from "assets";
 import { LOGIN, SIGNUP } from "routes/CONSTANTS";
-import { Button, Input, ZuAngleLeft } from "components";
+import { Button, Input, Loader, ZuAngleLeft } from "components";
 
 interface Props {
-  handleChange: (e: any) => void;
-  handleSubmit: (e: any) => void;
-  error: {
-    email?: string;
-    fullname?: string;
-    password?: string;
-  };
+  loading: boolean;
+  linkedLogin: () => void;
   googleLogin: () => void;
   microsoftLogin: () => void;
-  linkedLogin: () => void;
+  formik: FormikProps<{ fullname: string; email: string; password: string }>;
 }
 
 const SignupViewwithForm = ({
-  handleSubmit,
-  handleChange,
   googleLogin,
   linkedLogin,
   microsoftLogin,
-  error
+  loading,
+  formik
 }: Props) => {
   return (
     <div className="w-full">
@@ -38,27 +34,28 @@ const SignupViewwithForm = ({
         <div className="w-full space-y-1">
           <h4 className="font-bold">Register Individual Account!</h4>
           <p className="text-lg text-gray-200 capitalize">
-            For the purpose of industry regulation, your details are required.
+            For the purpose of industry regulation, your details are .
           </p>
         </div>
 
         <div className="w-full h-px my-5 bg-gray-100 shadow" />
-        <form onSubmit={handleSubmit} className="space-y-3">
+        <form onSubmit={formik.handleSubmit} className="space-y-3">
           <div>
             <label htmlFor="fullname" className="block text-lg text-gray-200">
               Your fullname*
             </label>
             <Input
-              required
               size="lg"
               type="text"
               id="fullname"
               name="fullname"
               placeholder="Enter full name"
-              onChange={handleChange}
+              onChange={formik.handleChange}
               className="w-full"
             />
-            <p className="text-red text-base ">{error.fullname}</p>
+            {formik.touched.fullname && formik.errors.fullname && (
+              <p className="text-red text-base ">{formik.errors.fullname}</p>
+            )}
           </div>
 
           <div>
@@ -66,16 +63,17 @@ const SignupViewwithForm = ({
               Email address*
             </label>
             <Input
-              required
               size="lg"
               type="email"
               id="email"
               name="email"
               placeholder="Enter email address"
-              onChange={handleChange}
+              onChange={formik.handleChange}
               className="w-full"
             />
-            <p className="text-red text-base ">{error.email}</p>
+            {formik.touched.email && formik.errors.email && (
+              <p className="text-red text-base ">{formik.errors.email}</p>
+            )}
           </div>
 
           <div>
@@ -83,25 +81,26 @@ const SignupViewwithForm = ({
               Create password*
             </label>
             <Input
-              required
               size="lg"
               type="password"
               id="password"
               name="password"
               placeholder="Enter password"
-              onChange={handleChange}
+              onChange={formik.handleChange}
               autoComplete="on"
               className="w-full"
             />
-            <p className="text-red text-base ">{error.password}</p>
+            {formik.touched.password && formik.errors.password && (
+              <p className="text-red text-base ">{formik.errors.password}</p>
+            )}
           </div>
 
           <div className="flex items-center space-x-3">
-            <Input size="sm" type="checkbox" required className="accent-green" />
+            <Input size="sm" type="checkbox" className="accent-green" />
             <p className="capitalize text-lg text-gray-200">I agree to terms & conditions</p>
           </div>
-          <Button size="lg" className="w-full bg-green">
-            Register Account
+          <Button size="lg" className="w-full flex items-center justify-center bg-green">
+            {loading ? <Loader /> : "Register Account"}
           </Button>
         </form>
         <div className="my-5 w-full flex items-center">

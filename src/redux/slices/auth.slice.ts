@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { setMessage } from "./message.slice";
 
+import { toast } from "react-toastify";
 import { AuthService } from "services";
 import { formatErrorResponse } from "utils";
 import { ZUMARIDI_USER_DATA } from "services/CONSTANTS";
@@ -12,20 +12,25 @@ export const register = createAsyncThunk(
   "auth/register",
   async (
     {
-      firstname,
-      lastname,
+      firstName,
+      lastName,
       email,
       password
-    }: { firstname: string; lastname: string; email: string; password: string },
+    }: { firstName: string; lastName: string; email: string; password: string },
     thunkAPI
   ) => {
     try {
-      const response = await AuthService.register({ firstname, lastname, email, password });
-      thunkAPI.dispatch(setMessage(response.data.MESSAGE));
-      return response.data;
+      const { MESSAGE, DATA } = await AuthService.register({
+        firstName,
+        lastName,
+        email,
+        password
+      });
+      toast.success(MESSAGE);
+      return { userId: DATA.id, email: DATA.email };
     } catch (error) {
       const message = formatErrorResponse(error);
-      thunkAPI.dispatch(setMessage(message));
+      toast.error(message);
       return thunkAPI.rejectWithValue(message);
     }
   }
@@ -38,9 +43,8 @@ export const login = createAsyncThunk(
       const { DATA } = await AuthService.signin({ email, password });
       return { userId: DATA.id, email: DATA.email };
     } catch (error) {
-      console.log(error);
       const message = formatErrorResponse(error);
-      thunkAPI.dispatch(setMessage(message));
+      toast.error(message);
       return thunkAPI.rejectWithValue(message);
     }
   }
@@ -51,9 +55,8 @@ export const loginSuccess = createAsyncThunk("auth/loginSuccess", async (_, thun
     const { DATA } = await AuthService.loginSuccess();
     return { user: DATA };
   } catch (error) {
-    console.log(error);
     const message = formatErrorResponse(error);
-    thunkAPI.dispatch(setMessage(message));
+    toast.error(message);
     return thunkAPI.rejectWithValue(message);
   }
 });
@@ -65,9 +68,38 @@ export const confirmAccount = createAsyncThunk(
       const { DATA } = await AuthService.confirmAccount(code);
       return { user: DATA };
     } catch (error) {
-      console.log(error);
       const message = formatErrorResponse(error);
-      thunkAPI.dispatch(setMessage(message));
+      toast.error(message);
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
+export const forgotPassword = createAsyncThunk(
+  "auth/forgotPassword",
+  async (details: { email: string }, thunkAPI) => {
+    try {
+      const { DATA, MESSAGE } = await AuthService.forgotPassword(details);
+      toast.success(MESSAGE);
+      return { userId: DATA.id, email: DATA.email };
+    } catch (error) {
+      const message = formatErrorResponse(error);
+      toast.error(message);
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
+export const resetPassword = createAsyncThunk(
+  "auth/resetPassword",
+  async (details: { token?: string; password: string }, thunkAPI) => {
+    try {
+      const { DATA, MESSAGE } = await AuthService.resetPassword(details);
+      toast.success(MESSAGE);
+      return { userId: DATA.id, email: DATA.email };
+    } catch (error) {
+      const message = formatErrorResponse(error);
+      toast.error(message);
       return thunkAPI.rejectWithValue(message);
     }
   }
@@ -125,6 +157,28 @@ const authSlice = createSlice({
     builder.addCase(loginSuccess.rejected, (state) => {
       state.isLoggedIn = false;
       state.user = null;
+      state.isLoading = false;
+    });
+
+    // forgot password actions
+    builder.addCase(forgotPassword.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(forgotPassword.fulfilled, (state) => {
+      state.isLoading = false;
+    });
+    builder.addCase(forgotPassword.rejected, (state) => {
+      state.isLoading = false;
+    });
+
+    // forgot password actions
+    builder.addCase(resetPassword.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(resetPassword.fulfilled, (state) => {
+      state.isLoading = false;
+    });
+    builder.addCase(resetPassword.rejected, (state) => {
       state.isLoading = false;
     });
   }
