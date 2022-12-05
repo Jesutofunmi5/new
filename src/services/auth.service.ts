@@ -19,7 +19,7 @@ export const signin = async ({ email, password }: { email: string; password: str
       username: email,
       password
     })
-    .then((res) => {
+    .then((res: any) => {
       const data = res.data;
       if (data?.DATA?.accessToken) {
         localStorage.setItem(ZUMARIDI_USER_DATA, JSON.stringify(data.DATA));
