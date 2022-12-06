@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import type { ComponentProps } from "react";
 
 type Props = {
@@ -5,6 +7,8 @@ type Props = {
 } & Omit<ComponentProps<"input">, "size">;
 
 const Input = ({ size = "md", className = "", ...props }: Props) => {
+  const [password, setPassword] = useState<boolean>(true);
+
   const getSize = (size: string) => {
     switch (size) {
       case "sm":
@@ -18,12 +22,28 @@ const Input = ({ size = "md", className = "", ...props }: Props) => {
         return "p-1 h-10";
     }
   };
+  if (props.type === "password") {
+    return (
+      <div
+        className={`${getSize(
+          size
+        )} ${className} flex items-center justify-between text-base bg-white placeholder:text-[#8692A6] border rounded-[6px] focus:border-primary`}
+      >
+        <input
+          {...props}
+          type={password ? "password" : "text"}
+          className="w-full h-full bg-transparent"
+        />
+        <button onClick={() => setPassword(!password)}>{password ? "Show" : "Hide"}</button>
+      </div>
+    );
+  }
 
   return (
     <input
       className={`${getSize(
         size
-      )} ${className} text-base placeholder:text-[#8692A6] border rounded-[6px] focus:border-primary`}
+      )} ${className} text-base bg-white placeholder:text-[#8692A6] border rounded-[6px] focus:border-primary`}
       {...props}
     />
   );
