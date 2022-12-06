@@ -22,6 +22,7 @@ export const yellowElipse = `${BACKGROUND}/yellow_elipse.png`;
 export const greenElipse = `${BACKGROUND}/green_elipse.png`;
 export const socialIcons = `${BACKGROUND}/social_elipse.png`;
 export const socialIconsBackground = `${BACKGROUND}/BG.png`;
+export const elipseAndLine = `${BACKGROUND}/elipse_line.png`;
 
 const SVG_PATH = "/svg";
 const DOTS = `${SVG_PATH}`;
