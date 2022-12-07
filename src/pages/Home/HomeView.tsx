@@ -148,13 +148,13 @@ const HomeView = () => {
             </h3>
           </div>
           <div className="absolute ml-24">
-            <img src={ZUimages.elipseAndLine} className="h-96 -z-[20] ml-[500px]"></img>
+            <img src={ZUimages.elipseAndLine} className="h-96 -z-[20] ml-[450px]"></img>
           </div>
           <div className=" mt-24 mb-24 z-[0]">
             <div className="flex flex-col mb-8 mt-18 -z-[10]">
               <img src={ZUimages.dots} className="ml-36 mr-18 mt-6  -z-[20] "></img>
             </div>
-            <div className="flex flex-col items-center bg-white h-[350px] -ml-8 -mt-36 -mr-6 mb-12 m w-72 z-[100] ">
+            <div className="flex flex-col items-center bg-white h-[450px] -ml-8 -mt-36 -mr-6 mb-12 m w-72 z-[100] ">
               <div className="flex flex-col items-center justify-around my-6 rounded-lg  w-60">
                 <h4>$271,284</h4>
                 <p>Annual Revenue</p>
