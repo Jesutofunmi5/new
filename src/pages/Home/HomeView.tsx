@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Button } from "components";
 
 import { ZUimages } from "assets";
 import { SIGNUP } from "routes/CONSTANTS";
@@ -232,7 +233,136 @@ const HomeView = () => {
           <br />
           <br />
           <br />
+        </div>
+        <div className="flex flex-col items-center bg-[#F8F9FC] ">
           <br />
+          <br />
+          <div className="items-center text-center">
+            <h6 className="text-[#07AA3D] text-center">Testimonial</h6>
+            <br />
+            <h3 className="font-bold ">
+              We Care About Our Customers <br />
+              Experience too
+            </h3>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+          </div>
+          <div className="flex flex-col space-between  items-center  ">
+            <img src={ZUimages.circularUser1} className="absolute mr-[1000px] -mt-[150px] "></img>
+            <img src={ZUimages.circularUser3} className="absolute -mt-[200px] mr-[170px] "></img>
+            <img src={ZUimages.circularUser2} className="absolute -mt-[160px] -mr-[610px]"></img>
+
+            <div className="flex flex-row space-between">
+              <div className="flex flex-col h-[350px] w-[350px] bg-[#07AA3D] rounded-lg mx-6 text-justify text-white p-[20px] ">
+                <br />
+                <br />
+                <p>
+                  There are many variations passages of <br /> Lorem lpsum available, but the
+                  majority
+                  <br /> have suffered alteration in some form, by injected or randomised.
+                </p>
+                <div className="flex flex-row space-between">
+                  <div className="flex flex-col">
+                    <br />
+                    <br />
+                    <br />
+
+                    <h6 className="font-bold">Gary Simon</h6>
+                    <br />
+                    <div className="flex flex-row space-between text-justify items-justify">
+                      <p className="">Sholl’s Colonial Cafeteria</p>
+                      <div className="flex flex-row item-end ml-12">
+                        <img src={ZUimages.star} alt="" />
+                        <img src={ZUimages.star} alt="" />
+                        <img src={ZUimages.star} alt="" />
+                        <img src={ZUimages.star} alt="" />
+                        <img src={ZUimages.star} alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col h-[350px] w-[350px]  bg-white rounded-lg mx-6 text-justify text-black p-[20px]">
+                <br />
+                <br />
+                <p>
+                  There are many variations passages of <br /> Lorem lpsum available, but the
+                  majority
+                  <br /> have suffered alteration in some form, by injected or randomised.
+                </p>
+                <div className="flex flex-row space-between">
+                  <div className="flex flex-col">
+                    <br />
+                    <br />
+                    <br />
+
+                    <h6 className="font-bold">Karla Lynn</h6>
+                    <br />
+                    <div className="flex flex-row space-between text-justify items-justify">
+                      <p className="">Sholl’s Colonial Cafeteria</p>
+                      <div className="flex flex-row item-end ml-12">
+                        <img src={ZUimages.star} alt="" />
+                        <img src={ZUimages.star} alt="" />
+                        <img src={ZUimages.star} alt="" />
+                        <img src={ZUimages.star} alt="" />
+                        <img src={ZUimages.star} alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col h-[350px] w-[350px] bg-white rounded-lg mx-6 text-justify text-black p-[20px]">
+                <br />
+                <br />
+                <p>
+                  There are many variations passages of <br /> Lorem lpsum available, but the
+                  majority
+                  <br /> have suffered alteration in some form, by injected or randomised.
+                </p>
+                <div className="flex flex-row space-between">
+                  <div className="flex flex-col">
+                    <br />
+                    <br />
+                    <br />
+
+                    <h6 className="font-bold">Stella Jennifer</h6>
+                    <br />
+                    <div className="flex flex-row space-between text-justify items-justify">
+                      <p className="">Sholl’s Colonial Cafeteria</p>
+                      <div className="flex flex-row item-end ml-12">
+                        <img src={ZUimages.star} alt="" />
+                        <img src={ZUimages.star} alt="" />
+                        <img src={ZUimages.star} alt="" />
+                        <img src={ZUimages.star} alt="" />
+                        <img src={ZUimages.star} alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <div className="flex flex-col space-between items-center justify-center h-72 w-full  bg-white">
+            <div className=" absolute z-10 text-white items-left -ml-[580px]">
+              <h5>
+                Get Started By Creating <br /> an Account
+              </h5>
+            </div>
+            <Button to={SIGNUP} className="absolute -mr-[650px]">
+              Create an Account
+            </Button>
+            <img
+              src={ZUimages.lastRowBackground}
+              className="w-[1000px] items-center mt-[75px]"
+            ></img>
+          </div>
         </div>
       </div>
     </div>

@@ -8,7 +8,11 @@ const Polygon = `${IMG_PATH}/polygon`;
 export const user1 = `${USERS}/user1.png`;
 export const user2 = `${USERS}/user2.png`;
 export const user3 = `${USERS}/user3.png`;
+export const circularUser1 = `${USERS}/user1_cropped.png`;
+export const circularUser2 = `${USERS}/user2_cropped.png`;
+export const circularUser3 = `${USERS}/user3_cropped.png`;
 export const youngManOnline = `${USERS}/young_man_online.png`;
+export const star = `${USERS}/star.png`;
 
 export const logo = `${LOGO}/logo.png`;
 export const logoIcon = `${LOGO}/logo_icon.png`;
@@ -24,6 +28,7 @@ export const greenElipse = `${BACKGROUND}/green_elipse.png`;
 export const socialIcons = `${BACKGROUND}/social_elipse.png`;
 export const socialIconsBackground = `${BACKGROUND}/BG.png`;
 export const elipseAndLine = `${BACKGROUND}/elipse_line.png`;
+export const lastRowBackground = `${BACKGROUND}/last_row_bg.png`;
 
 const SVG_PATH = "/svg";
 const DOTS = `${SVG_PATH}`;
