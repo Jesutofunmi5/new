@@ -65,8 +65,9 @@ export const confirmAccount = createAsyncThunk(
   "auth/confirmAccount",
   async (code: string, thunkAPI) => {
     try {
-      const { DATA } = await AuthService.confirmAccount(code);
-      return { user: DATA };
+      const { MESSAGE, DATA } = await AuthService.confirmAccount(code);
+      toast.success(MESSAGE);
+      return { userId: DATA.id, email: DATA.email };
     } catch (error) {
       const message = formatErrorResponse(error);
       toast.error(message);

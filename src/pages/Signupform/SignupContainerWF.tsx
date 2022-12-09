@@ -28,13 +28,12 @@ export const SignupContainerWF = () => {
     }),
 
     onSubmit: (details) => {
-      console.log(details, details.fullname.split(" ")[0], details.fullname.split(" ")[1]);
       void dispatch(
         register({
           email: details.email,
           password: details.password,
-          firstName: "Ifeoluwa",
-          lastName: "Oluwayelu"
+          firstName: details.fullname.split(" ")[0],
+          lastName: details.fullname.split(" ")[1]
         })
       );
     }

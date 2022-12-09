@@ -36,6 +36,7 @@ const LoginView = ({ googleLogin, linkedLogin, microsoftLogin, loading, formik }
               type="email"
               id="email"
               name="email"
+              value={formik.values.email}
               placeholder="Enter email address"
               onChange={formik.handleChange}
               className="w-full"
