@@ -6,6 +6,7 @@ import {
   FORGOT_PASSWORD,
   HOME,
   LOGIN,
+  LOGIN_CONFIRM,
   RESET_PASSWORD,
   SIGNUP,
   SIGNUPFORM
@@ -24,6 +25,7 @@ const RouterConfig: FC = () => {
         <Route path="/" element={<PublicRoute />}>
           {/* Auth pages */}
           <Route path={LOGIN} element={<Login />} />
+          <Route path={LOGIN_CONFIRM} element={<Login />} />
           <Route path={SIGNUP} element={<Signup />} />
           <Route path={SIGNUPFORM} element={<Signupform />} />
           <Route path={RESET_PASSWORD} element={<ResetPassword />} />
