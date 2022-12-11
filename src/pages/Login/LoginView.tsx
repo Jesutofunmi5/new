@@ -1,40 +1,22 @@
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+import { FormikProps } from "formik";
 import { Link } from "react-router-dom";
 
 import { ZUimages } from "assets";
 import { SIGNUP, FORGOT_PASSWORD } from "routes/CONSTANTS";
-import { Button, Input, ZuAngleLeft } from "components";
+import { Button, Input, Loader } from "components";
 
 interface Props {
-  handleChange: (e: any) => void;
-  handleSubmit: (e: any) => void;
-  error: {
-    email?: string;
-    password?: string;
-  };
+  loading: boolean;
+  linkedLogin: () => void;
   googleLogin: () => void;
   microsoftLogin: () => void;
-  linkedLogin: () => void;
-  formik: any;
+  formik: FormikProps<{ email: string; password: string }>;
 }
 
-const LoginView = ({
-  handleSubmit,
-  handleChange,
-  googleLogin,
-  linkedLogin,
-  microsoftLogin,
-  error
-}: // formik
-Props) => {
+const LoginView = ({ googleLogin, linkedLogin, microsoftLogin, loading, formik }: Props) => {
   return (
     <div className="w-full">
-      <Link
-        to={SIGNUP}
-        className="mb-5 lg:mb-0 lg:absolute top-10 left-5 md:left-10 z-20 flex items-center space-x-2"
-      >
-        <ZuAngleLeft size={16} />
-        <p className="font-bold">Back</p>
-      </Link>
       <div className="w-full lg:w-2/3">
         <div className="w-full space-y-1">
           <h4 className="font-bold">Login your Account!</h4>
@@ -44,7 +26,7 @@ Props) => {
         </div>
 
         <div className="w-full h-px my-5 bg-gray-100 shadow" />
-        <form onSubmit={handleSubmit} className="space-y-3">
+        <form onSubmit={formik.handleSubmit} className="space-y-3">
           <div>
             <label htmlFor="email" className="block text-lg text-gray-200">
               Email address
@@ -54,11 +36,14 @@ Props) => {
               type="email"
               id="email"
               name="email"
+              value={formik.values.email}
               placeholder="Enter email address"
-              onChange={handleChange}
+              onChange={formik.handleChange}
               className="w-full"
             />
-            <p className="text-red text-base ">{error.email}</p>
+            {formik.touched.email && formik.errors.password && (
+              <p className="text-red text-base ">{formik.errors.email}</p>
+            )}
           </div>
 
           <div>
@@ -71,11 +56,13 @@ Props) => {
               id="password"
               name="password"
               placeholder="Enter password"
-              onChange={handleChange}
+              onChange={formik.handleChange}
               autoComplete="on"
               className="w-full"
             />
-            <p className="text-red text-base ">{error.password}</p>
+            {formik.touched.password && formik.errors.password && (
+              <p className="text-red text-base ">{formik.errors.password}</p>
+            )}
           </div>
 
           <div className="w-full flex items-center justify-between">
@@ -87,8 +74,8 @@ Props) => {
               Forgot password?
             </Link>
           </div>
-          <Button type="submit" size="lg" className="w-full bg-green">
-            Login
+          <Button size="lg" className="w-full flex items-center justify-center bg-green">
+            {loading ? <Loader /> : "Login"}
           </Button>
         </form>
         <div className="my-5 w-full flex items-center">

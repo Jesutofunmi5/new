@@ -1,13 +1,14 @@
+import * as Yup from "yup";
 import { useFormik } from "formik";
 import { Auth } from "components";
-import { useAppDispatch } from "hooks";
+import { useAppDispatch, useAppSelector } from "hooks";
 import SignupView from "./SignupViewwithForm";
 import { register } from "redux/slices/auth.slice";
 import { GOOGLE_END_POINT, LINKED_IN_END_POINT, MICROSOFT_END_POINT } from "services/CONSTANTS";
-// import { registerSchema } from "validations";
 
 export const SignupContainerWF = () => {
   const dispatch = useAppDispatch();
+  const { isLoading } = useAppSelector((state) => state.auth);
 
   const formik = useFormik({
     initialValues: {
@@ -15,23 +16,26 @@ export const SignupContainerWF = () => {
       password: "",
       fullname: ""
     },
-    // validate: registerSchema,
+    validationSchema: Yup.object().shape({
+      fullname: Yup.string().required("Fullname is required"),
+      email: Yup.string().email("Invalid email address").required("Email is required"),
+      password: Yup.string()
+        .required("Password is required")
+        .matches(
+          /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
+          "Weak Password. Password must have at least: 1 upper case, 1 digit, 1 special character, Minimum eight in length"
+        )
+    }),
 
     onSubmit: (details) => {
-      console.log(details);
-      dispatch(
+      void dispatch(
         register({
           email: details.email,
           password: details.password,
-          firstname: details.fullname.split(" ")[0],
-          lastname: details.fullname.split(" ")[1]
+          firstName: details.fullname.split(" ")[0],
+          lastName: details.fullname.split(" ")[1]
         })
-      )
-        .unwrap()
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => console.error(err));
+      );
     }
   });
 
@@ -47,9 +51,8 @@ export const SignupContainerWF = () => {
   return (
     <Auth>
       <SignupView
-        error={formik.errors}
-        handleChange={formik.handleChange}
-        handleSubmit={formik.handleSubmit}
+        formik={formik}
+        loading={isLoading}
         googleLogin={googleLogin}
         microsoftLogin={microsoftLogin}
         linkedLogin={linkedLogin}

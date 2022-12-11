@@ -20,7 +20,7 @@ const Dropdown = ({ children, button }: Props) => {
   return (
     <div className="group relative">
       {button}
-      <div className="w-full hidden absolute group-hover:block transition-transform duration-1000 z-20">
+      <div className="min-w-full hidden absolute group-hover:block transition-transform duration-1000 z-20">
         <div className="p-3 bg-white rounded overflow-hidden">{dropdownElements}</div>
       </div>
     </div>
