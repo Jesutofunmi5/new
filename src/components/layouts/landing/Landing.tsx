@@ -1,7 +1,5 @@
 import { useLocation } from "react-router-dom";
-
 import { Footer, Navbar } from "components/modules";
-
 import type { ReactNode } from "react";
 
 interface Props {
