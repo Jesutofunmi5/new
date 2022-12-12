@@ -14,7 +14,7 @@ const SignupView = () => {
           </Link>
         </p>
       </div>
-      <div className="w-full lg:w-2/3">
+      <div className="w-full xl:w-2/3">
         <div className="w-full lg:w-3/4">
           <h4>Join Us!</h4>
           <p className="text-lg capitalize text-gray-200">
@@ -24,7 +24,7 @@ const SignupView = () => {
 
         <Link to={SIGNUPFORM}>
           <div className="mt-10 w-full p-5 bg-green-100/20 flex items-center rounded-md space-x-5 hover:border-1 hover:border-green shadow">
-            <div className="relative w-poly h-poly flex items-center justify-center">
+            <div className="relative w-16 h-16 flex items-center justify-center">
               <img src={ZUimages.firstPolygon} className="" alt="" />
               <img src={ZUimages.polyUser} className="absolute" alt="" />
             </div>
@@ -34,12 +34,12 @@ const SignupView = () => {
                 Personal account to manage all you activities.
               </p>
             </div>
-            <ZuArrowRight size={20} className="text-green" />
+            <ZuArrowRight size={30} className="text-green" />
           </div>
         </Link>
 
         <div className="mt-5 w-full p-5 bg-white flex items-center rounded-md space-x-5 hover:border-1 hover:border-green shadow">
-          <div className="relative w-poly h-poly flex items-center justify-center">
+          <div className="relative w-16 h-16 flex items-center justify-center">
             <img src={ZUimages.secondPolygon} alt="" />
             <img src={ZUimages.briefcase} className="absolute" alt="" />
           </div>
