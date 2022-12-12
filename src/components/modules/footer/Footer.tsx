@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ZUimages } from "assets";
 import { Button } from "components/widgets";
 import { ZuEmail, ZuPhone, ZuLocation, ZuFacebook, ZuTwitter } from "components/icons";
+import { SIGNUP } from "routes/CONSTANTS";
 
 const Footer = () => {
   return (
@@ -13,7 +14,7 @@ const Footer = () => {
           <h1 className="text-center text-[40px] md:text-[60px]">
             It's easy to get <br /> started. Start now.
           </h1>
-          <Button>Start for free</Button>
+          <Button to={SIGNUP}>Start for free</Button>
         </div>
 
         <div className="w-full py-5 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-3 md:gap-5 justify-around">
