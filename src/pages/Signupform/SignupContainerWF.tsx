@@ -14,7 +14,8 @@ export const SignupContainerWF = () => {
     initialValues: {
       email: "",
       password: "",
-      fullname: ""
+      fullname: "",
+      terms: false
     },
     validationSchema: Yup.object().shape({
       fullname: Yup.string().required("Fullname is required"),
@@ -24,7 +25,8 @@ export const SignupContainerWF = () => {
         .matches(
           /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
           "Weak Password. Password must have at least: 1 upper case, 1 digit, 1 special character, Minimum eight in length"
-        )
+        ),
+      terms: Yup.boolean().isTrue("Terms and condition not accepted")
     }),
 
     onSubmit: (details) => {

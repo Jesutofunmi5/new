@@ -11,7 +11,7 @@ interface Props {
   linkedLogin: () => void;
   googleLogin: () => void;
   microsoftLogin: () => void;
-  formik: FormikProps<{ fullname: string; email: string; password: string }>;
+  formik: FormikProps<{ fullname: string; email: string; password: string; terms: boolean }>;
 }
 
 const SignupViewwithForm = ({
@@ -30,7 +30,7 @@ const SignupViewwithForm = ({
         <ZuAngleLeft size={16} />
         <p className="font-bold">Back</p>
       </Link>
-      <div className="w-full lg:w-2/3">
+      <div className="w-full xl:w-2/3">
         <div className="w-full space-y-1">
           <h4 className="font-bold">Register Individual Account!</h4>
           <p className="text-lg text-gray-200 capitalize">
@@ -95,11 +95,27 @@ const SignupViewwithForm = ({
             )}
           </div>
 
-          <div className="flex items-center space-x-3">
-            <Input size="sm" type="checkbox" className="accent-green" />
-            <p className="capitalize text-lg text-gray-200">I agree to terms & conditions</p>
+          <div>
+            <div className="flex items-center space-x-3">
+              <Input
+                id="terms"
+                name="terms"
+                onChange={formik.handleChange}
+                size="sm"
+                type="checkbox"
+                className="accent-green"
+              />
+              <p className="capitalize text-lg text-gray-200">I agree to terms & conditions</p>
+            </div>
+            {formik.touched.terms && formik.errors.terms && (
+              <p className="text-red text-base ">{formik.errors.terms}</p>
+            )}
           </div>
-          <Button size="lg" className="w-full flex items-center justify-center bg-green">
+          <Button
+            size="lg"
+            type="submit"
+            className="w-full flex items-center justify-center bg-green"
+          >
             {loading ? <Loader /> : "Register Account"}
           </Button>
         </form>

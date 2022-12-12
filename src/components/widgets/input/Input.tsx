@@ -34,7 +34,9 @@ const Input = ({ size = "md", className = "", ...props }: Props) => {
           type={password ? "password" : "text"}
           className="w-full h-full bg-transparent"
         />
-        <button onClick={() => setPassword(!password)}>{password ? "Show" : "Hide"}</button>
+        <div className="cursor-pointer" onClick={() => setPassword(!password)}>
+          {password ? "Show" : "Hide"}
+        </div>
       </div>
     );
   }

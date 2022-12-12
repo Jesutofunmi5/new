@@ -28,7 +28,7 @@ const AuthLayout = ({ children, reverse = false }: Props) => {
           <img src={ZUimages.authBackground} className="w-full h-full" />
         </div>
       </div>
-      <div className="relative w-full lg:w-3/5 h-full pt-20 px-5 md:px-10 lg:px-20 flex">
+      <div className="relative w-full lg:w-3/5 h-full pt-20 px-5 md:px-10 lg:px-20 flex overflow-hidden">
         <div className="absolute top-10 right-5 md:right-10 lg:right-20 z-20">
           <Dropdown
             button={
@@ -41,7 +41,7 @@ const AuthLayout = ({ children, reverse = false }: Props) => {
             <></>
           </Dropdown>
         </div>
-        {children}
+        <div className="w-full overflow-auto no-scrollbar">{children}</div>
       </div>
     </div>
   );
