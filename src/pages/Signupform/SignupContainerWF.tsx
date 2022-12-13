@@ -1,10 +1,13 @@
 import * as Yup from "yup";
 import { useFormik } from "formik";
+import { toast } from "react-toastify";
+
 import { Auth } from "components";
-import { useAppDispatch, useAppSelector } from "hooks";
-import SignupView from "./SignupViewwithForm";
 import { register } from "redux/slices/auth.slice";
+import { useAppDispatch, useAppSelector } from "hooks";
 import { GOOGLE_END_POINT, LINKED_IN_END_POINT, MICROSOFT_END_POINT } from "services/CONSTANTS";
+
+import SignupView from "./SignupViewwithForm";
 
 export const SignupContainerWF = () => {
   const dispatch = useAppDispatch();
@@ -37,7 +40,16 @@ export const SignupContainerWF = () => {
           firstName: details.fullname.split(" ")[0],
           lastName: details.fullname.split(" ")[1]
         })
-      );
+      )
+        .unwrap()
+        .then((res) => {
+          setTimeout(() => {
+            toast.success(
+              // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+              `Verification Link has been sent to this email "${res.email}", kindly follow the instruction in the mail to verify your account`
+            );
+          }, 5000);
+        });
     }
   });
 
