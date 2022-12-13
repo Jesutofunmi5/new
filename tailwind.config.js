@@ -2,15 +2,15 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    fontSize: {
-      lg: ["16px"],
-      base: ["12px"],
-      sm: [
-        "10px",
-        {
-          fontWeight: "500"
-        }
-      ]
+    fontFamily: {
+      Heebo: ["Heebo", "sans-serif"]
+    },
+    screens: {
+      sm: "512px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px"
     },
     extend: {
       colors: {
@@ -37,6 +37,9 @@ module.exports = {
         citrus: "#F26D21",
         background: "#F7F7F7"
       }
+    },
+    container: {
+      center: true
     }
   },
   plugins: []
