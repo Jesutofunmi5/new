@@ -17,7 +17,10 @@ const Save = () => {
             <p className="text-5xl">$271,284</p>
             <p className="text-base">Annual Revenue</p>
           </div>
-          <div className="flex flex-col gap-4 rounded-lg border-t-2 border-dotted border-gray-200">
+          <div className="bg-white text-gray-200 flex text-3xl gap-12">
+            . . . . . . . . . . . . . . . . . . . .
+          </div>
+          <div className="flex flex-col gap-4 rounded-lg ">
             <p className="text-5xl">$4,249</p>
             <p className="text-base">Savings Using Other Services</p>
           </div>

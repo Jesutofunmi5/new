@@ -13,9 +13,9 @@ const Testimonial = () => {
           </h3>
         </div>
         <div className="flex flex-col justify-between  items-center">
-          <div className="flex gap-12 items-center justify-center">
-            <div className="flex flex-col justify-between h-[290px] w-[407px] bg-[#07AA3D] rounded-lg text-justify py-12 px-8 text-white ">
-              <img src={ZUimages.circularUser1} className="absolute -mt-[150px] "></img>
+          <div className="flex gap-12">
+            <div className="flex flex-col justify-between h-[290px] w-[33%] bg-[#07AA3D] rounded-lg text-justify py-12 pl-8 pr-4 text-white ">
+              <img src={ZUimages.circularUser1} className=" absolute -mt-[80px] rounded-full" />
               <p className="text-base">
                 There are many variations passages of <br /> Lorem lpsum available, but the majority
                 <br /> have suffered alteration in some form, by injected or randomised.
@@ -36,8 +36,8 @@ const Testimonial = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col justify-between h-[290px] w-[407px] bg-white rounded-lg text-justify text-black py-12 px-8">
-              <img src={ZUimages.circularUser3} className="absolute -mt-[200px] "></img>
+            <div className="flex flex-col justify-between h-[290px] w-[33%] bg-white rounded-lg text-justify text-black py-12 pl-8 pr-4">
+              <img src={ZUimages.circularUser3} className="absolute -mt-[80px] rounded-full" />
               <p className="text-base">
                 There are many variations passages of <br /> Lorem lpsum available, but the majority
                 <br /> have suffered alteration in some form, by injected or randomised.
@@ -58,8 +58,8 @@ const Testimonial = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col h-[290px] w-[407px] justify-between bg-white rounded-lg text-justify text-black py-12 px-8">
-              <img src={ZUimages.circularUser2} className="absolute -mt-[160px]"></img>
+            <div className="flex flex-col h-[290px] w-[33%] justify-between bg-white rounded-lg text-justify text-black py-12 pl-8 pr-4">
+              <img src={ZUimages.circularUser2} className="absolute -mt-[80px]  rounded-full"></img>
               <p>
                 There are many variations passages of <br /> Lorem lpsum available, but the majority
                 <br /> have suffered alteration in some form, by injected or randomised.

@@ -2,7 +2,7 @@ import { AcheiveMore, Create, Hero, Integrations, Process, Save, Testimonial } f
 
 const HomeView = () => {
   return (
-    <div className="">
+    <div className="overflow-hidden">
       <Hero />
       <AcheiveMore />
       <Integrations />
@@ -10,7 +10,6 @@ const HomeView = () => {
       <Process />
       <Testimonial />
       <Create />
-      {/* <div className="bg-white flex-col height-200vh "></div> */}
     </div>
   );
 };

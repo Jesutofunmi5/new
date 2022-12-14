@@ -22,7 +22,7 @@ const AcheiveMore = () => {
         </div>
       </div>
       <div className="flex justify-center items-center px-5 md:px-20 pt-8 ">
-        <div className="w-[390px]">
+        <div className="w-[390px] pl-8">
           <div>
             <div className="w-16 h-16 rounded-full bg-[#FFD166] text-center"></div>
             <img src={ZUimages.zuAthletics} className="-mt-12 ml-3 text-center"></img>
@@ -34,7 +34,7 @@ const AcheiveMore = () => {
             deserunt ullamco est sit aliqua
           </p>
         </div>
-        <div className="flex-col w-[390px]">
+        <div className="flex-col w-[390px] pl-8">
           <div>
             <div className="w-16 h-16 rounded-full bg-[#96F7D2] text-center"></div>
             <img src={ZUimages.zuArchery} className="-mt-12 ml-3"></img>
@@ -46,7 +46,7 @@ const AcheiveMore = () => {
             deserunt ullamco est sit aliqua
           </p>
         </div>
-        <div className="flex-col w-[390px]">
+        <div className="flex-col w-[390px] pl-8">
           <div>
             <div className="w-16 h-16 rounded-full bg-[#A9D2FF] text-center"></div>
             <img src={ZUimages.zuMoneyCoins} className="-mt-12 ml-6"></img>
