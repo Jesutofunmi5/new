@@ -24,7 +24,7 @@ const Hero = () => {
           </p>
           <div className="w-full">
             <Link to={SIGNUP}>
-              <div className="w-[90%] bg-[#50C878] py-4 px-4 flex items-center justify-center rounded-md">
+              <div className="w-[90%] bg-[#50C878] hover:bg-[#59c97e] py-4 px-4 flex items-center justify-center rounded-md">
                 GET STARTED!
               </div>
             </Link>
