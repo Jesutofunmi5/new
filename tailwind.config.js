@@ -5,12 +5,15 @@ module.exports = {
     fontFamily: {
       Heebo: ["Heebo", "sans-serif"]
     },
-    screens: {
-      sm: "512px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1280px",
-      "2xl": "1536px"
+    fontSize: {
+      lg: ["16px"],
+      base: ["12px"],
+      sm: [
+        "10px",
+        {
+          fontWeight: "500"
+        }
+      ]
     },
     extend: {
       colors: {

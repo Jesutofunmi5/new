@@ -9,13 +9,15 @@ const Hero = () => {
     >
       <div className="bg-black bg-opacity-50 absolute inset-0 flex items-center justify-between h-screen overflow-hidden">
         <div className=" flex flex-col gap-12 text-white pl-20">
-          <p className="text-4xl md:text-[80px] text-white font-normal">Connect Simply,</p>
-          <p className="text-4xl md:text-[80px] text-white font-normal">
-            Engage
-            <span className="font-black text-[#50C878]"> Powerfully.</span>
-          </p>
+          <div className="leading-[100px]">
+            <p className="text-4xl md:text-[80px] text-white font-normal">Connect Simply,</p>
+            <p className="text-4xl md:text-[80px] text-white font-normal">
+              Engage
+              <span className="font-black text-[#50C878]"> Powerfully.</span>
+            </p>
+          </div>
 
-          <p className="text-justify text-3xl">
+          <p className="text-justify text-[28px]">
             The end-to-end video engagement platform <br />
             enabling organizations to create meetings <br />
             and webinars at scale.

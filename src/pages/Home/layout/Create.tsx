@@ -9,7 +9,7 @@ const Create = () => {
         style={{ backgroundImage: `url('${ZUimages.lastRowBackground}')` }}
         className="bg-cover bg-center h-80 w-full rounded-3xl px-28 flex justify-between items-center"
       >
-        <h5 className="text-white text-5xl mb-12 leading-[60px]">
+        <h5 className="text-white text-[45px] mb-12 leading-[60px]">
           Get Started By Creating <br /> an Account
         </h5>
         <Button to={SIGNUP} className="mb-12">
