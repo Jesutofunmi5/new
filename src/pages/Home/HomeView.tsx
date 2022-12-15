@@ -1,4 +1,4 @@
-import { AcheiveMore, Create, Hero, Integrations, Process, Save, Testimonial } from "./layout";
+import { AcheiveMore, Create, Hero, Integrations, Process, Save, Testimonial } from "components";
 
 const HomeView = () => {
   return (
