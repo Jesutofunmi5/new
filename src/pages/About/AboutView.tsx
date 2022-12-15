@@ -34,13 +34,35 @@ const AboutView = () => {
                 Get Started
               </Button>
             </div>
-            <div className="mt-10 md:-mt-[7rem]">
+            <div className="mt-10 md:-mt-[7rem] mb-10">
               <img src={ZUimages.aboutConference} />
             </div>
           </div>
         </div>
       </div>
-      <div className="">ppp</div>
+      <div className="flex flex-col justify-center sm:py-12 mx-4 md:mx-40 mt-10 md:mt-32">
+        <div className="px-4 md:px-12 py-10 bg-white shadow-lg rounded-1xl">
+          <div className="grid sm:grid-cols-2 gap-4 p-8">
+            <div className="sm:border-b-0 sm:border-r">
+              <div className="flex">
+                <img src={ZUimages.zuArchery} className=""></img>
+                <h1 className="pl-4">Mission</h1>
+              </div>
+              <p className="text-gray-200 pt-4">Connecting people through technology</p>
+            </div>
+            <div className="">
+              <div className="flex">
+                <img
+                  src={ZUimages.zuEye}
+                  className="border border-dashed border-green p-1 border-8"
+                ></img>
+                <h1 className="pl-4">Vision</h1>
+              </div>
+              <p className="text-gray-200 pt-4">Innovate for change</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

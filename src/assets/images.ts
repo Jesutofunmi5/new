@@ -11,7 +11,7 @@ export const user3 = `${USERS}/user3.png`;
 export const circularUser1 = `${USERS}/user1_cropped.png`;
 export const circularUser2 = `${USERS}/user2_cropped.png`;
 export const circularUser3 = `${USERS}/user3_cropped.png`;
-export const aboutConference = `${USERS}/about_conference.jpeg`;
+export const aboutConference = `${USERS}/conference_preview.png`;
 export const youngManOnline = `${USERS}/young_man_online.png`;
 export const star = `${USERS}/star.png`;
 
@@ -30,7 +30,7 @@ export const socialIcons = `${BACKGROUND}/social_elipse.png`;
 export const socialIconsBackground = `${BACKGROUND}/BG.png`;
 export const elipseAndLine = `${BACKGROUND}/elipse_line.png`;
 export const lastRowBackground = `${BACKGROUND}/last_row_bg.png`;
-export const aboutBackground = `${BACKGROUND}/about_bg.png`;
+export const aboutBackground = `${BACKGROUND}/about-bg5.png`;
 
 const SVG_PATH = "/svg";
 const DOTS = `${SVG_PATH}`;
@@ -40,6 +40,7 @@ export const dots = `${DOTS}/dots.svg`;
 export const zuMoneyCoins = `${ICONS}/zu_money_coins.svg`;
 export const zuAthletics = `${ICONS}/zu_athletics.svg`;
 export const zuArchery = `${ICONS}/zu_archery_target.svg`;
+export const zuEye = `${ICONS}/zu_eye.svg`;
 
 export const firstPolygon = `${Polygon}/Polygon1.png`;
 export const polyUser = `${Polygon}/user.png`;
