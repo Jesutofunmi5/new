@@ -1,8 +1,18 @@
 import { Routes, Route } from "react-router-dom";
 
-import { Contact, ForgetPassword, Home, Login, ResetPassword, Signup, Signupform } from "pages";
+import {
+  Contact,
+  ForgetPassword,
+  Home,
+  Login,
+  ResetPassword,
+  Signup,
+  Signupform,
+  About
+} from "pages";
 import {
   CONTACT,
+  ABOUT,
   FORGOT_PASSWORD,
   HOME,
   LOGIN,
@@ -21,6 +31,7 @@ const RouterConfig: FC = () => {
       <Routes>
         {/* Public routes should be placed in here */}
         <Route path={HOME} element={<Home />} />
+        <Route path={ABOUT} element={<About />} />
         <Route path={CONTACT} element={<Contact />} />
         <Route path="/" element={<PublicRoute />}>
           {/* Auth pages */}
