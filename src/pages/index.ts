@@ -6,3 +6,4 @@ export { default as Signupform } from "./Signupform";
 export { default as Signup } from "./Signup";
 export { default as ResetPassword } from "./ResetPassword";
 export { default as ForgetPassword } from "./ForgetPassword";
+export { default as Pricing } from "./Pricing";
