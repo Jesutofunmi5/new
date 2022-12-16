@@ -17,26 +17,32 @@ const PricingCard: FC<Props> = ({ title, pricing, basic }) => {
       <p className="flex flex-row justify-center items-center font-[400] text-[18px] text-[#041723] w-[251px] h-[43px] border-solid border-[1px] border-[#8E8E93] rounded-[8px]">
         {basic}
       </p>
-      <div className="mt-6">
-        <p className="font-[400] text-[18px] text-[#041723] flex-none flex-grow-0">
-          1 hour meeting limit
-        </p>
-        <p className="mt-2 font-[400] text-[18px] text-[#041723] flex-none flex-grow-0">
-          100 attendees
-        </p>
-        <p className="mt-2 font-[400] text-[18px] text-[#041723] flex-none flex-grow-0">Chat box</p>
-        <p className="mt-2 font-[400] text-[18px] text-[#041723] flex-none flex-grow-0">
-          collaboration and file sharing
-        </p>
-        <p className="mt-2 font-[400] text-[18px] text-[#041723] flex-none flex-grow-0">
-          collaboration and file sharing
-        </p>
-        <p className="mt-2 font-[400] text-[18px] text-[#041723] flex-none flex-grow-0">
-          collaboration and file sharing
-        </p>
-        <p className="mt-2 font-[400] text-[18px] text-[#041723] flex-none flex-grow-0">
-          collaboration and file sharing
-        </p>
+      <div className="mt-6 flex justify-between">
+        <div>
+          <p className="font-[400] text-[18px] text-[#041723] flex-none flex-grow-0">
+            1 hour meeting limit
+          </p>
+          <p className="mt-2 font-[400] text-[18px] text-[#041723] flex-none flex-grow-0">
+            100 attendees
+          </p>
+          <p className="mt-2 font-[400] text-[18px] text-[#041723] flex-none flex-grow-0">
+            Chat box Chat box
+          </p>
+          <p className="mt-2 font-[400] text-[18px] text-[#041723] flex-none flex-grow-0">
+            collaboration and file sharing
+          </p>
+          <p className="mt-2 font-[400] text-[18px] text-[#041723] flex-none flex-grow-0">
+            collaboration and file sharing
+          </p>
+        </div>
+        <div>
+          <p className="mt-2 font-[400] text-[18px] text-[#041723] flex-none flex-grow-0">
+            collaboration and file sharing
+          </p>
+          <p className="mt-2 font-[400] text-[18px] text-[#041723] flex-none flex-grow-0">
+            collaboration and file sharing
+          </p>
+        </div>
       </div>
       <p className="text-[#07AA3D] font-[400] text-[18px] mt-4 cursor-pointer">See Details</p>
     </div>
