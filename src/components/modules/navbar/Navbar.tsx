@@ -22,7 +22,7 @@ const Navbar = ({ transparent = false }: Props) => {
   return (
     <div
       className={`${
-        transparent ? "bg-transparent text-white" : "bg-black text-white"
+        transparent ? "bg-transparent text-black" : "bg-black text-white"
       } w-full py-5 px-5 md:px-10 xl:px-20 flex items-center justify-between`}
     >
       <Link to={HOME}>
