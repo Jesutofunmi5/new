@@ -10,12 +10,14 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <RouterConfig />
-      </BrowserRouter>
-      <ToastContainer />
-    </Provider>
+    <div className="font-Heebo">
+      <Provider store={store}>
+        <BrowserRouter>
+          <RouterConfig />
+        </BrowserRouter>
+        <ToastContainer />
+      </Provider>
+    </div>
   );
 }
 

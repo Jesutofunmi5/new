@@ -17,7 +17,7 @@ interface Props {
 const LoginView = ({ googleLogin, linkedLogin, microsoftLogin, loading, formik }: Props) => {
   return (
     <div className="w-full">
-      <div className="w-full lg:w-2/3">
+      <div className="w-full xl:w-2/3">
         <div className="w-full space-y-1">
           <h4 className="font-bold">Login your Account!</h4>
           <p className="text-lg text-gray-200 capitalize">
@@ -36,6 +36,7 @@ const LoginView = ({ googleLogin, linkedLogin, microsoftLogin, loading, formik }
               type="email"
               id="email"
               name="email"
+              value={formik.values.email}
               placeholder="Enter email address"
               onChange={formik.handleChange}
               className="w-full"
@@ -73,7 +74,11 @@ const LoginView = ({ googleLogin, linkedLogin, microsoftLogin, loading, formik }
               Forgot password?
             </Link>
           </div>
-          <Button size="lg" className="w-full flex items-center justify-center bg-green">
+          <Button
+            size="lg"
+            type="submit"
+            className="w-full flex items-center justify-center bg-green"
+          >
             {loading ? <Loader /> : "Login"}
           </Button>
         </form>

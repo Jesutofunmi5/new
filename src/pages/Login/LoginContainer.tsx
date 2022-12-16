@@ -2,18 +2,19 @@
 import * as Yup from "yup";
 import { useEffect } from "react";
 import { useFormik } from "formik";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import { Auth } from "components";
 import { HOME } from "routes/CONSTANTS";
-import { login, loginSuccess } from "redux/slices/auth.slice";
+import { confirmAccount, login, loginSuccess } from "redux/slices/auth.slice";
 import { useAppDispatch, useAppSelector, useQuery } from "hooks";
 import { GOOGLE_END_POINT, LINKED_IN_END_POINT, MICROSOFT_END_POINT } from "services/CONSTANTS";
 
 import LoginView from "./LoginView";
 
 export const LoginContainer = () => {
+  const { confirmationCode } = useParams();
   const query = useQuery();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -60,6 +61,19 @@ export const LoginContainer = () => {
         .catch((err) => console.log(err));
     }
   });
+
+  useEffect(() => {
+    if (confirmationCode !== undefined) {
+      dispatch(confirmAccount(confirmationCode))
+        .unwrap()
+        .then(({ email }) => {
+          void formik.setValues({ ...formik.values, email });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, []);
 
   const googleLogin = () => {
     window.open(GOOGLE_END_POINT, "_self");
