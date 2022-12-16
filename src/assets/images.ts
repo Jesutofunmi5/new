@@ -51,6 +51,11 @@ export const dots = `${DOTS}/dots.svg`;
 export const zuMoneyCoins = `${ICONS}/zu_money_coins.svg`;
 export const zuAthletics = `${ICONS}/zu_athletics.svg`;
 export const zuArchery = `${ICONS}/zu_archery_target.svg`;
+export const zuCoins = `${DOTS}/coins.svg`;
+export const zuChatDots = `${DOTS}/chats-dots.svg`;
+export const zuMoneyBill = `${DOTS}/money-bill.svg`;
+export const zuSettings = `${DOTS}/settings.svg`;
+export const zuTool = `${DOTS}/tool.svg`;
 
 export const firstPolygon = `${Polygon}/Polygon1.png`;
 export const polyUser = `${Polygon}/user.png`;
