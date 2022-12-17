@@ -5,7 +5,7 @@ interface IURL {
 
 const dev = {
   REDIRECT_URL: "http://localhost:3000/",
-  API_BASE_URL: "http://localhost:8000/api"
+  API_BASE_URL: "https://localhost:443/api"
 };
 
 const prod = {
