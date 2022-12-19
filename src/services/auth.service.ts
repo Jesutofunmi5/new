@@ -14,12 +14,25 @@ import {
 } from "./CONSTANTS";
 
 export const signin = async ({ email, password }: { email: string; password: string }) => {
+  const headers = {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Credentials": true
+  };
+  const configs = {
+    headers,
+    withCredentials: true
+  };
   return await axios
-    .post(`${env.API_BASE_URL}/${LOGIN}`, {
-      username: email,
-      password
-    })
-    .then((res: any) => {
+    .post(
+      `${env.API_BASE_URL}/${LOGIN}`,
+      {
+        username: email,
+        password
+      },
+      configs
+    )
+    .then((res) => {
       const data = res.data;
       if (data?.DATA?.accessToken) {
         localStorage.setItem(ZUMARIDI_USER_DATA, JSON.stringify(data.DATA));

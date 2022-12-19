@@ -1,7 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
-
 import { store } from "redux/store";
 import RouterConfig from "routes/RouterConfig";
 

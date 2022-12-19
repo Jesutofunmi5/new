@@ -63,3 +63,4 @@ export const allbox = `${Polygon}/allbox.png`;
 export const gmail = `${Polygon}/gmail.png`;
 export const micro = `${Polygon}/micro.png`;
 export const link = `${Polygon}/link.png`;
+export const img404 = `${Polygon}/404.png`;
