@@ -20,6 +20,7 @@ export const logoIcon = `${LOGO}/logo_icon.png`;
 export const authBackground = `${BACKGROUND}/auth.gif`;
 export const heroBackground = `${BACKGROUND}/hero.png`;
 export const contactBackground = `${BACKGROUND}/contact.png`;
+
 export const youngManVector = `${BACKGROUND}/youngman_vector.png`;
 export const youngManWithVector = `${BACKGROUND}/youngman_vector_merged.png`;
 export const purpleElipse = `${BACKGROUND}/purple_elipse.png`;
@@ -38,6 +39,19 @@ export const dots = `${DOTS}/dots.svg`;
 export const zuMoneyCoins = `${ICONS}/zu_money_coins.svg`;
 export const zuAthletics = `${ICONS}/zu_athletics.svg`;
 export const zuArchery = `${ICONS}/zu_archery_target.svg`;
+export const zuCoins = `${DOTS}/coins.svg`;
+export const zuChatDots = `${DOTS}/chats-dots.svg`;
+export const zuMoneyBill = `${DOTS}/money-bill.svg`;
+export const zuSettings = `${DOTS}/settings.svg`;
+export const zuYouTube = `${DOTS}/youtube.svg`;
+export const zuTwitter = `${DOTS}/twitter.svg`;
+export const zuLinkedin = `${DOTS}/linkedin.svg`;
+export const zuFacebook = `${DOTS}/facebook.svg`;
+export const zuTool = `${DOTS}/tool.svg`;
+export const zuInstagram = `${DOTS}/instagram.svg`;
+export const zuPlaceMarker = `${DOTS}/placeMarker.svg`;
+export const zuPhoneCall = `${DOTS}/phoneCall.svg`;
+export const zuMailBox = `${DOTS}/mailbox.svg`;
 
 export const firstPolygon = `${Polygon}/Polygon1.png`;
 export const polyUser = `${Polygon}/user.png`;
