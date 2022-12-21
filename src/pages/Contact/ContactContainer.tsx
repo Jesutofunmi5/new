@@ -4,7 +4,7 @@ import { Landing } from "components";
 export const ContactContainer = () => {
   return (
     <Landing>
-      <ContainerView title="Contact Page" />
+      <ContainerView />
     </Landing>
   );
 };
