@@ -13,6 +13,10 @@ export const circularUser2 = `${USERS}/user2_cropped.png`;
 export const circularUser3 = `${USERS}/user3_cropped.png`;
 export const youngManOnline = `${USERS}/young_man_online.png`;
 export const star = `${USERS}/star.png`;
+export const userimg1 = `${USERS}/userimg-1.png`;
+export const userimg2 = `${USERS}/userimg-2.png`;
+export const userimg3 = `${USERS}/userimg-3.png`;
+export const userimg4 = `${USERS}/userimg-4.png`;
 
 export const logo = `${LOGO}/logo.png`;
 export const logoIcon = `${LOGO}/logo_icon.png`;
@@ -52,6 +56,12 @@ export const zuInstagram = `${DOTS}/instagram.svg`;
 export const zuPlaceMarker = `${DOTS}/placeMarker.svg`;
 export const zuPhoneCall = `${DOTS}/phoneCall.svg`;
 export const zuMailBox = `${DOTS}/mailbox.svg`;
+export const ZuVideo = `${ICONS}/video.svg`;
+export const ZuPlus = `${ICONS}/plus.svg`;
+export const close = `${ICONS}/close.svg`;
+export const ZuCalendarPlus = `${ICONS}/calendarplus.svg`;
+export const ZuLink = `${ICONS}/link.svg`;
+export const ZuPlay = `${ICONS}/play.svg`;
 
 export const firstPolygon = `${Polygon}/Polygon1.png`;
 export const polyUser = `${Polygon}/user.png`;

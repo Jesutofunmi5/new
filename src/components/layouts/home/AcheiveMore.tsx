@@ -2,33 +2,31 @@ import { ZUimages } from "assets";
 const AcheiveMore = () => {
   return (
     <div className="py-20">
-      <div className="flex gap-20">
-        <div className="flex gap-56">
-          <img src={ZUimages.dots} className="" />
-          <div className="relative flex-col">
-            <h4 className="text-[61px] font-normal leading-[90px]">
-              Achieve more with <br />
-              the Zumaridi Video <br />
-              Conferencing
+      <div className="flex md:flex-row flex-col md:gap-20 gap-8 md:justify-start justify-center items-center">
+        <div className="flex md:gap-56 gap-4">
+          <img src={ZUimages.dots} className="md:m-0 -ml-24" />
+
+          <div className="md:pl-0 pl-4 pr-5">
+            <h4 className="md:text-[61px] text-[24px] font-normal md:leading-[90px] leading-[40px] md:w-[530px] w-full">
+              Achieve more with the Zumaridi Video Conferencing
             </h4>
           </div>
         </div>
-        <div className="text-justify pt-10">
-          <p className="text-[21px] font-normal opacity-70 leading-[35px]">
-            Amet minim mollit non deserunt <br />
-            ullamco est sit aliqua dolor do amet <br /> sint. Velit officia consequat duis <br />
-            enim velit mollit. Exercitation veniam <br /> consequat sunt nostrud amet.
+        <div className="text-justify md:pt-10 pt-2">
+          <p className="md:text-[21px] text-lg font-normal opacity-70 leading-[35px] md:w-[350px] w-full md:px-0 pl-12 pr-5 text-left">
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+            consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
           </p>
         </div>
       </div>
-      <div className="flex justify-center items-center px-5 md:px-20 pt-8 ">
+      <div className="flex md:flex-row flex-col md:gap-0 gap-24 justify-center items-center pl-20 pr-5 md:px-20 pt-8 ">
         <div className="w-[390px] pl-8">
           <div>
             <div className="w-16 h-16 rounded-full bg-[#FFD166] text-center"></div>
             <img src={ZUimages.zuAthletics} className="-mt-12 ml-3 text-center"></img>
           </div>
           <p className="font-bold pt-8 text-[21px]">Manage Smartly</p>
-          <p className="opacity-70 pt-3 text-[21px]">
+          <p className="opacity-70 pt-3 md:text-[21px] text-lg">
             Amet minim mollit non
             <br />
             deserunt ullamco est sit aliqua
@@ -40,7 +38,7 @@ const AcheiveMore = () => {
             <img src={ZUimages.zuArchery} className="-mt-12 ml-3"></img>
           </div>
           <p className="font-bold pt-8 text-[21px]">Communicate Fast</p>
-          <p className="opacity-70 pt-3 text-[21px]">
+          <p className="opacity-70 pt-3 md:text-[21px] text-lg">
             Amet minim mollit non
             <br />
             deserunt ullamco est sit aliqua
@@ -52,7 +50,7 @@ const AcheiveMore = () => {
             <img src={ZUimages.zuMoneyCoins} className="-mt-12 ml-6"></img>
           </div>
           <p className="font-bold pt-8 text-[21px]">Save Costs</p>
-          <p className="opacity-70 pt-3 text-[21px]">
+          <p className="opacity-70 pt-3 md:text-[21px] text-lg">
             Amet minim mollit non
             <br />
             deserunt ullamco est sit aliqua
