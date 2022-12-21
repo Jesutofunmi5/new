@@ -4,14 +4,20 @@ interface Props {
   title: string;
   pricing: string | number;
   basic: string;
+  off: string;
+  slash: any;
 }
 
-const PricingCard: FC<Props> = ({ title, pricing, basic }) => {
+const PricingCard: FC<Props> = ({ title, pricing, basic, off, slash }) => {
   return (
     <div className="border-solid border-[1px] rounded-[8px] p-5 m-3 border-[#8E8E93] w-[100%] ">
       <div className="flex justify-between">
         <h1 className="font-[700] text-[36px] text-[#41723]">{title}</h1>
-        <h1 className="font-[700] text-[36px] text-[#07AA3D]">{pricing}</h1>
+        <div className="flex">
+          <h1 className="font-[700] text-[36px] text-[#07AA3D]">{pricing}</h1>
+          <span className="font-[700] text-[36px] text-[#07AA3D] relative bottom-2">{slash}</span>
+          <p className="font-[700] mt-4">{off}</p>
+        </div>
       </div>
 
       <p className="flex flex-row justify-center items-center font-[400] text-[18px] text-[#041723] w-[251px] h-[43px] border-solid border-[1px] border-[#8E8E93] rounded-[8px]">
