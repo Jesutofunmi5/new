@@ -13,7 +13,7 @@ const DashboardWrapper = ({ children }: Props) => {
       </div>
       <div className="w-4/5">
         <Header />
-        <div className="py-8 pl-8 pr-16">{children}</div>
+        <div className="py-8 pl-8 pr-8">{children}</div>
       </div>
     </div>
   );

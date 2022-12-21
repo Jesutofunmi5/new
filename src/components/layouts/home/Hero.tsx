@@ -4,35 +4,36 @@ import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <div
-      className="w-full h-screen bg-black"
+      className="w-full md:h-screen h-[50vh] bg-black"
       style={{ backgroundImage: `url('${ZUimages.heroBackground}')` }}
     >
-      <div className="bg-black bg-opacity-50 absolute inset-0 flex items-center justify-between h-screen overflow-hidden">
-        <div className=" flex flex-col gap-12 text-white pl-20">
-          <div className="leading-[100px]">
-            <p className="text-4xl md:text-[80px] text-white font-normal">Connect Simply,</p>
-            <p className="text-4xl md:text-[80px] text-white font-normal">
-              Engage
+      <div className="bg-black bg-opacity-50 absolute inset-0 flex items-center justify-between md:h-screen h-[50vh] overflow-hidden w-full">
+        <div className=" flex flex-col md:gap-12 gap-4 text-white md:pl-20 pl-5  md:w-[711px] w-[284px] pt-8">
+          <div className="md:leading-[100px] leading-8">
+            <p className="text-[28px] md:text-[73px] text-white font-normal">
+              Connect Simply, Engage
               <span className="font-black text-[#50C878]"> Powerfully.</span>
             </p>
           </div>
 
-          <p className="text-justify text-[28px]">
-            The end-to-end video engagement platform <br />
-            enabling organizations to create meetings <br />
-            and webinars at scale.
+          <p className=" md:text-[28px] text-lg">
+            The end-to-end video engagement platform enabling organizations to create meetings and
+            webinars at scale.
           </p>
-          <div className="w-full">
+          <div className="md:w-full ">
             <Link to={SIGNUP}>
-              <div className="w-[90%] bg-[#50C878] hover:bg-[#59c97e] py-4 px-4 flex items-center justify-center rounded-md">
+              <div className="w-[85%] bg-[#50C878] hover:bg-green md:py-4 py-2 px-4 flex items-center justify-center rounded-md">
                 GET STARTED!
               </div>
             </Link>
           </div>
         </div>
 
-        <div className="mt-60">
-          <img src={ZUimages.youngManWithVector} className="" />
+        <div className="md:mt-60">
+          <img
+            src={ZUimages.youngManWithVector}
+            className=" md:h-full h-[30vh] md:w-full w-[100px]"
+          />
         </div>
       </div>
     </div>
