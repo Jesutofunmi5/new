@@ -44,9 +44,9 @@ const PricingCard: FC<Props> = ({ title, pricing, basic, off, slash }) => {
         </div>
       </div>
 
-      <p className="flex flex-row mt-2 justify-center items-center font-[400] text-[18px] text-[#041723] w-[251px] h-[43px] border-solid border-[1px] border-[#8E8E93] rounded-[8px]">
+      <button className="flex flex-row mt-2 justify-center items-center font-[400] text-[18px] text-[#041723] w-[251px] h-[43px] border-solid border-[1px] border-[#8E8E93] rounded-[8px]">
         {basic}
-      </p>
+      </button>
       <div className="mt-6 flex justify-between">
         <div>
           <div className="flex">
