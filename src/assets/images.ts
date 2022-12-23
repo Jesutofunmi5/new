@@ -17,6 +17,12 @@ export const star = `${USERS}/star.png`;
 
 export const logo = `${LOGO}/logo.png`;
 export const logoIcon = `${LOGO}/logo_icon.png`;
+export const ahm = `${LOGO}/AHM.png`;
+export const usaf = `${LOGO}/USAF.png`;
+export const bmhm = `${LOGO}/BMHM.png`;
+export const mwata = `${LOGO}/MWATA.png`;
+export const sakaivms = `${LOGO}/Sa Kai VMS.png`;
+export const swWestPapua = `${LOGO}/SW WEST PAPUA.png`;
 
 export const authBackground = `${BACKGROUND}/auth.gif`;
 export const heroBackground = `${BACKGROUND}/hero.png`;
@@ -31,6 +37,7 @@ export const socialIconsBackground = `${BACKGROUND}/BG.png`;
 export const elipseAndLine = `${BACKGROUND}/elipse_line.png`;
 export const lastRowBackground = `${BACKGROUND}/last_row_bg.png`;
 export const aboutBackground = `${BACKGROUND}/about-bg5.png`;
+export const aboutValue = `${BACKGROUND}/about_value.png`;
 
 const SVG_PATH = "/svg";
 const DOTS = `${SVG_PATH}`;
@@ -52,3 +59,8 @@ export const allbox = `${Polygon}/allbox.png`;
 export const gmail = `${Polygon}/gmail.png`;
 export const micro = `${Polygon}/micro.png`;
 export const link = `${Polygon}/link.png`;
+export const truck = `${Polygon}/truck.png`;
+export const ingenuity = `${Polygon}/ingenuity.png`;
+export const teamwork = `${Polygon}/teamwork.png`;
+export const aboutTop = `${Polygon}/about_top.png`;
+export const aboutBottom = `${Polygon}/about_bottom.png`;
