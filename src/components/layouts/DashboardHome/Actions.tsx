@@ -7,7 +7,7 @@ const Actions = () => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <div className=" grid grid-cols-2 gap-4 text-white">
-      <div className="bg-green rounded-2xl px-4 py-8 flex flex-col justify-between w-48 h-48">
+      <div className="bg-green rounded-2xl px-4 py-8 flex flex-col justify-between w-full h-48">
         <button
           onClick={() => setModalOpen(true)}
           className="w-12 h-12 rounded-lg border-[0.5px] border-green-400 flex items-center justify-center bg-gradient-to-r from-green-600 to-green-500"
@@ -20,7 +20,7 @@ const Actions = () => {
         </div>
         {modalOpen && <NewMeetingModal setOpenModal={setModalOpen} />}
       </div>
-      <div className="bg-[#0E78F9] rounded-2xl px-4 py-8 flex flex-col justify-between w-48 h-48">
+      <div className="bg-[#0E78F9] rounded-2xl px-4 py-8 flex flex-col justify-between w-full h-48">
         <Button
           to=""
           className=" rounded-lg border-[0.5px] border-[#5ca0f3] flex items-center justify-center bg-gradient-to-r from-[#2E87F5] to-[#509cf9]"
@@ -32,7 +32,7 @@ const Actions = () => {
           <p className="text-base font-normal">Via invitation Link</p>
         </div>
       </div>
-      <div className="bg-[#0E78F9] rounded-2xl px-4 py-8 flex flex-col justify-between w-48 h-48">
+      <div className="bg-[#0E78F9] rounded-2xl px-4 py-8 flex flex-col justify-between w-full h-48">
         <Button
           to=""
           className="w-12 h-12 rounded-lg border-[0.5px] border-[#5ca0f3] flex items-center justify-center bg-gradient-to-r from-[#2E87F5] to-[#509cf9]"
@@ -44,7 +44,7 @@ const Actions = () => {
           <p className="text-base font-normal">Plan your meetings</p>
         </div>
       </div>
-      <div className="bg-[#0E78F9] rounded-2xl px-4 py-8 flex flex-col justify-between w-48 h-48">
+      <div className="bg-[#0E78F9] rounded-2xl px-4 py-8 flex flex-col justify-between w-full h-48">
         <Button
           to=""
           className=" rounded-lg border-[0.5px] border-[#5ca0f3]  bg-gradient-to-r from-[#2E87F5] to-[#509cf9]"

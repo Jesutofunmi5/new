@@ -21,12 +21,7 @@ function NewMeetingModal({ setOpenModal }: Props) {
     console.log(data);
   };
   return (
-    <div
-      className="fixed inset-0 bg-[#000] bg-opacity-70 flex items-center justify-center px-1"
-      // onClick={() => {
-      //   setOpenModal(false);
-      // }}
-    >
+    <div className="fixed inset-0 bg-[#000] bg-opacity-70 flex items-center justify-center px-1">
       <div className="h-[666px] w-[653px] bg-white flex flex-col gap-4 pb-4 rounded-lg">
         <div className="flex justify-between items-center px-8 bg-[#FAFAFA] text-black rounded-t-lg">
           <p className="text-[18px]">Schedule a Meeting</p>

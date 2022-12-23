@@ -1,3 +1,5 @@
+import { ZUimages } from "assets";
+import { broadcast, calender, share } from "assets/images";
 import { NavLink } from "react-router-dom";
 import { BROADCASTCHANNEL, CALENDER, DASHBOARD, REFER_A_FRIEND, SETTINGS } from "routes/CONSTANTS";
 
@@ -8,49 +10,65 @@ const Sidebar = () => {
       <NavLink
         to={DASHBOARD}
         className={({ isActive }) =>
-          isActive ? "bg-green-600 rounded-md text-white p-2" : "text-gray-200 p-2"
+          isActive
+            ? "bg-green-600 rounded-md text-white p-2 flex items-center gap-2"
+            : "text-gray-200 p-2 flex items-center gap-2"
         }
       >
-        <span className="text-lg font-normal py-4">Home</span>
+        <img src="" />
+        <span className="text-lg font-normal py-2">Home</span>
       </NavLink>
 
       <NavLink
         to={CALENDER}
         className={({ isActive }) =>
-          isActive ? "bg-green-600 rounded-md text-white p-2" : "text-gray-200 p-2"
+          isActive
+            ? "bg-green-600 rounded-md text-white p-2 flex items-center gap-2"
+            : "text-gray-200 p-2 flex items-center gap-2"
         }
       >
-        <span className="text-lg font-normal py-4">Calender</span>
+        <img src={calender} />
+        <span className="text-lg font-normal py-2">Calender</span>
       </NavLink>
 
       <NavLink
         to={BROADCASTCHANNEL}
         className={({ isActive }) =>
-          isActive ? "bg-green-600 rounded-md text-white p-2" : "text-gray-200 p-2"
+          isActive
+            ? "bg-green-600 rounded-md text-white p-2 flex items-center gap-2"
+            : "text-gray-200 p-2 flex items-center gap-2"
         }
       >
-        <span className="text-lg font-normal py-4">Broadcast Channel</span>
+        <img src={broadcast} />
+        <span className="text-lg font-normal py-2">Broadcast Channel</span>
       </NavLink>
 
       <NavLink
         to={REFER_A_FRIEND}
         className={({ isActive }) =>
-          isActive ? "bg-green-600 rounded-md text-white p-2" : "text-gray-200 p-2"
+          isActive
+            ? "bg-green-600 rounded-md text-white p-2 flex items-center gap-2"
+            : "text-gray-200 p-2 flex items-center gap-2"
         }
       >
-        <span className="text-lg font-normal py-4">Refer a Friend</span>
+        <img src={share} />
+        <span className="text-lg font-normal py-2">Refer a Friend</span>
       </NavLink>
 
       <NavLink
         to={SETTINGS}
         className={({ isActive }) =>
-          isActive ? "bg-green-600 rounded-md text-white p-2" : "text-gray-200 p-2"
+          isActive
+            ? "bg-green-600 rounded-md text-white p-2 flex items-center gap-2"
+            : "text-gray-200 p-2 flex items-center gap-2"
         }
       >
-        <span className="text-lg font-normal py-4">Settings</span>
+        <img src={ZUimages.zuSettings} className="h-5 w-5 fill-slate-400" />
+        <span className="text-lg font-normal py-2">Settings</span>
       </NavLink>
 
-      <NavLink to="" className="">
+      <NavLink to="" className="flex items-center gap-2">
+        <img src="" />
         Logout
       </NavLink>
     </div>
