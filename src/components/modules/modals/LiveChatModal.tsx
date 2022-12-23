@@ -10,7 +10,11 @@ const LiveChatModal = ({ setOpenModal }: Props) => {
       <div className="w-[500px] h-[600px] bg-white rounded-lg">
         <div className="flex justify-between items-center">
           <p>Zumaridi Chat assistant</p>
-          <button onClick={() => setOpenModal(false)}>
+          <button
+            onClick={() => {
+              setOpenModal(false);
+            }}
+          >
             <img src={close} />
           </button>
         </div>

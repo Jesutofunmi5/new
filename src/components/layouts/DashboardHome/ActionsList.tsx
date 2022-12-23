@@ -1,29 +1,15 @@
 import { ZUimages } from "assets";
 import { UserImgData } from "utils/userImg";
-import { userbg } from "assets/images";
 import { Link } from "react-router-dom";
+import UserDateTimeDisplay from "./UserDateTimeDisplay";
 
 const ActionsList = () => {
   return (
     <div className=" w-full pr-2">
-      <div className="pr-8">
-        <div
-          className="h-48 w-full mb-4 rounded-2xl  text-white"
-          style={{ backgroundImage: `url(${userbg})` }}
-        >
-          <div className="bg-black bg-opacity-80 w-full p-8 rounded-2xl h-full flex justify-between items-center">
-            <div>
-              <p className="font-bold text-lg">Welcome user</p>
-              <p className="font-bold text-[61px]">12:37</p>
-              <p className="text-[18px] font-normal">Saturday, 12th October, 2022</p>
-            </div>
-            <div className="h-28 w-28 rounded-full bg-green-100">
-              <img />
-            </div>
-          </div>
-        </div>
+      <div className="">
+        <UserDateTimeDisplay />
       </div>
-      <div className="overflow-scroll  h-[50vh] pr-6">
+      <div className="overflow-scroll  h-[56vh] pr-6">
         <div className="h-48 w-full mb-4 rounded-2xl bg-green-100 p-8 flex justify-between">
           <div className="flex flex-col justify-between">
             <div className="flex flex-col gap-2">

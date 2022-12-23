@@ -17,6 +17,7 @@ export const userimg1 = `${USERS}/userimg-1.png`;
 export const userimg2 = `${USERS}/userimg-2.png`;
 export const userimg3 = `${USERS}/userimg-3.png`;
 export const userimg4 = `${USERS}/userimg-4.png`;
+export const user = `${USERS}/user.png`;
 
 export const logo = `${LOGO}/logo.png`;
 export const logoIcon = `${LOGO}/logo_icon.png`;
