@@ -2,7 +2,7 @@ import PricingCard from "./PricingCard";
 
 const PricingView = () => {
   return (
-    <div className="mb-[5em]">
+    <div className="mb-[5em] mx-12">
       <h1 className="font-[700] text-[47px] font-['Heebo'] text-[#41723] text-center leading-[150% mt-[1.2em] mb-[1.7em]">
         The best platform for price{" "}
       </h1>
@@ -15,7 +15,7 @@ const PricingView = () => {
         <input
           type="button"
           value="Monthly"
-          className="flex flex-row absolute right-[400px] cursor-pointer justify-center align-middle pl-[5em] w-[260px] h-[40px] bg-[#ffffff] border-[1px] border-solid border-[#d1d1d6] font-['Heebo'] rounded-[32px] font-[700] text-[16px] leading-[150%] text-[#041723]"
+          className="flex flex-row absolute right-[350px] cursor-pointer justify-center align-middle pl-[5em] w-[260px] h-[40px] bg-[#ffffff] border-[1px] border-solid border-[#d1d1d6] font-['Heebo'] rounded-[32px] font-[700] text-[16px] leading-[150%] text-[#041723]"
         />
       </div>
       <div className="flex">

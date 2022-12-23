@@ -100,8 +100,8 @@ const PricingCard: FC<Props> = ({ title, pricing, basic, off, slash }) => {
           </div>
         </div>
 
-        <div className="relative mt-1">
-          <div className="flex mt-4">
+        <div className="">
+          <div className="flex">
             <div className="relative mt-1">
               <span className="absolute top-[4.5px] left-[4px]">{check}</span>
               <span>{circle}</span>
