@@ -32,7 +32,8 @@ module.exports = {
         gray: {
           DEFAULT: "#48484A",
           100: "#D1D1D6",
-          200: "#8E8E93"
+          200: "#8E8E93",
+          300: "#25373f"
         },
         pine: "#005C39",
         blue: "#0096DB",
