@@ -6,7 +6,7 @@ import { logout } from "redux/slices/auth.slice";
 import { Button, Dropdown } from "components/widgets";
 import { useAppDispatch, useAppSelector } from "hooks";
 import { ZuFlagUnitedKingdom, ZuDown, ZuLogout } from "components/icons";
-import { CONTACT, HOME, LOGIN, SIGNUP } from "routes/CONSTANTS";
+import { ABOUT, CONTACT, HOME, LOGIN, SIGNUP } from "routes/CONSTANTS";
 
 interface Props {
   transparent?: boolean;
@@ -44,6 +44,8 @@ const Navbar = ({ transparent = false }: Props) => {
         <NavLink to={CONTACT}>Contact Us</NavLink>
         <NavLink to="#">Pricing</NavLink>
         <NavLink to="#">About Us</NavLink>
+        <NavLink to="#">Services</NavLink>
+        <NavLink to={ABOUT}>About Us</NavLink>
       </div>
 
       {!isLoggedIn ? (
