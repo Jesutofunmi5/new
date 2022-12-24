@@ -13,12 +13,14 @@ import {
   ResetPassword,
   Settings,
   Signup,
-  Signupform
+  Signupform,
+  About
 } from "pages";
 import {
   BROADCASTCHANNEL,
   CALENDER,
   CONTACT,
+  ABOUT,
   DASHBOARD,
   FORGOT_PASSWORD,
   HOME,
@@ -40,6 +42,7 @@ const RouterConfig: FC = () => {
       <Routes>
         {/* Public routes should be placed in here */}
         <Route path={HOME} element={<Home />} />
+        <Route path={ABOUT} element={<About />} />
         <Route path={CONTACT} element={<Contact />} />
         <Route path="/" element={<PublicRoute />}>
           {/* Auth pages */}

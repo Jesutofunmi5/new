@@ -11,7 +11,7 @@ const SvgZuMoneyCoins = ({ size, color, className, ...props }: Props) => {
       width={size}
       height={size}
       viewBox="0 0 57 57"
-      fill={color}
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       preserveAspectRatio="xMidYMid meet"
