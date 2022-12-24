@@ -38,6 +38,7 @@ export const dots = `${DOTS}/dots.svg`;
 export const zuMoneyCoins = `${ICONS}/zu_money_coins.svg`;
 export const zuAthletics = `${ICONS}/zu_athletics.svg`;
 export const zuArchery = `${ICONS}/zu_archery_target.svg`;
+export const checkcircle = `${ICONS}/checkcircle.svg`;
 
 export const firstPolygon = `${Polygon}/Polygon1.png`;
 export const polyUser = `${Polygon}/user.png`;

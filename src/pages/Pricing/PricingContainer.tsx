@@ -1,4 +1,4 @@
-import PricingView from "./ContainerView";
+import PricingView from "./PricingView";
 import { Landing } from "components";
 
 export const PricingContainer = () => {
