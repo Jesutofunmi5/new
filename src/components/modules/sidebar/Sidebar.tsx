@@ -1,9 +1,12 @@
 import { ZUimages } from "assets";
-import { broadcast, calender, share } from "assets/images";
+import { broadcast, calender, logout, share } from "assets/images";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BROADCASTCHANNEL, CALENDER, DASHBOARD, REFER_A_FRIEND, SETTINGS } from "routes/CONSTANTS";
+import { LogoutModal } from "components/modules/modals";
 
 const Sidebar = () => {
+  const [logoutModal, setLogoutModal] = useState(false);
   return (
     <div className=" flex flex-col gap-8 pt-12 px-8 bg-white h-screen w-full">
       <div className="mb-4">LOGO</div>
@@ -67,9 +70,14 @@ const Sidebar = () => {
         <span className="text-lg font-normal py-2">Settings</span>
       </NavLink>
 
-      <NavLink to="" className="flex items-center gap-2">
-        <img src="" />
+      <NavLink
+        to=""
+        className="flex items-center p-2 gap-2 text-gray-200"
+        onClick={() => setLogoutModal(true)}
+      >
+        <img src={logout} />
         Logout
+        {logoutModal && <LogoutModal setOpenModal={setLogoutModal} />}
       </NavLink>
     </div>
   );

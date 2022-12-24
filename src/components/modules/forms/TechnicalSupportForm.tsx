@@ -1,16 +1,21 @@
 import { Form, Formik } from "formik";
-import { useState } from "react";
 import { technicalSupportSchema } from "validations";
 import InputFormGroup from "./InputFormGroup";
 import TextareaFormGroup from "./TextAreaFormGroup";
 
+interface FormValues {
+  firstName: string;
+  lastName: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+interface FormikBag {
+  setSubmitting: (isSubmitting: boolean) => void;
+}
+
 const TechnicalSupportForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    file: null
-  });
-  //   const [file, setFile] = useState(null);
   const formikInitialValues = {
     firstName: "",
     lastName: "",
@@ -18,11 +23,9 @@ const TechnicalSupportForm = () => {
     subject: "",
     message: ""
   };
-  const handleSubmit = (values: {}) => {
-    // setFile(event.target.files[0]);
-    const data = { ...formData, ...values };
-    setFormData(data);
-    console.log(data);
+  const handleSubmit = (values: FormValues, formikBag: FormikBag) => {
+    console.log(values);
+    formikBag.setSubmitting(false);
   };
   return (
     <div className="p-4">
@@ -31,14 +34,14 @@ const TechnicalSupportForm = () => {
         onSubmit={handleSubmit}
         validate={technicalSupportSchema}
       >
-        <Form className="flex flex-col gap-4">
-          <div className="flex justify-between items-center gap-2">
+        <Form className="flex flex-col gap-6">
+          <div className="flex justify-between items-center gap-2 h-40px]">
             <InputFormGroup
               nameAndId="firstName"
               label="First Name"
               placeholder=""
               type="text"
-              labelClassName="text-black text-[12px]"
+              labelClassName="text-black font-medium text-[14px]"
               className="border-[#D1D1D6] border-2 w-full rounded-lg placeholder-[#D1D1D6] text-black px-4 py-2"
             />
             <InputFormGroup
@@ -46,7 +49,7 @@ const TechnicalSupportForm = () => {
               label="Last Name"
               placeholder=""
               type="text"
-              labelClassName="text-black text-[12px]"
+              labelClassName="text-black font-medium text-[14px]"
               className="border-[#D1D1D6] border-2 w-full rounded-lg placeholder-[#D1D1D6] text-black px-4 py-2"
             />
           </div>
@@ -55,7 +58,7 @@ const TechnicalSupportForm = () => {
             label="Email Address"
             placeholder=""
             type="email"
-            labelClassName="text-black text-[12px]"
+            labelClassName="text-black font-medium text-[14px]"
             className="border-[#D1D1D6] border-2 w-full rounded-lg placeholder-[#D1D1D6] text-black px-4 py-2"
           />
           <InputFormGroup
@@ -63,14 +66,14 @@ const TechnicalSupportForm = () => {
             label="Subject"
             placeholder=""
             type="text"
-            labelClassName="text-black text-[12px]"
+            labelClassName="text-black font-medium text-[14px]"
             className="border-[#D1D1D6] border-2 w-full rounded-lg placeholder-[#D1D1D6] text-black px-4 py-2"
           />
           <TextareaFormGroup nameAndId="message" label="Message" placeholder="" />
-          {/* <div>
-            <input type="file" id="file-input" onChange={handleChange} />
-            {file && <p>File chosen: {file.name}</p>}
-          </div> */}
+          <label className="text-lg text-green border-2 border-green p-2 rounded-md w-1/5 cursor-pointer">
+            Attach file
+            <input type="file" name="file" style={{ display: "none" }} />
+          </label>
           <div className="flex md:justify-end ">
             <button type="submit" className="bg-green p-2 md:w-[20%] w-full text-white rounded-md">
               Submit

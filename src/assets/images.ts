@@ -18,6 +18,7 @@ export const userimg2 = `${USERS}/userimg-2.png`;
 export const userimg3 = `${USERS}/userimg-3.png`;
 export const userimg4 = `${USERS}/userimg-4.png`;
 export const user = `${USERS}/user.png`;
+export const logoutimg = `${USERS}/logoutimg.png`;
 
 export const logo = `${LOGO}/logo.png`;
 export const logoIcon = `${LOGO}/logo_icon.png`;
@@ -52,6 +53,8 @@ export const share = `${ICONS}/share.svg`;
 export const broadcast = `${ICONS}/broadcast.svg`;
 export const location = `${ICONS}/location.svg`;
 export const envelope = `${ICONS}/envelope.svg`;
+export const logout = `${ICONS}/logout.svg`;
+export const send = `${ICONS}/send.svg`;
 export const zuCoins = `${DOTS}/coins.svg`;
 export const zuChatDots = `${DOTS}/chats-dots.svg`;
 export const zuMoneyBill = `${DOTS}/money-bill.svg`;

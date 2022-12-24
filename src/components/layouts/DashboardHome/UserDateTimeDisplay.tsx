@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
-import { userbg } from "assets/images";
+import { user, userbg } from "assets/images";
 
 const UserDateTimeDisplay = () => {
   const [date, setDate] = useState(new Date());
@@ -45,14 +45,14 @@ const UserDateTimeDisplay = () => {
         className="h-48 w-full mb-4 rounded-2xl  text-white"
         style={{ backgroundImage: `url(${userbg})` }}
       >
-        <div className="bg-black bg-opacity-80 w-full p-8 rounded-2xl h-full flex justify-between items-center">
+        <div className="bg-black bg-opacity-70 w-full p-8 rounded-2xl h-full flex justify-between items-center">
           <div>
             <p className="font-bold text-lg">Welcome user</p>
             <p className="font-bold text-[61px]">{formattedTime}</p>
             <p className="text-[18px] font-normal">{formattedDate}</p>
           </div>
-          <div className="h-28 w-28 rounded-full bg-green-100">
-            <img />
+          <div className="h-28 w-28 rounded-full bg-green-100 flex items-center justify-center">
+            <img src={user} className="h-28 w-28" />
           </div>
         </div>
       </div>

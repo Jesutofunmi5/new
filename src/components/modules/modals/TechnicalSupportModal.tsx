@@ -1,11 +1,11 @@
 import { close } from "assets/images";
 import { TechnicalSupportForm } from "components/modules/forms";
 
-interface Props {
-  setOpenModal: (technicalSupportModalOpen: boolean) => void;
+interface TechnicalModalProps {
+  setOpenModal: (technicalModal: boolean) => void;
 }
 
-const TechnicalSupportModal = ({ setOpenModal }: Props) => {
+const TechnicalSupportModal = ({ setOpenModal }: TechnicalModalProps) => {
   return (
     <div className="fixed inset-0 bg-[#000] bg-opacity-70 flex items-center justify-center p-5">
       <div className="md:w-[500px] w-full md:h-[700px] h-full bg-white rounded-lg">

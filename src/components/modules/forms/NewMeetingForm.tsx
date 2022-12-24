@@ -1,12 +1,18 @@
 import { Form, Formik } from "formik";
+// import { useState } from "react";
 import { newMeetingSchema } from "validations";
 import InputFormGroup from "./InputFormGroup";
 import SelectFormGroup from "./SelectFormGroup";
 import TextareaFormGroup from "./TextAreaFormGroup";
 
-// interface NewMeetingFormProps {
-//   setOpenModal?: (modalOpen: boolean) => void;
-// }
+interface NewMeetingValues {
+  conferenceTitle: string;
+  description: string;
+  date: string;
+  time: string;
+  event: string;
+  allDay: boolean;
+}
 
 const NewMeetingForm = () => {
   const formikInitialValues = {
@@ -18,12 +24,12 @@ const NewMeetingForm = () => {
     allDay: false
   };
 
-  const handleSubmit = (values: {}) => {
+  const handleSubmit = (values: NewMeetingValues) => {
     console.log(values);
   };
 
   return (
-    <div className="px-8">
+    <div className="md:px-8 px-2">
       <Formik
         initialValues={formikInitialValues}
         onSubmit={handleSubmit}
