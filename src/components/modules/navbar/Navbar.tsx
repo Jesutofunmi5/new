@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+import NavLink from "./NavLink";
 import { ZUimages } from "assets";
 import { logout } from "redux/slices/auth.slice";
 import { Button, Dropdown } from "components/widgets";
@@ -22,8 +23,8 @@ const Navbar = ({ transparent = false }: Props) => {
   return (
     <div
       className={`${
-        transparent ? "bg-transparent text-black" : "bg-black text-white"
-      } w-full py-5 px-5 md:px-10 xl:px-20 flex items-center justify-between`}
+        transparent ? "bg-transparent" : "bg-black"
+      } text-white w-full py-5 px-5 md:px-10 xl:px-20 flex items-center justify-between`}
     >
       <Link to={HOME}>
         <img src={ZUimages.logo} alt="logo" />
@@ -40,10 +41,9 @@ const Navbar = ({ transparent = false }: Props) => {
         >
           <p></p>
         </Dropdown>
-        <Link to={CONTACT}>Contact Us</Link>
-        <Link to="#">Pricing</Link>
-        <Link to="#">Services</Link>
-        <Link to="#">About Us</Link>
+        <NavLink to={CONTACT}>Contact Us</NavLink>
+        <NavLink to="#">Pricing</NavLink>
+        <NavLink to="#">About Us</NavLink>
       </div>
 
       {!isLoggedIn ? (
