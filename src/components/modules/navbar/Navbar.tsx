@@ -34,7 +34,7 @@ const Navbar = ({ transparent = false }: Props) => {
         <Dropdown
           button={
             <div className="flex items-center gap-2 cursor-pointer">
-              <p>Product</p>
+              <p>Products</p>
               <ZuDown size={10} />
             </div>
           }
@@ -43,7 +43,6 @@ const Navbar = ({ transparent = false }: Props) => {
         </Dropdown>
         <NavLink to={CONTACT}>Contact Us</NavLink>
         <NavLink to="#">Pricing</NavLink>
-        <NavLink to="#">About Us</NavLink>
         <NavLink to="#">Services</NavLink>
         <NavLink to={ABOUT}>About Us</NavLink>
       </div>
