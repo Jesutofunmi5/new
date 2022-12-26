@@ -19,8 +19,10 @@ const Landing = ({ children, footer = true }: Props) => {
         <Navbar />
       )}
 
-      {children}
-      <div>{footer && <Footer />}</div>
+      <div className={`${pathname === "/" ? "pt-0" : "pt-[10vh]"} lg:pt-0`}>
+        {children}
+        {footer && <Footer />}
+      </div>
     </div>
   );
 };
