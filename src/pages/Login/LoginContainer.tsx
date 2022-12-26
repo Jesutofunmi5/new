@@ -51,12 +51,20 @@ export const LoginContainer = () => {
         )
     }),
     onSubmit: (details) => {
-      console.log(details);
       dispatch(login(details))
         .unwrap()
         .then(() => {
-          navigate(HOME);
-          window.location.reload();
+          const redirect = query.get("redirect");
+          if (redirect) {
+            //  redirect to absolute URL - possibly initiated from VC app
+            if (redirect.startsWith("http")) {
+              return window.location.replace(redirect);
+            }
+            navigate(`../${redirect}`, { replace: true });
+          } else {
+            navigate(HOME);
+            window.location.reload();
+          }
         })
         .catch((err) => console.log(err));
     }

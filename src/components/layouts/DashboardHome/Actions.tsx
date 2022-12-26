@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ZUicons, ZUimages } from "assets";
 import { Button } from "components/widgets";
 import { NewMeetingModal } from "components/modules/modals";
+import env from "configs";
 
 const Actions = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -9,7 +10,7 @@ const Actions = () => {
     <div className=" grid grid-cols-2 gap-4 text-white">
       <div className="bg-green rounded-2xl px-4 py-8 flex flex-col justify-between w-48 h-48">
         <button
-          onClick={() => setModalOpen(true)}
+          onClick={() => window.open(env.MEETING_BASE_URL)}
           className="w-12 h-12 rounded-lg border-[0.5px] border-green-400 flex items-center justify-center bg-gradient-to-r from-green-600 to-green-500"
         >
           <img src={ZUicons.video} className="h-4 w-6" />
