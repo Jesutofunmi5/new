@@ -34,9 +34,7 @@ const Button = ({
   const Button = () => (
     <button
       className={`${getSize(size)} ${
-        variant === "full"
-          ? "bg-primary text-white "
-          : "border-2 border-primary text-primary hover:bg-[#E9A218] hover:text-black"
+        variant === "full" ? "bg-primary text-white " : "border-2 border-primary text-primary"
       } ${className}  rounded-[6px] px-5 py-2 `}
       {...rest}
     >

@@ -2,3 +2,4 @@
 
 export * from "./formatErrorResponse";
 export * from "./priceCardData";
+export * from "./userImg";

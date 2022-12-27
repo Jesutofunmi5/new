@@ -1,5 +1,6 @@
 export const HOME = "/";
 export const CONTACT = "/contact";
+export const ABOUT = "/about";
 
 export const PRICING = "/pricing";
 export const LOGIN = "/auth/login";
@@ -10,3 +11,7 @@ export const FORGOT_PASSWORD = "/auth/forgot-password";
 export const RESET_PASSWORD = "/token/:token";
 
 export const DASHBOARD = "/dashboard";
+export const BROADCASTCHANNEL = "/dashboard/broadcast-channel";
+export const CALENDER = "/dashboard/calender";
+export const REFER_A_FRIEND = "/dashboard/refer-a-friend";
+export const SETTINGS = "/dashboard/settings";

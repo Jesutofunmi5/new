@@ -2,6 +2,9 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    fontFamily: {
+      Heebo: ["Heebo", "sans-serif"]
+    },
     fontSize: {
       lg: ["16px"],
       base: ["12px"],
@@ -29,7 +32,8 @@ module.exports = {
         gray: {
           DEFAULT: "#48484A",
           100: "#D1D1D6",
-          200: "#8E8E93"
+          200: "#8E8E93",
+          300: "#25373f"
         },
         pine: "#005C39",
         blue: "#0096DB",
@@ -38,6 +42,9 @@ module.exports = {
         background: "#F7F7F7",
         orange: "#F26D21"
       }
+    },
+    container: {
+      center: true
     }
   },
   plugins: []

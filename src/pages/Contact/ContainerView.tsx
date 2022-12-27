@@ -1,11 +1,14 @@
-import type { FC } from "react";
+import { About, ContactHero, Follow, Subscribe } from "components";
 
-interface Props {
-  title: string;
-}
-
-const ContainerView: FC<Props> = ({ title }) => {
-  return <div>{title}</div>;
+const ContainerView = () => {
+  return (
+    <div className="bg-white">
+      <ContactHero />
+      <Follow />
+      <About />
+      <Subscribe />
+    </div>
+  );
 };
 
 export default ContainerView;

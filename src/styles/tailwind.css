@@ -10,7 +10,7 @@
 
 @layer base {
   body {
-    @apply bg-background;
+    @apply bg-background font-Heebo;
   }
 
   h1,
