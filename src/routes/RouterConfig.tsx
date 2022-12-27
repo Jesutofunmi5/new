@@ -1,29 +1,21 @@
 import { Routes, Route } from "react-router-dom";
 
 import {
- 
   BroadcastChannel,
   Calender,
   Contact,
- 
   DashboardHome,
   ErrorPage,
   ForgetPassword,
- 
   Home,
   Pricing,
- 
   Login,
- 
   ReferAFriend,
   ResetPassword,
- 
   Settings,
   Signup,
- 
   Signupform,
- 
-About
+  About
 } from "pages";
 import {
   BROADCASTCHANNEL,

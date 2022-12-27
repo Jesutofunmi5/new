@@ -18,9 +18,7 @@ const About = () => {
           <p className="font-normal md:text-[20px] text-lg p-3 text-center">
             Get instant answers to your questions about our product.
           </p>
-          {liveChatModal && <LiveChatModal setOpenModal={setLiveChatModal} />}
         </div>
-
         <div
           className=" rounded-md border-2 border-gray-100 hover:border-green md:h-[336px] h-64 md:w-[346px] w-full bg-white hover:bg-[#F8F9FC] flex justify-center flex-col items-center cursor-pointer"
           onClick={() => setTechnicalModal(true)}
@@ -29,12 +27,10 @@ const About = () => {
             <img src={ZUimages.zuTool} className="h-7 w-7 m-2" />
             <img src={ZUimages.zuSettings} className="h-7 w-7 m-2" />
           </div>
-
           <p className="font-bold md:text-[20px] text-lg p-2">Technical Support</p>
           <p className="font-normal md:text-[20px] text-lg p-3 text-center">
             Email technical support for issues with our product.
           </p>
-          {technicalModal && <TechnicalSupportModal setOpenModal={setTechnicalModal} />}
         </div>
         <Link to="">
           <div className=" rounded-md border-2 border-gray-100 hover:border-green md:h-[336px] h-64 md:w-[346px] w-full flex justify-center flex-col items-center hover:border bg-white hover:bg-[#F8F9FC] cursor-pointer">
@@ -47,6 +43,8 @@ const About = () => {
           </div>
         </Link>
       </div>
+      <LiveChatModal setOpenModal={setLiveChatModal} liveChatModal={liveChatModal} />
+      <TechnicalSupportModal setOpenModal={setTechnicalModal} technicalModal={technicalModal} />
     </div>
   );
 };

@@ -7,7 +7,7 @@ import { SIGNUP } from "routes/CONSTANTS";
 
 const Footer = () => {
   return (
-    <div className="relative w-full px-5 md:px-10 pt-10 flex flex-col items-center justify-center bg-no-repeat bg-cover text-white bg-black overflow-clip">
+    <div className="relative w-full px-5 md:px-10 pt-10 flex flex-col items-center justify-center bg-no-repeat bg-cover text-white bg-black-100 overflow-clip">
       <div className="absolute -left-[150px] -top-[200px] w-[300px] h-[300px] md:-left-[312px] md:-top-[560px] md:w-[750px] md:h-[750px] rounded-full bg-[#FFD166]"></div>
       <div className="relative lg:w-3/4 space-y-10">
         <div className="w-full flex flex-col py-5 items-center justify-center">

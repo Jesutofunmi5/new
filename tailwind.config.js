@@ -37,7 +37,10 @@ module.exports = {
         },
         pine: "#005C39",
         blue: "#0096DB",
-        black: "#041723",
+        black: {
+          DEFAULT: "#000000",
+          100: "#041723"
+        },
         citrus: "#F26D21",
         background: "#F7F7F7",
         orange: "#F26D21"
