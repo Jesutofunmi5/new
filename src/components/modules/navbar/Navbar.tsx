@@ -8,7 +8,7 @@ import { logout } from "redux/slices/auth.slice";
 import { Button, Dropdown } from "components/widgets";
 import { useAppDispatch, useAppSelector, useScroll } from "hooks";
 import { ZuFlagUnitedKingdom, ZuDown, ZuLogout } from "components/icons";
-import { ABOUT, CONTACT, HOME, LOGIN, SIGNUP } from "routes/CONSTANTS";
+import { ABOUT, CONTACT, HOME, LOGIN, SIGNUP, PRICING } from "routes/CONSTANTS";
 import Menu from "./Menu";
 
 interface Props {
@@ -31,7 +31,7 @@ const Navbar = ({ transparent = false }: Props) => {
       initial={false}
       animate={open ? "open" : "closed"}
       className={`${
-        transparent && y <= 40 ? "bg-transparent" : "bg-black"
+        transparent && y <= 40 ? "bg-transparent" : "bg-black-100"
       } fixed lg:relative top-0 left-0 right-0 text-white z-50`}
     >
       <div className="relative w-full h-[10vh] px-5 md:px-10 xl:px-20 flex items-center justify-between z-50">
@@ -51,7 +51,7 @@ const Navbar = ({ transparent = false }: Props) => {
             <p></p>
           </Dropdown>
           <NavLink to={CONTACT}>Contact Us</NavLink>
-          <NavLink to="#">Pricing</NavLink>
+          <NavLink to={PRICING}>Pricing</NavLink>
           <NavLink to="#">Services</NavLink>
           <NavLink to={ABOUT}>About Us</NavLink>
         </div>

@@ -45,7 +45,7 @@ const UserDateTimeDisplay = () => {
         className="h-48 w-full mb-4 rounded-2xl  text-white"
         style={{ backgroundImage: `url(${userbg})` }}
       >
-        <div className="bg-black bg-opacity-70 w-full p-8 rounded-2xl h-full flex justify-between items-center">
+        <div className="bg-black-100 bg-opacity-70 w-full p-8 rounded-2xl h-full flex justify-between items-center">
           <div>
             <p className="font-bold text-lg">Welcome user</p>
             <p className="font-bold text-[61px]">{formattedTime}</p>

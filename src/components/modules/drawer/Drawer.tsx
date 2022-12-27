@@ -50,7 +50,7 @@ const Drawer = ({ open }: Props) => {
       exit={{ height: 0, transition: { delay: 0.7, duration: 0.3 } }}
       className={`${
         open ? "block lg:hidden" : "hidden"
-      } fixed w-full pt-[10vh] top-0 left-0 bottom-0 px-5 bg-black text-white z-30`}
+      } fixed w-full pt-[10vh] top-0 left-0 bottom-0 px-5 bg-black-100 text-white z-30`}
     >
       <motion.ul
         initial="closed"
