@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { ZUimages } from "assets";
 import { SIGNUP, FORGOT_PASSWORD } from "routes/CONSTANTS";
 import { Button, Input, Loader } from "components";
+import { useState } from "react";
 
 interface Props {
   loading: boolean;
@@ -15,6 +16,21 @@ interface Props {
 }
 
 const LoginView = ({ googleLogin, linkedLogin, microsoftLogin, loading, formik }: Props) => {
+  const [emailError, setEmailError] = useState("");
+
+  // Validating User Email Provided On Mouse Leave
+  const validateEmail = () => {
+    if (formik.values.email) {
+      const email = formik.values.email;
+      const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      if (!emailRegex.test(email)) {
+        setEmailError("Ensure a valid email is provided.");
+      } else {
+        setEmailError("");
+      }
+    }
+  };
+
   return (
     <div className="w-full">
       <div className="w-full xl:w-2/3">
@@ -39,11 +55,13 @@ const LoginView = ({ googleLogin, linkedLogin, microsoftLogin, loading, formik }
               value={formik.values.email}
               placeholder="Enter email address"
               onChange={formik.handleChange}
+              onMouseLeave={() => validateEmail()}
               className="w-full"
             />
             {formik.touched.email && formik.errors.password && (
               <p className="text-red text-base ">{formik.errors.email}</p>
             )}
+            {emailError && <p className="text-red text-base ">{emailError}</p>}
           </div>
 
           <div>
