@@ -1,7 +1,7 @@
 import { logoutimg } from "assets/images";
 
 interface LogoutModalProps {
-  setOpenModal: (logoutModal: boolean) => void;
+  setOpenModal: (modalOpen: boolean) => void;
 }
 
 const LogoutModal = ({ setOpenModal }: LogoutModalProps) => {
