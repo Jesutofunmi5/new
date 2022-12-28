@@ -1,15 +1,18 @@
-const validation = (values: {
+interface ValidationType {
   conferenceTitle: string;
   description: string;
   date: string;
   time: string;
-}) => {
+}
+
+const validation = (values: ValidationType) => {
   const errors = {
     conferenceTitle: "",
     description: "",
     date: "",
     time: ""
   };
+
   if (values.conferenceTitle.length === 0) {
     errors.conferenceTitle = "A conference Title is required";
   } else if (values.conferenceTitle.length < 4) {

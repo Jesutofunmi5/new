@@ -8,17 +8,20 @@ import {
   ErrorPage,
   ForgetPassword,
   Home,
+  Pricing,
   Login,
   ReferAFriend,
   ResetPassword,
   Settings,
   Signup,
-  Signupform
+  Signupform,
+  About
 } from "pages";
 import {
   BROADCASTCHANNEL,
   CALENDER,
   CONTACT,
+  ABOUT,
   DASHBOARD,
   FORGOT_PASSWORD,
   HOME,
@@ -28,7 +31,8 @@ import {
   RESET_PASSWORD,
   SETTINGS,
   SIGNUP,
-  SIGNUPFORM
+  SIGNUPFORM,
+  PRICING
 } from "./CONSTANTS";
 
 import type { FC } from "react";
@@ -40,7 +44,9 @@ const RouterConfig: FC = () => {
       <Routes>
         {/* Public routes should be placed in here */}
         <Route path={HOME} element={<Home />} />
+        <Route path={ABOUT} element={<About />} />
         <Route path={CONTACT} element={<Contact />} />
+        <Route path={PRICING} element={<Pricing />} />
         <Route path="/" element={<PublicRoute />}>
           {/* Auth pages */}
           <Route path={LOGIN} element={<Login />} />
