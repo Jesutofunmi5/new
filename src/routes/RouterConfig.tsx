@@ -8,6 +8,7 @@ import {
   ErrorPage,
   ForgetPassword,
   Home,
+  Pricing,
   Login,
   ReferAFriend,
   ResetPassword,
@@ -32,7 +33,8 @@ import {
   SETTINGS,
   SIGNUP,
   SIGNUPFORM,
-  TERMS
+  TERMS,
+  PRICING
 } from "./CONSTANTS";
 
 import type { FC } from "react";
@@ -47,6 +49,7 @@ const RouterConfig: FC = () => {
         <Route path={ABOUT} element={<About />} />
         <Route path={TERMS} element={<Terms />} />
         <Route path={CONTACT} element={<Contact />} />
+        <Route path={PRICING} element={<Pricing />} />
         <Route path="/" element={<PublicRoute />}>
           {/* Auth pages */}
           <Route path={LOGIN} element={<Login />} />

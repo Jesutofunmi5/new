@@ -3,6 +3,7 @@ export const CONTACT = "/contact";
 export const ABOUT = "/about";
 export const TERMS = "/terms_and_cond";
 
+export const PRICING = "/pricing";
 export const LOGIN = "/auth/login";
 export const LOGIN_CONFIRM = "/auth/login/:confirmationCode";
 export const SIGNUP = "/auth/signup";
