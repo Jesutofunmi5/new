@@ -2,7 +2,7 @@ import { ZUimages } from "assets";
 import { NewMeetingForm } from "components/modules/forms";
 
 interface NewMeetingProps {
-  setOpenModal: (modalOpen: boolean) => void;
+  setOpenModal: (newModal: boolean) => void;
 }
 
 function NewMeetingModal({ setOpenModal }: NewMeetingProps) {

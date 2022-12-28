@@ -2,7 +2,7 @@ import { close } from "assets/images";
 import { JoinMeetingForm } from "components/modules/forms";
 
 interface JoinMeetingProps {
-  setOpenModal: (modalOpen: boolean) => void;
+  setOpenModal: (joinModal: boolean) => void;
 }
 const JoinMeetingModal = ({ setOpenModal }: JoinMeetingProps) => {
   return (
