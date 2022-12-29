@@ -6,7 +6,7 @@ interface ModalProps {
   title?: string;
   content: React.ReactNode;
   setOpenModal: (value: boolean) => void;
-  [key: string]: any; // this allows you to pass in any other props dynamically
+  [key: string]: any;
 }
 
 const Modal = ({ size, content, title, setOpenModal, ...otherProps }: ModalProps) => {

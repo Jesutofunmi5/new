@@ -48,17 +48,17 @@ const About = () => {
       {chatModal && (
         <Modal
           size="w-[500px] h-[600px]"
+          title="Zumaridi Live Chat"
           content={<LiveChat />}
           setOpenModal={setChatModal}
-          title="Zumaridi Live Chat"
         />
       )}
       {techModal && (
         <Modal
           size="md:w-[500px] w-full md:h-[700px]"
+          title="Technical Support"
           content={<TechnicalSupportForm />}
           setOpenModal={setTechModal}
-          title="Technical Support"
         />
       )}
     </div>
