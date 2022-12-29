@@ -2,6 +2,7 @@ export const HOME = "/";
 export const CONTACT = "/contact";
 export const ABOUT = "/about";
 
+export const PRICING = "/pricing";
 export const LOGIN = "/auth/login";
 export const LOGIN_CONFIRM = "/auth/login/:confirmationCode";
 export const SIGNUP = "/auth/signup";

@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <div
-      className="w-full md:h-screen h-[50vh] bg-black"
+      className="w-full md:h-screen h-[50vh] bg-black-100"
       style={{ backgroundImage: `url('${ZUimages.heroBackground}')` }}
     >
-      <div className="bg-black bg-opacity-50 absolute inset-0 flex items-center justify-between md:h-screen h-[50vh] overflow-hidden w-full">
+      <div className="bg-black-100 bg-opacity-50 absolute inset-0 flex items-center justify-between md:h-screen h-[50vh] overflow-hidden w-full">
         <div className=" flex flex-col md:gap-12 gap-4 text-white md:pl-20 pl-5  md:w-[711px] w-[284px] pt-8">
           <div className="md:leading-[100px] leading-8">
             <p className="text-[28px] md:text-[73px] text-white font-normal">

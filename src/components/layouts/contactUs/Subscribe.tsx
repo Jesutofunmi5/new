@@ -8,7 +8,7 @@ const Subscribe = () => {
             Lorem Ipsum to be the first to hear when we lorem ipsum dummy text here.
           </p>
         </div>
-        <div className="rounded-md bg-black md:h-36 h-full flex items-center justify-between md:flex-row flex-col md:gap-28 gap-8 md:mt-20 mt-8 md:px-8 px-3 py-8">
+        <div className="rounded-md bg-black-100 md:h-36 h-full flex items-center justify-between md:flex-row flex-col md:gap-28 gap-8 md:mt-20 mt-8 md:px-8 px-3 py-8">
           <div className="">
             <p className="md:font-bold font-medium text-[20px] text-white items-start text-start pb-4">
               Remain Updated

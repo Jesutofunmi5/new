@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { ZUicons, ZUimages } from "assets";
 import { Button } from "components/widgets";
-import { JoinMeetingModal, NewMeetingModal } from "components/modules/modals";
+import { Modal } from "components/modules/modals";
+import { JoinMeetingForm, NewMeetingForm } from "components/modules";
 
 const Actions = () => {
   const [newModal, setNewModal] = useState(false);
@@ -19,7 +20,6 @@ const Actions = () => {
           <p className="text-lg font-semibold tracking-wide">New Meeting</p>
           <p className="text-base font-normal">Setup an instant meeting</p>
         </div>
-        {newModal && <NewMeetingModal setOpenModal={setNewModal} />}
       </div>
       <div className="bg-[#0E78F9] rounded-2xl px-4 py-8 flex flex-col justify-between w-full h-48">
         <button
@@ -32,7 +32,6 @@ const Actions = () => {
           <p className="text-lg font-semibold tracking-wide">Join Meeting</p>
           <p className="text-base font-normal">Via invitation Link</p>
         </div>
-        {joinModal && <JoinMeetingModal setOpenModal={setJoinModal} />}
       </div>
       <div className="bg-[#0E78F9] rounded-2xl px-4 py-8 flex flex-col justify-between w-full h-48">
         <Button
@@ -58,6 +57,22 @@ const Actions = () => {
           <p className="text-base font-normal">For instant meeting</p>
         </div>
       </div>
+      {newModal && (
+        <Modal
+          size="md:h-[666px] h-full md:w-[653px] w-full"
+          content={<NewMeetingForm />}
+          title="Schedule a Meeting"
+          setOpenModal={setNewModal}
+        />
+      )}
+      {joinModal && (
+        <Modal
+          size="md:h-[666px] h-full md:w-[653px] w-full"
+          content={<JoinMeetingForm />}
+          title="Join Meeting"
+          setOpenModal={setJoinModal}
+        />
+      )}
     </div>
   );
 };

@@ -14,3 +14,4 @@ export { default as Calender } from "./Calender";
 export { default as BroadcastChannel } from "./BroadcastChannel";
 export { default as ReferAFriend } from "./ReferAFriend";
 export { default as Settings } from "./Settings";
+export { default as Pricing } from "./Pricing";
