@@ -16,6 +16,7 @@
     "axios": "^1.2.1",
     "formik": "^2.2.9",
     "framer-motion": "^8.0.2",
+    "random-string": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
@@ -26,7 +27,7 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "HTTPS=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "lint": "eslint .",
@@ -63,6 +64,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
+    "@types/random-string": "^0.0.28",
     "@types/react-redux": "^7.1.24",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "autoprefixer": "^10.4.13",

@@ -7,8 +7,7 @@ interface IUser {
 
 export default function authHeader() {
   const user: IUser = JSON.parse(localStorage.getItem(ZUMARIDI_USER_DATA) as string);
-
-  if (user.accessToken) {
+  if (user?.accessToken) {
     return { Authorization: "Bearer " + user.accessToken };
   } else {
     return {};
