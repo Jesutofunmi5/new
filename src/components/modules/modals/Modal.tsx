@@ -1,11 +1,13 @@
 import { close } from "assets/images";
 import React from "react";
 
+type ModalId = string | null;
+
 interface ModalProps {
   size: string;
   title?: string;
   content: React.ReactNode;
-  setOpenModal: (value: boolean) => void;
+  setOpenModal: (value: ModalId | null) => void;
   [key: string]: any;
 }
 
@@ -20,7 +22,7 @@ const Modal = ({ size, content, title, setOpenModal, ...otherProps }: ModalProps
           <p className="text-black">{title}</p>
           <button
             onClick={() => {
-              setOpenModal(false);
+              setOpenModal(null);
             }}
           >
             <img src={close} />

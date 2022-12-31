@@ -5,3 +5,5 @@ export { default as NewMeetingForm } from "./NewMeetingForm";
 export { default as TechnicalSupportForm } from "./TechnicalSupportForm";
 export { default as LiveChat } from "./LiveChat";
 export { default as JoinMeetingForm } from "./JoinMeetingForm";
+export { default as MeetingLink } from "./MeetingLink";
+export { default as PlanMeetingForm } from "./PlanMeetingForm";

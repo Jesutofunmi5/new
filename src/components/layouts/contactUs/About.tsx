@@ -4,16 +4,19 @@ import { Modal } from "components/modules/modals";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+type ModalId = "chat" | "tech" | null;
+
 const About = () => {
-  const [chatModal, setChatModal] = useState(false);
-  const [techModal, setTechModal] = useState(false);
+  // const [chatModal, setChatModal] = useState(false);
+  // const [techModal, setTechModal] = useState(false);
+  const [openModal, setOpenModal] = useState<ModalId | null>(null);
 
   return (
     <div className=" bg-white md:pt-44 pt-8  pb-4 my-3 px-12">
       <div className="flex md:flex-row flex-col gap-12 justify-center items-center  py-10">
         <div
           className=" rounded-md border-2 md:h-[336px] h-64 md:w-[346px] w-full flex justify-center flex-col items-center bg-white hover:bg-[#F8F9FC] border-gray-100 hover:border-green cursor-pointer"
-          onClick={() => setChatModal(true)}
+          onClick={() => setOpenModal("chat")}
         >
           <img src={ZUimages.zuChatDots} className="h-7 w-7 m-2" />
           <p className="font-bold md:text-[20px] text-lg p-2">Live Chat</p>
@@ -23,7 +26,7 @@ const About = () => {
         </div>
         <div
           className=" rounded-md border-2 border-gray-100 hover:border-green md:h-[336px] h-64 md:w-[346px] w-full bg-white hover:bg-[#F8F9FC] flex justify-center flex-col items-center cursor-pointer"
-          onClick={() => setTechModal(true)}
+          onClick={() => setOpenModal("tech")}
         >
           <div className="flex p-2">
             <img src={ZUimages.zuTool} className="h-7 w-7 m-2" />
@@ -45,20 +48,20 @@ const About = () => {
           </div>
         </Link>
       </div>
-      {chatModal && (
+      {openModal === "chat" && (
         <Modal
           size="w-[500px] h-[600px]"
           title="Zumaridi Live Chat"
           content={<LiveChat />}
-          setOpenModal={setChatModal}
+          setOpenModal={() => setOpenModal(null)}
         />
       )}
-      {techModal && (
+      {openModal === "tech" && (
         <Modal
           size="md:w-[500px] w-full md:h-[700px]"
           title="Technical Support"
           content={<TechnicalSupportForm />}
-          setOpenModal={setTechModal}
+          setOpenModal={() => setOpenModal(null)}
         />
       )}
     </div>
