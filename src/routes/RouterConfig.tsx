@@ -15,7 +15,8 @@ import {
   Settings,
   Signup,
   Signupform,
-  About
+  About,
+  Terms
 } from "pages";
 import {
   BROADCASTCHANNEL,
@@ -32,6 +33,7 @@ import {
   SETTINGS,
   SIGNUP,
   SIGNUPFORM,
+  TERMS,
   PRICING
 } from "./CONSTANTS";
 
@@ -45,6 +47,7 @@ const RouterConfig: FC = () => {
         {/* Public routes should be placed in here */}
         <Route path={HOME} element={<Home />} />
         <Route path={ABOUT} element={<About />} />
+        <Route path={TERMS} element={<Terms />} />
         <Route path={CONTACT} element={<Contact />} />
         <Route path={PRICING} element={<Pricing />} />
         <Route path="/" element={<PublicRoute />}>

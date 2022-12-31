@@ -1,4 +1,6 @@
 import { useLocation } from "react-router-dom";
+
+import { Fab } from "components/widgets";
 import { Footer, Navbar } from "components/modules";
 import type { ReactNode } from "react";
 
@@ -23,6 +25,7 @@ const Landing = ({ children, footer = true }: Props) => {
         {children}
         {footer && <Footer />}
       </div>
+      <Fab />
     </div>
   );
 };

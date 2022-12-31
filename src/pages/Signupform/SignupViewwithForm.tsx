@@ -3,7 +3,7 @@ import { FormikProps } from "formik";
 import { Link } from "react-router-dom";
 
 import { ZUimages } from "assets";
-import { LOGIN, SIGNUP } from "routes/CONSTANTS";
+import { LOGIN, SIGNUP, TERMS } from "routes/CONSTANTS";
 import { Button, Input, Loader, ZuAngleLeft } from "components";
 
 interface Props {
@@ -105,7 +105,12 @@ const SignupViewwithForm = ({
                 type="checkbox"
                 className="accent-green"
               />
-              <p className="capitalize text-lg text-gray-200">I agree to terms & conditions</p>
+              <p className="capitalize text-lg text-gray-200">
+                I agree to{" "}
+                <Link to={TERMS} className="text-primary hover:text-primary-100">
+                  terms & condition
+                </Link>
+              </p>
             </div>
             {formik.touched.terms && formik.errors.terms && (
               <p className="text-red text-base ">{formik.errors.terms}</p>
