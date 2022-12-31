@@ -6,7 +6,7 @@ import { meetingActions } from "utils";
 type ModalId = string | null;
 
 const Actions = () => {
-  const [openModal, setOpenModal] = useState<ModalId | null>(null);
+  const [openModal, setOpenModal] = useState<ModalId>(null);
 
   return (
     <div className=" grid grid-cols-2 gap-4 text-white">

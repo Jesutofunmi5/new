@@ -7,3 +7,4 @@ export { default as LiveChat } from "./LiveChat";
 export { default as JoinMeetingForm } from "./JoinMeetingForm";
 export { default as MeetingLink } from "./MeetingLink";
 export { default as PlanMeetingForm } from "./PlanMeetingForm";
+export { default as BillsAndPaymentForm } from "./BillsAndPaymentForm";

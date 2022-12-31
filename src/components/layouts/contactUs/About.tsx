@@ -1,56 +1,37 @@
-import { ZUimages } from "assets";
-import { LiveChat, TechnicalSupportForm } from "components/modules";
+import { BillsAndPaymentForm, LiveChat, TechnicalSupportForm } from "components/modules";
 import { Modal } from "components/modules/modals";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { aboutCardData } from "utils";
 
-type ModalId = "chat" | "tech" | null;
+type ModalId = string | null;
 
 const About = () => {
-  // const [chatModal, setChatModal] = useState(false);
-  // const [techModal, setTechModal] = useState(false);
-  const [openModal, setOpenModal] = useState<ModalId | null>(null);
+  const [openModal, setOpenModal] = useState<ModalId>(null);
 
   return (
     <div className=" bg-white md:pt-44 pt-8  pb-4 my-3 px-12">
       <div className="flex md:flex-row flex-col gap-12 justify-center items-center  py-10">
-        <div
-          className=" rounded-md border-2 md:h-[336px] h-64 md:w-[346px] w-full flex justify-center flex-col items-center bg-white hover:bg-[#F8F9FC] border-gray-100 hover:border-green cursor-pointer"
-          onClick={() => setOpenModal("chat")}
-        >
-          <img src={ZUimages.zuChatDots} className="h-7 w-7 m-2" />
-          <p className="font-bold md:text-[20px] text-lg p-2">Live Chat</p>
-          <p className="font-normal md:text-[20px] text-lg p-3 text-center">
-            Get instant answers to your questions about our product.
-          </p>
-        </div>
-        <div
-          className=" rounded-md border-2 border-gray-100 hover:border-green md:h-[336px] h-64 md:w-[346px] w-full bg-white hover:bg-[#F8F9FC] flex justify-center flex-col items-center cursor-pointer"
-          onClick={() => setOpenModal("tech")}
-        >
-          <div className="flex p-2">
-            <img src={ZUimages.zuTool} className="h-7 w-7 m-2" />
-            <img src={ZUimages.zuSettings} className="h-7 w-7 m-2" />
-          </div>
-          <p className="font-bold md:text-[20px] text-lg p-2">Technical Support</p>
-          <p className="font-normal md:text-[20px] text-lg p-3 text-center">
-            Email technical support for issues with our product.
-          </p>
-        </div>
-        <Link to="">
-          <div className=" rounded-md border-2 border-gray-100 hover:border-green md:h-[336px] h-64 md:w-[346px] w-full flex justify-center flex-col items-center hover:border bg-white hover:bg-[#F8F9FC] cursor-pointer">
-            <img src={ZUimages.zuCoins} className="h-7 w-7 mt-2" />
-            <p className="font-bold md:text-[20px] text-lg p-1 mt-2">Billing & Payment</p>
-            <p className="font-normal md:text-[20px] text-lg p-3 text-center">
-              Solve your billing & payment issues. Get answers about our pricing, payment channels,
-              and subscriptions.
+        {aboutCardData.map((card) => (
+          <div
+            key={card.id}
+            className=" rounded-md border-2 md:h-[336px] h-64 md:w-[346px] w-full flex justify-center flex-col items-center bg-white hover:bg-[#F8F9FC] border-gray-100 hover:border-green cursor-pointer"
+            onClick={() => setOpenModal(card.id)}
+          >
+            <div className="flex md:h-12 h-8">
+              <img src={card.icon} className="h-7 w-7 m-2" />
+              <img src={card.icon2} className="h-7 w-7 m-2" />
+            </div>
+            <p className="font-bold md:text-[20px] text-lg p-2 md:h-12 h-8">{card.title}</p>
+            <p className="font-normal md:text-[20px] text-lg p-3 text-center md:h-40 h-28">
+              {card.description}
             </p>
           </div>
-        </Link>
+        ))}
       </div>
+
       {openModal === "chat" && (
         <Modal
-          size="w-[500px] h-[600px]"
+          size="w-[500px] w-full h-[600px]"
           title="Zumaridi Live Chat"
           content={<LiveChat />}
           setOpenModal={() => setOpenModal(null)}
@@ -61,6 +42,14 @@ const About = () => {
           size="md:w-[500px] w-full md:h-[700px]"
           title="Technical Support"
           content={<TechnicalSupportForm />}
+          setOpenModal={() => setOpenModal(null)}
+        />
+      )}
+      {openModal === "billing" && (
+        <Modal
+          size="md:w-[500px] w-full md:h-[700px]"
+          title="Technical Support"
+          content={<BillsAndPaymentForm />}
           setOpenModal={() => setOpenModal(null)}
         />
       )}
