@@ -37,6 +37,7 @@ module.exports = {
         },
         pine: "#005C39",
         blue: "#0096DB",
+        bluebg: "#0E78F9",
         black: {
           DEFAULT: "#000000",
           100: "#041723"
