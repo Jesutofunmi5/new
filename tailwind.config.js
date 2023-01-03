@@ -18,7 +18,7 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: " #50C878",
+          DEFAULT: "#50C878",
           100: "#008753"
         },
         red: {
@@ -36,7 +36,10 @@ module.exports = {
           300: "#25373f"
         },
         pine: "#005C39",
-        blue: "#0096DB",
+        bgBlue: {
+          DEFAULT: "#0096DB"
+        },
+        bluebg: "#0E78F9",
         black: {
           DEFAULT: "#000000",
           100: "#041723"

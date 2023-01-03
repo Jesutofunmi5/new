@@ -1,6 +1,7 @@
 export const HOME = "/";
 export const CONTACT = "/contact";
 export const ABOUT = "/about";
+export const TERMS = "/terms_and_cond";
 
 export const PRICING = "/pricing";
 export const LOGIN = "/auth/login";

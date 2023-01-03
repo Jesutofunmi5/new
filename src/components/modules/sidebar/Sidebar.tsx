@@ -77,8 +77,8 @@ const Sidebar = () => {
       >
         <img src={logout} />
         Logout
-        {logoutModal && <LogoutModal setOpenModal={setLogoutModal} />}
       </NavLink>
+      {logoutModal && <LogoutModal setOpenModal={setLogoutModal} />}
     </div>
   );
 };
