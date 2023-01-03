@@ -32,3 +32,11 @@ export const UPDATE_USER_PROFILE = "/user";
 export const UPLOAD_FILE = "/upload/profile-photo/";
 
 export const ZUMARIDI_USER_DATA = "ZUMARIDI_USER_DATA";
+
+export const PUBLIC_REQUEST_KEY = "public-request";
+
+/**
+ * Meetings
+ */
+
+export const CREATE_NEW_MEETING = "/meetings/new-meeting";

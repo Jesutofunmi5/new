@@ -1,12 +1,34 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import axios from "axios";
 import env from "configs";
+import { logout } from "redux/slices/auth.slice";
+import { store } from "redux/store";
 import { LOGIN } from "routes/CONSTANTS";
+import authHeader from "services/auth-header";
+import { PUBLIC_REQUEST_KEY } from "services/CONSTANTS";
+import { toast } from "react-toastify";
 
 const service = axios.create({
   baseURL: env.API_BASE_URL,
   timeout: 60000
 });
+
+// A PI request interceptor
+
+service.interceptors.request.use(
+  (config: any): any => {
+    const auth = authHeader();
+    if (auth?.Authorization) {
+      Object.assign(config.headers, auth);
+    } else if (!config.headers[PUBLIC_REQUEST_KEY]) {
+      void store.dispatch(logout());
+    }
+    return config;
+  },
+  (error) => {
+    void Promise.reject(error);
+  }
+);
 
 // API respone interceptor
 service.interceptors.response.use(
@@ -44,8 +66,8 @@ service.interceptors.response.use(
       if (error.response.status === 422) {
         notificationParam.message = "Validation Error";
       }
-      console.log("notificationPram", notificationParam);
-
+      toast.dismiss();
+      toast.error(notificationParam.message);
       return await Promise.reject(error.response.data);
     }
     return await Promise.reject(error);
