@@ -82,13 +82,9 @@ export const confirmAccount = async (confirmationCode: string) => {
 export const logout = async () => {
   return await axios
     .get(`${env.API_BASE_URL}/${LOG_OUT}`, { headers: authHeader() })
-    .then((response) => {
-      if (response) {
-        localStorage.removeItem(ZUMARIDI_USER_DATA);
-      }
-    })
-    .catch((err) => {
-      console.log("logout err", err);
+    .finally(() => {
+      localStorage.removeItem(ZUMARIDI_USER_DATA);
+      window.location.reload();
     });
 };
 

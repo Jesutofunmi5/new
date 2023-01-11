@@ -13,7 +13,7 @@ const service = axios.create({
   timeout: 60000
 });
 
-// A PI request interceptor
+// API request interceptor
 
 service.interceptors.request.use(
   (config: any): any => {
