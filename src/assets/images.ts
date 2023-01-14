@@ -85,6 +85,15 @@ export const close = `${ICONS}/close.svg`;
 export const ZuCalendarPlus = `${ICONS}/calendarplus.svg`;
 export const ZuLink = `${ICONS}/link.svg`;
 export const ZuPlay = `${ICONS}/play.svg`;
+export const ZuRoundFacebook = `${ICONS}/zu_round_facebook.svg`;
+export const ZuRoundLinkedin = `${ICONS}/zu_round_linkedin.svg`;
+export const ZuRoundPintrest = `${ICONS}/zu_round_pintrest.svg`;
+export const ZuRoundSnapchat = `${ICONS}/zu_round_snapchat.svg`;
+export const ZuRoundTelegram = `${ICONS}/zu_round_telegram.svg`;
+export const ZuRoundTicktock = `${ICONS}/zu_round_ticktock.svg`;
+export const ZuRoundTwitter = `${ICONS}/zu_round_twitter.svg`;
+export const ZuRoundWhatsapp = `${ICONS}/zu_round_whatsapp.svg`;
+export const ZuRoundYoutube = `${ICONS}/zu_round_youtube.svg`;
 
 export const firstPolygon = `${Polygon}/Polygon1.png`;
 export const polyUser = `${Polygon}/user.png`;
