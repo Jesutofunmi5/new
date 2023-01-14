@@ -1,16 +1,18 @@
-import {
-  ZuRoundFacebook,
-  ZuRoundLinkedin,
-  ZuRoundPintrest,
-  ZuRoundSnapchat,
-  ZuRoundTelegram,
-  ZuRoundTicktock,
-  ZuRoundTwitter,
-  ZuRoundWhatsapp,
-  ZuRoundYoutube
-} from "assets/images";
+import { ZuRoundPintrest, ZuRoundSnapchat, ZuRoundTicktock, ZuRoundYoutube } from "assets/images";
 import { FC, useState } from "react";
 import { Link } from "react-router-dom";
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  LinkedinIcon,
+  LinkedinShareButton,
+  TelegramIcon,
+  TelegramShareButton,
+  TwitterIcon,
+  TwitterShareButton,
+  WhatsappIcon,
+  WhatsappShareButton
+} from "react-share";
 
 const handleCopy = (referral: string) => {
   type CopyFn = (text: string) => Promise<boolean>; // Return success
@@ -79,33 +81,33 @@ const ReferAFriendView: FC<{ referral: string }> = ({ referral }) => {
       <div className="mt-10 font-thin text-[24px] max-w-full">
         <p className="">Share via social media</p>
         <div className="flex bg-white mt-2 -ml-8 lg:max-w-[1054px] h-[106px] rounded-lg items-center">
-          <Link to={"/"} className="md:ml-6 ml-4 md:mr-10 mr-5">
-            <img src={ZuRoundTwitter} />
-          </Link>
+          <TwitterShareButton url={referral} className="md:ml-6 ml-4 md:mr-10 mr-5">
+            <TwitterIcon round={true} size={76} bgStyle={{ fill: "#55ACEE" }}></TwitterIcon>
+          </TwitterShareButton>
           <Link to={"/"} className="md:mr-10 mr-5">
             <img src={ZuRoundSnapchat} />
           </Link>
-          <Link to={"/"} className="md:mr-10 mr-5">
-            <img src={ZuRoundFacebook} />
-          </Link>
-          <Link to={"/"} className="md:mr-10 mr-5">
-            <img src={ZuRoundWhatsapp} />
-          </Link>
+          <FacebookShareButton url={referral} className="md:mr-10 mr-5">
+            <FacebookIcon round={true} size={76} bgStyle={{ fill: "#1877F2" }}></FacebookIcon>
+          </FacebookShareButton>
+          <WhatsappShareButton url={referral} className="md:mr-10 mr-5">
+            <WhatsappIcon round={true} size={76} bgStyle={{ fill: "#1FAF38" }}></WhatsappIcon>
+          </WhatsappShareButton>
           <Link to={"/"} className="md:mr-10 mr-5">
             <img src={ZuRoundTicktock} />
           </Link>
           <Link to={"/"} className="md:mr-10 mr-5">
             <img src={ZuRoundYoutube} />
           </Link>
-          <Link to={"/"} className="md:mr-10 mr-5">
-            <img src={ZuRoundTelegram} />
-          </Link>
+          <TelegramShareButton url={referral} className="md:mr-10 mr-5">
+            <TelegramIcon round={true} size={76} bgStyle={{ fill: "#2AABEE" }}></TelegramIcon>
+          </TelegramShareButton>
           <Link to={"/"} className="md:mr-10 mr-5">
             <img src={ZuRoundPintrest} />
           </Link>
-          <Link to={"/"} className="md:mr-6 mr-4">
-            <img src={ZuRoundLinkedin} />
-          </Link>
+          <LinkedinShareButton url={referral} className="md:mr-6 mr-4">
+            <LinkedinIcon round={true} size={76} bgStyle={{ fill: "#0A66C2" }}></LinkedinIcon>
+          </LinkedinShareButton>
         </div>
       </div>
     </div>
