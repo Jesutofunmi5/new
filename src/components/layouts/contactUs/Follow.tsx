@@ -27,11 +27,15 @@ const Follow = () => {
         <div className="md:border-r-2 border-r-none md:border-b-0 border-b-2 border-gray-100 md:p-4 py-8 px-4 flex flex-col gap-4 justify-center">
           <div className="flex md:flex-row flex-col text-[#25373F] items-center justify-center md:gap-4 gap-2">
             <img src={ZUimages.zuPhoneCall} className="w-5 h-5" alt="linkedin" />
-            <p>+31621922705</p>
+            <a href="tel:+31621922705">
+              <p>+31621922705</p>
+            </a>
           </div>
           <div className="flex md:flex-row flex-col items-center justify-center md:gap-4 gap-2">
             <img src={ZUimages.envelope} className=" w-5  h-5" alt="linkedin" />
-            <p className="text-lg text-[#25373F] font-light">info@zumaridi.io</p>
+            <a href="mailto:info@zumaridi.io">
+              <p className="text-lg text-[#25373F] font-light">info@zumaridi.io</p>
+            </a>
           </div>
         </div>
         <div className="md:p-4 py-8 flex items-center justify-center">
