@@ -14,7 +14,7 @@ interface Props {
   formik: FormikProps<{ fullname: string; email: string; password: string; terms: boolean }>;
 }
 
-const SignupViewwithForm = ({
+const SignupIndividualView = ({
   googleLogin,
   linkedLogin,
   microsoftLogin,
@@ -164,4 +164,4 @@ const SignupViewwithForm = ({
   );
 };
 
-export default SignupViewwithForm;
+export default SignupIndividualView;

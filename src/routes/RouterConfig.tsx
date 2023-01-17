@@ -14,9 +14,10 @@ import {
   ResetPassword,
   Settings,
   Signup,
-  Signupform,
   About,
-  Terms
+  Terms,
+  SignupBusiness,
+  SignupIndividual
 } from "pages";
 import {
   BROADCASTCHANNEL,
@@ -32,9 +33,10 @@ import {
   RESET_PASSWORD,
   SETTINGS,
   SIGNUP,
-  SIGNUPFORM,
   TERMS,
-  PRICING
+  PRICING,
+  SIGNUP_INDIVIDUAL,
+  SIGNUP_BUSINESS
 } from "./CONSTANTS";
 
 import type { FC } from "react";
@@ -55,7 +57,8 @@ const RouterConfig: FC = () => {
           <Route path={LOGIN} element={<Login />} />
           <Route path={LOGIN_CONFIRM} element={<Login />} />
           <Route path={SIGNUP} element={<Signup />} />
-          <Route path={SIGNUPFORM} element={<Signupform />} />
+          <Route path={SIGNUP_BUSINESS} element={<SignupBusiness />} />
+          <Route path={SIGNUP_INDIVIDUAL} element={<SignupIndividual />} />
           <Route path={RESET_PASSWORD} element={<ResetPassword />} />
           <Route path={FORGOT_PASSWORD} element={<ForgetPassword />} />
         </Route>

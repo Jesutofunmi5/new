@@ -7,9 +7,9 @@ import { register } from "redux/slices/auth.slice";
 import { useAppDispatch, useAppSelector } from "hooks";
 import { GOOGLE_END_POINT, LINKED_IN_END_POINT, MICROSOFT_END_POINT } from "services/CONSTANTS";
 
-import SignupView from "./SignupViewwithForm";
+import SignupIndividualView from "./SignupIndividualView";
 
-export const SignupContainerWF = () => {
+export const SignupIndividualContainer = () => {
   const dispatch = useAppDispatch();
   const { isLoading } = useAppSelector((state) => state.auth);
 
@@ -64,7 +64,7 @@ export const SignupContainerWF = () => {
   };
   return (
     <Auth>
-      <SignupView
+      <SignupIndividualView
         formik={formik}
         loading={isLoading}
         googleLogin={googleLogin}
