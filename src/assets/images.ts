@@ -111,3 +111,4 @@ export const teamwork = `${Polygon}/teamwork.png`;
 export const aboutTop = `${Polygon}/about_top.png`;
 export const aboutBottom = `${Polygon}/about_bottom.png`;
 export const img404 = `${Polygon}/404.png`;
+// export const paperclip = `${Polygon}/paperclip.png`;

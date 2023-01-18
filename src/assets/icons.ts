@@ -11,3 +11,4 @@ export const video = `${ICON_PATH}/video.png`;
 export const link = `${ICON_PATH}/link.png`;
 export const play = `${SVG_PATH}/play.svg`;
 export const close = `${ICON_PATH}/close.svg`;
+export const paperclip = `${ICON_PATH}/paperclip.svg`;
