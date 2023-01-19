@@ -107,7 +107,12 @@ export const resetPassword = createAsyncThunk(
 );
 
 export const logout = createAsyncThunk("auth/logout", async () => {
-  await AuthService.logout();
+  try {
+    await AuthService.logout();
+  } catch (error) {
+    const message = formatErrorResponse(error);
+    toast.error(message);
+  }
 });
 
 const initialState = user
@@ -179,6 +184,19 @@ const authSlice = createSlice({
       state.isLoading = false;
     });
     builder.addCase(resetPassword.rejected, (state) => {
+      state.isLoading = false;
+    });
+
+    // logout
+    builder.addCase(logout.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(logout.fulfilled, (state) => {
+      state.isLoggedIn = false;
+      state.user = null;
+      state.isLoading = false;
+    });
+    builder.addCase(logout.rejected, (state) => {
       state.isLoading = false;
     });
   }
