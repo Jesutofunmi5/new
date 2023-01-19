@@ -5,11 +5,10 @@ import NavLink from "./NavLink";
 import { ZUimages } from "assets";
 import { Drawer } from "components/modules";
 import { logout } from "redux/slices/auth.slice";
-import { Button, Dropdown } from "components/widgets";
+import { Button, Dropdown, Menu } from "components/widgets";
 import { useAppDispatch, useAppSelector, useScroll } from "hooks";
 import { ZuFlagUnitedKingdom, ZuDown, ZuLogout } from "components/icons";
 import { ABOUT, CONTACT, HOME, LOGIN, SIGNUP, PRICING } from "routes/CONSTANTS";
-import Menu from "./Menu";
 
 interface Props {
   transparent?: boolean;

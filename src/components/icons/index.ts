@@ -12,6 +12,7 @@ export { default as ZuBackward } from "./ZuBackward";
 export { default as ZuBan } from "./ZuBan";
 export { default as ZuBell } from "./ZuBell";
 export { default as ZuBills } from "./ZuBills";
+export { default as ZuBroadcast } from "./ZuBroadcast";
 export { default as ZuBrowser } from "./ZuBrowser";
 export { default as ZuCalender } from "./ZuCalender";
 export { default as ZuCalenderPlus } from "./ZuCalenderPlus";

@@ -1,10 +1,10 @@
-import { DashboardWrapper } from "components/DashboardWrapper";
+import { Dashboard } from "components";
 import SettingsView from "./SettingsView";
 
 export const SettingsContainer = () => {
   return (
-    <DashboardWrapper>
+    <Dashboard>
       <SettingsView />
-    </DashboardWrapper>
+    </Dashboard>
   );
 };

@@ -6,11 +6,11 @@ import { meetingsList } from "utils";
 
 const ActionsList = () => {
   return (
-    <div className=" w-full pr-2">
+    <div className=" w-full">
       <div className="">
         <UserDateTimeDisplay />
       </div>
-      <div className="overflow-scroll  h-[56vh] pr-6">
+      <div className="lg:overflow-scroll lg:h-[56vh]">
         {meetingsList.map((meeting) => (
           <div
             key={meeting.id}
