@@ -1,10 +1,22 @@
 import { logoutimg } from "assets/images";
+import { useAppDispatch } from "hooks";
+import { logout } from "redux/slices/auth.slice";
+import { LOGIN } from "routes/CONSTANTS";
 
 interface LogoutModalProps {
   setOpenModal: (logoutModal: boolean) => void;
 }
 
 const LogoutModal = ({ setOpenModal }: LogoutModalProps) => {
+  const dispatch = useAppDispatch();
+
+  const onLogoutSubmit = () => {
+    dispatch(logout())
+      .unwrap()
+      .then(() => window.location.replace(LOGIN))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className="fixed inset-0 bg-black-10 bg-opacity-70 z-50 flex items-center justify-center p-5">
       <div className="h-[406px] w-[440px] bg-white pb-4 flex flex-col gap-8 rounded-lg">
@@ -24,7 +36,7 @@ const LogoutModal = ({ setOpenModal }: LogoutModalProps) => {
           >
             Nevermind
           </button>
-          <button type="submit" className="bg-green py-2 px-4 rounded-md text-white">
+          <button className="bg-green py-2 px-4 rounded-md text-white" onClick={onLogoutSubmit}>
             Yes, Logout
           </button>
         </div>
