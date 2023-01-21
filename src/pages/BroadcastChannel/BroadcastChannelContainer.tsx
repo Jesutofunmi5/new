@@ -1,11 +1,10 @@
-// import { Sidebar } from "components";
-import { DashboardWrapper } from "components/DashboardWrapper";
+import { Dashboard } from "components";
 import BroadcastChannelView from "./BroadcastChannelView";
 
 export const BroadcastChannelContainer = () => {
   return (
-    <DashboardWrapper>
+    <Dashboard>
       <BroadcastChannelView />
-    </DashboardWrapper>
+    </Dashboard>
   );
 };

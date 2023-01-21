@@ -1,10 +1,10 @@
-import { DashboardWrapper } from "components/DashboardWrapper";
+import { Dashboard } from "components";
 import CalenderView from "./CalenderView";
 
 export const CalenderContainer = () => {
   return (
-    <DashboardWrapper>
+    <Dashboard>
       <CalenderView />
-    </DashboardWrapper>
+    </Dashboard>
   );
 };

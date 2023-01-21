@@ -1,10 +1,10 @@
-import { DashboardWrapper } from "components/DashboardWrapper";
+import { Dashboard } from "components";
 import DashBoardHomeView from "./DashboardHomeView";
 
 export const DashboardHomeContainer = () => {
   return (
-    <DashboardWrapper>
+    <Dashboard>
       <DashBoardHomeView />
-    </DashboardWrapper>
+    </Dashboard>
   );
 };

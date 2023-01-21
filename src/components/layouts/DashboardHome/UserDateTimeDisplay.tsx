@@ -40,20 +40,18 @@ const UserDateTimeDisplay = () => {
   }, [date]);
 
   return (
-    <div className="pr-8">
-      <div
-        className="h-48 w-full mb-4 rounded-2xl  text-white"
-        style={{ backgroundImage: `url(${userbg})` }}
-      >
-        <div className="bg-black-100 bg-opacity-70 w-full p-8 rounded-2xl h-full flex justify-between items-center">
-          <div>
-            <p className="font-bold text-lg">Welcome user</p>
-            <p className="font-bold text-[61px]">{formattedTime}</p>
-            <p className="text-[18px] font-normal">{formattedDate}</p>
-          </div>
-          <div className="h-28 w-28 rounded-full bg-green-100 flex items-center justify-center">
-            <img src={user} className="h-28 w-28" />
-          </div>
+    <div
+      className="h-48 w-full mb-4 rounded-2xl  text-white"
+      style={{ backgroundImage: `url(${userbg})` }}
+    >
+      <div className="bg-black-100 bg-opacity-70 w-full p-8 rounded-2xl h-full flex justify-between items-center">
+        <div>
+          <p className="font-bold text-lg">Welcome user</p>
+          <p className="font-bold text-[61px]">{formattedTime}</p>
+          <p className="text-[18px] font-normal">{formattedDate}</p>
+        </div>
+        <div className="h-28 w-28 rounded-full bg-green-100 flex items-center justify-center">
+          <img src={user} className="h-28 w-28" />
         </div>
       </div>
     </div>
