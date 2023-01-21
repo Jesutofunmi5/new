@@ -6,3 +6,4 @@ export * from "./userImg";
 export * from "./meetingsList";
 export * from "./meetingActions";
 export * from "./aboutCardData";
+export * from "./industriesList";

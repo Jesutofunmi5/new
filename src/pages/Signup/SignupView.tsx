@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ZUimages } from "assets";
-import { SIGNUPFORM, LOGIN } from "routes/CONSTANTS";
+import { LOGIN, SIGNUP_BUSINESS, SIGNUP_INDIVIDUAL } from "routes/CONSTANTS";
 import { ZuArrowRight } from "components";
 
 const SignupView = () => {
@@ -22,7 +22,7 @@ const SignupView = () => {
           </p>
         </div>
 
-        <Link to={SIGNUPFORM}>
+        <Link to={SIGNUP_INDIVIDUAL}>
           <div className="mt-10 w-full p-5 bg-green-100/20 flex items-center rounded-md space-x-5 hover:border-1 hover:border-green shadow">
             <div className="relative w-16 h-16 flex items-center justify-center">
               <img src={ZUimages.firstPolygon} className="" alt="" />
@@ -38,16 +38,20 @@ const SignupView = () => {
           </div>
         </Link>
 
-        <div className="mt-5 w-full p-5 bg-white flex items-center rounded-md space-x-5 hover:border-1 hover:border-green shadow">
-          <div className="relative w-16 h-16 flex items-center justify-center">
-            <img src={ZUimages.secondPolygon} alt="" />
-            <img src={ZUimages.briefcase} className="absolute" alt="" />
+        <Link to={SIGNUP_BUSINESS}>
+          <div className="mt-5 w-full p-5 bg-white flex items-center rounded-md space-x-5 hover:border-1 hover:border-green shadow">
+            <div className="relative w-16 h-16 flex items-center justify-center">
+              <img src={ZUimages.secondPolygon} alt="" />
+              <img src={ZUimages.briefcase} className="absolute" alt="" />
+            </div>
+            <div className="w-full space-y-2">
+              <h6 className="text-lg font-bold">Business</h6>
+              <p className="text-base text-gray-200">
+                Own or belong to a company, this is for you.
+              </p>
+            </div>
           </div>
-          <div className="w-full space-y-2">
-            <h6 className="text-lg font-bold">Business</h6>
-            <p className="text-base text-gray-200">Own or belong to a company, this is for you.</p>
-          </div>
-        </div>
+        </Link>
       </div>
     </div>
   );

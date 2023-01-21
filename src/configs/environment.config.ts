@@ -6,7 +6,7 @@ interface IURL {
 
 const dev = {
   REDIRECT_URL: "http://localhost:3000/",
-  API_BASE_URL: "https://localhost:443/api",
+  API_BASE_URL: "http://localhost:8000/api",
   MEETING_BASE_URL: "https://localhost:4443"
 };
 

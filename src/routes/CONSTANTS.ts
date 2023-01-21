@@ -7,7 +7,8 @@ export const PRICING = "/pricing";
 export const LOGIN = "/auth/login";
 export const LOGIN_CONFIRM = "/auth/login/:confirmationCode";
 export const SIGNUP = "/auth/signup";
-export const SIGNUPFORM = "/auth/signupform";
+export const SIGNUP_INDIVIDUAL = "/auth/signup/individual";
+export const SIGNUP_BUSINESS = "/auth/signup/business";
 export const FORGOT_PASSWORD = "/auth/forgot-password";
 export const RESET_PASSWORD = "/token/:token";
 
