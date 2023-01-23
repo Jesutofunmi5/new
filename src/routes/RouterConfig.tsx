@@ -16,6 +16,7 @@ import {
   Signup,
   About,
   Terms,
+  Privacy,
   SignupBusiness,
   SignupIndividual
 } from "pages";
@@ -34,6 +35,7 @@ import {
   SETTINGS,
   SIGNUP,
   TERMS,
+  PRIVACY,
   PRICING,
   SIGNUP_INDIVIDUAL,
   SIGNUP_BUSINESS
@@ -49,6 +51,7 @@ const RouterConfig: FC = () => {
         {/* Public routes should be placed in here */}
         <Route path={HOME} element={<Home />} />
         <Route path={ABOUT} element={<About />} />
+        <Route path={PRIVACY} element={<Privacy />} />
         <Route path={TERMS} element={<Terms />} />
         <Route path={CONTACT} element={<Contact />} />
         <Route path={PRICING} element={<Pricing />} />

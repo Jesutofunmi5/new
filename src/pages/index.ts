@@ -2,6 +2,7 @@ export { default as ErrorPage } from "./404Page";
 export { default as Home } from "./Home";
 export { default as About } from "./About";
 export { default as Terms } from "./Terms";
+export { default as Privacy } from "./Privacy";
 export { default as Contact } from "./Contact";
 export { default as Login } from "./Login";
 export { default as Signup } from "./Signup";
