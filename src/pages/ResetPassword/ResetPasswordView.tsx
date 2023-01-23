@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import { Button, Input, Loader } from "components";
+import { Button, FormInput, Loader } from "components";
 import { FormikProps } from "formik";
 import { LOGIN } from "routes/CONSTANTS";
 
@@ -16,41 +16,30 @@ const ResetPasswordView = ({ formik, loading }: Props) => {
         <p className="text-lg text-gray-200 capitalize">Choose A New Password For Your Account</p>
       </div>
       <form onSubmit={formik.handleSubmit} className="space-y-5">
-        <div>
-          <label htmlFor="email" className="block text-lg text-gray-200">
-            Password
-          </label>
-          <Input
-            size="lg"
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Your password"
-            onChange={formik.handleChange}
-            className="w-full"
-          />
-          {formik.touched.password && formik.errors.password && (
-            <p className="text-red text-base ">{formik.errors.password}</p>
-          )}
-        </div>
+        <FormInput
+          required
+          size="lg"
+          type="password"
+          id="password"
+          name="password"
+          label="Create password"
+          placeholder="Your password"
+          errors={formik.errors.password}
+          touched={formik.touched.password}
+          onChange={formik.handleChange}
+        />
 
-        <div>
-          <label htmlFor="email" className="block text-lg text-gray-200">
-            Confirm Password
-          </label>
-          <Input
-            size="lg"
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            placeholder="Confirm password"
-            onChange={formik.handleChange}
-            className="w-full"
-          />
-          {formik.touched.confirmPassword && formik.errors.confirmPassword && (
-            <p className="text-red text-base ">{formik.errors.confirmPassword}</p>
-          )}
-        </div>
+        <FormInput
+          required
+          size="lg"
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          placeholder="Confirm password"
+          errors={formik.errors.confirmPassword}
+          touched={formik.touched.confirmPassword}
+          onChange={formik.handleChange}
+        />
 
         <Button size="lg" className="w-full flex items-center justify-center bg-green">
           {loading ? <Loader /> : "Resend Email"}

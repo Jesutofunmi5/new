@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { ZUimages } from "assets";
 import { LOGIN, SIGNUP, TERMS } from "routes/CONSTANTS";
-import { Button, Input, Loader, ZuAngleLeft } from "components";
+import { Button, Input, FormInput, Loader, ZuAngleLeft } from "components";
 
 interface Props {
   loading: boolean;
@@ -40,61 +40,42 @@ const SignupIndividualView = ({
 
         <div className="w-full h-px my-5 bg-gray-100 shadow" />
         <form onSubmit={formik.handleSubmit} className="space-y-3">
-          <div>
-            <label htmlFor="fullname" className="block text-lg text-gray-200">
-              Your fullname*
-            </label>
-            <Input
-              size="lg"
-              type="text"
-              id="fullname"
-              name="fullname"
-              placeholder="Enter full name"
-              onChange={formik.handleChange}
-              className="w-full"
-            />
-            {formik.touched.fullname && formik.errors.fullname && (
-              <p className="text-red text-base ">{formik.errors.fullname}</p>
-            )}
-          </div>
-
-          <div>
-            <label htmlFor="email" className="block text-lg text-gray-200">
-              Email address*
-            </label>
-            <Input
-              size="lg"
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter email address"
-              onChange={formik.handleChange}
-              className="w-full"
-            />
-            {formik.touched.email && formik.errors.email && (
-              <p className="text-red text-base ">{formik.errors.email}</p>
-            )}
-          </div>
-
-          <div>
-            <label htmlFor="password" className="block text-lg text-gray-200">
-              Create password*
-            </label>
-            <Input
-              size="lg"
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Enter password"
-              onChange={formik.handleChange}
-              autoComplete="on"
-              className="w-full"
-            />
-            {formik.touched.password && formik.errors.password && (
-              <p className="text-red text-base ">{formik.errors.password}</p>
-            )}
-          </div>
-
+          <FormInput
+            required
+            size="lg"
+            type="text"
+            id="fullname"
+            name="fullname"
+            label="Your fullname"
+            placeholder="Enter full name"
+            errors={formik.errors.fullname}
+            touched={formik.touched.fullname}
+            onChange={formik.handleChange}
+          />
+          <FormInput
+            required
+            size="lg"
+            type="email"
+            id="email"
+            name="email"
+            label="Email Address"
+            placeholder="Enter email address"
+            errors={formik.errors.email}
+            touched={formik.touched.email}
+            onChange={formik.handleChange}
+          />
+          <FormInput
+            required
+            size="lg"
+            type="password"
+            id="password"
+            name="password"
+            label="Create password"
+            placeholder="Enter password"
+            errors={formik.errors.password}
+            touched={formik.touched.password}
+            onChange={formik.handleChange}
+          />
           <div>
             <div className="flex items-center space-x-3">
               <Input
