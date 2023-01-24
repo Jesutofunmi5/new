@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Form, Formik } from "formik";
 import { technicalSupportSchema } from "validations";
 import InputFormGroup from "./InputFormGroup";
@@ -27,6 +28,21 @@ const TechnicalSupportForm = () => {
   const handleSubmit = (values: FormValues, formikBag: FormikBag) => {
     console.log(values);
     formikBag.setSubmitting(false);
+  };
+
+  const [file, setFile] = useState<File | undefined>(undefined);
+
+  const fileHandler = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    const fileData = evt.target.files?.[0];
+    console.log(fileData);
+
+    if (fileData != null) {
+      setFile(fileData);
+    }
+  };
+
+  const onClose = () => {
+    setFile(undefined);
   };
 
   return (
@@ -72,10 +88,21 @@ const TechnicalSupportForm = () => {
             className="border-[#D1D1D6] border-2 w-full rounded-lg placeholder-[#D1D1D6] text-black px-4 py-2"
           />
           <TextareaFormGroup nameAndId="message" label="Message" placeholder="" />
-          <label className="flex justify-between text-lg text-green border-2 border-green p-2 rounded-md w-[27%] mt-[-30px] cursor-pointer">
+          <label className="flex justify-between w-[27%] text-lg text-green border-2 border-green p-2 rounded-md  mt-[-30px] cursor-pointer">
             <img src={paperclip} />
             Attach file
-            <input type="file" name="file" style={{ display: "none" }} />
+            <input type="file" name="file" style={{ display: "none" }} onChange={fileHandler} />
+            <div className="flex flex-wrap absolute ml-[7em] w-[100%]">
+              <button
+                onClick={onClose}
+                className="mx-2 font-[400] text-[18px] leading-[150%] text-[#F26021]"
+              >
+                {file != null ? "Remove File" : null}
+              </button>
+              <p className="flex text-[24px] font-[400] text-[rgba(37, 55, 63, 0.5)]">
+                {file != null ? file.name : null}
+              </p>
+            </div>
           </label>
           <div className="flex">
             <label className="text-[20px] mr-6 leading-[175.4%] tracking-[-0.3px] font-[500] text-[#25373F] border-2 border-[#25373F] bg-[#FFCA85] p-2 w-[140px] h-[70px] mt-[10px]">
