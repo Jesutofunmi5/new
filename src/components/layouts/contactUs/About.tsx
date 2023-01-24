@@ -39,7 +39,7 @@ const About = () => {
       )}
       {openModal === "tech" && (
         <Modal
-          size="md:w-[500px] w-full md:h-[700px]"
+          size="md:w-[500px] w-full"
           title="Technical Support"
           content={<TechnicalSupportForm />}
           setOpenModal={() => setOpenModal(null)}

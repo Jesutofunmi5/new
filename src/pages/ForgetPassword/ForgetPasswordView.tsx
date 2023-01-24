@@ -2,7 +2,7 @@
 import { FormikProps } from "formik";
 
 import { LOGIN } from "routes/CONSTANTS";
-import { Button, Input, Loader } from "components";
+import { Button, FormInput, Loader } from "components";
 
 interface Props {
   loading: boolean;
@@ -20,23 +20,18 @@ const ForgetPasswordView = ({ formik, loading }: Props) => {
         </p>
       </div>
       <form onSubmit={formik.handleSubmit} className="space-y-5">
-        <div>
-          <label htmlFor="email" className="block text-lg text-gray-200">
-            Email
-          </label>
-          <Input
-            size="lg"
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter email address"
-            onChange={formik.handleChange}
-            className="w-full"
-          />
-          {formik.touched.email && formik.errors.email && (
-            <p className="text-red text-base ">{formik.errors.email}</p>
-          )}
-        </div>
+        <FormInput
+          required
+          size="lg"
+          type="email"
+          id="email"
+          name="email"
+          label="Email"
+          placeholder="Enter email address"
+          errors={formik.errors.email}
+          touched={formik.touched.email}
+          onChange={formik.handleChange}
+        />
 
         <Button
           size="lg"
