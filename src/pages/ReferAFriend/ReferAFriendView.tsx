@@ -18,6 +18,17 @@ import {
   TwitterShareButton,
   WhatsappShareButton
 } from "react-share";
+import { toast } from "react-toastify";
+import { sendReferral, userData } from "services/users.service";
+import { ReactMultiEmail } from "react-multi-email";
+import "react-multi-email/dist/style.css";
+
+export interface IRefer {
+  firstName: string;
+  lastName: string;
+  email: string;
+  refId: string;
+}
 
 const handleCopy = (referral: string) => {
   type CopyFn = (text: string) => Promise<boolean>; // Return success
@@ -34,12 +45,23 @@ const handleCopy = (referral: string) => {
   void copy(referral);
 };
 
-const handleSend = (text: string) => {
-  console.log(text);
+const handleSend = (emails: string[]) => {
+  emails.map((email) => {
+    const details: IRefer = {
+      firstName: userData?.name?.firstName,
+      lastName: userData?.name?.lastName,
+      email,
+      refId: userData?.refId
+    };
+    sendReferral(details)
+      .then(() => toast.success("Referral Sent"))
+      .catch(() => toast.error("Unable to send referral"));
+    return true;
+  });
 };
 
 const ReferAFriendView: FC<{ referral: string; title: string }> = ({ referral, title }) => {
-  const [email, setEmail] = useState("");
+  const [emails, setEmails] = useState<string[]>([]);
   return (
     <div>
       <div>
@@ -63,15 +85,27 @@ const ReferAFriendView: FC<{ referral: string; title: string }> = ({ referral, t
       <div className="mt-10">
         <p>Enter their email address and we send them your referral code</p>
         <div className="flex border-green bg-white rounded-md w-full lg:max-w-[978px] max-w-full h-[54px] border-[1px] items-center justify-between px-4 mt-2">
-          <input
-            className="w-5/6 mr-2"
-            type="email"
-            placeholder="Enter email"
-            onChange={(e) => setEmail(e.target?.value)}
+          <ReactMultiEmail
+            placeholder="Enter emails"
+            emails={emails}
+            className="w-5/6 mr-2 -ml-3 border-none"
+            onChange={(_emails: string[]) => {
+              setEmails(_emails);
+            }}
+            getLabel={(email, index, removeEmail) => {
+              return (
+                <div data-tag key={index}>
+                  <div data-tag-item>{email}</div>
+                  <span data-tag-handle onClick={() => removeEmail(index)}>
+                    ×
+                  </span>
+                </div>
+              );
+            }}
           />
           <button
             className="bg-green border-green text-white rounded-md border-[1px] h-[34px] w-[102px]"
-            onClick={() => handleSend(email)}
+            onClick={() => handleSend(emails)}
           >
             SEND
           </button>
