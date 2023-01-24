@@ -23,7 +23,7 @@ const SignupView = () => {
         </div>
 
         <Link to={SIGNUP_INDIVIDUAL}>
-          <div className="mt-10 w-full p-5 bg-green-100/20 flex items-center rounded-md space-x-5 hover:border-1 hover:border-green shadow">
+          <div className="mt-10 w-full p-5 group bg-white hover:bg-green-100/20 flex items-center rounded-md space-x-5 hover:border-1 hover:border-green shadow">
             <div className="relative w-16 h-16 flex items-center justify-center">
               <img src={ZUimages.firstPolygon} className="" alt="" />
               <img src={ZUimages.polyUser} className="absolute" alt="" />
@@ -34,12 +34,12 @@ const SignupView = () => {
                 Personal account to manage all you activities.
               </p>
             </div>
-            <ZuArrowRight size={30} className="text-green" />
+            <ZuArrowRight size={30} className="text-green hidden group-hover:block" />
           </div>
         </Link>
 
         <Link to={SIGNUP_BUSINESS}>
-          <div className="mt-5 w-full p-5 bg-white flex items-center rounded-md space-x-5 hover:border-1 hover:border-green shadow">
+          <div className="mt-10 w-full p-5 group bg-white hover:bg-green-100/20 flex items-center rounded-md space-x-5 hover:border-1 hover:border-green shadow">
             <div className="relative w-16 h-16 flex items-center justify-center">
               <img src={ZUimages.secondPolygon} alt="" />
               <img src={ZUimages.briefcase} className="absolute" alt="" />
@@ -50,6 +50,7 @@ const SignupView = () => {
                 Own or belong to a company, this is for you.
               </p>
             </div>
+            <ZuArrowRight size={30} className="text-green hidden group-hover:block" />
           </div>
         </Link>
       </div>
