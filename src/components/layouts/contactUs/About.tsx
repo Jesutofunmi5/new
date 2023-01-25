@@ -31,7 +31,6 @@ const About = () => {
 
       {openModal === "chat" && (
         <Modal
-          size="w-[500px] w-full h-[600px]"
           title="Zumaridi Live Chat"
           content={<LiveChat />}
           setOpenModal={() => setOpenModal(null)}
@@ -39,7 +38,6 @@ const About = () => {
       )}
       {openModal === "tech" && (
         <Modal
-          size="md:w-[500px] w-full md:h-[700px]"
           title="Technical Support"
           content={<TechnicalSupportForm />}
           setOpenModal={() => setOpenModal(null)}
@@ -47,7 +45,6 @@ const About = () => {
       )}
       {openModal === "billing" && (
         <Modal
-          size="md:w-[500px] w-full md:h-[700px]"
           title="Technical Support"
           content={<BillsAndPaymentForm />}
           setOpenModal={() => setOpenModal(null)}

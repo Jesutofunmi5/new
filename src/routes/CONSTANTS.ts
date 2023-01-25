@@ -16,5 +16,5 @@ export const RESET_PASSWORD = "/token/:token";
 export const DASHBOARD = "/dashboard";
 export const BROADCASTCHANNEL = "/dashboard/broadcast-channel";
 export const CALENDER = "/dashboard/calender";
-export const REFER_A_FRIEND = "/dashboard/refer-a-friend";
+export const REFER_A_FRIEND = "/dashboard/invites";
 export const SETTINGS = "/dashboard/settings";
