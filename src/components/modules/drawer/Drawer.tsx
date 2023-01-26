@@ -4,7 +4,7 @@ import Item from "./Item";
 import { useAppSelector } from "hooks";
 import { ZuDown } from "components/icons";
 import { Button, Dropdown } from "components/widgets";
-import { ABOUT, CONTACT, LOGIN, SIGNUP } from "routes/CONSTANTS";
+import { ABOUT, CONTACT, LOGIN, PRICING, SIGNUP } from "routes/CONSTANTS";
 
 interface Props {
   open: boolean;
@@ -74,7 +74,7 @@ const Drawer = ({ open }: Props) => {
             <div></div>
           </Dropdown>
           <Item to={CONTACT}>Contact Us</Item>
-          <Item to="#">Pricing</Item>
+          <Item to={PRICING}>Pricing</Item>
           <Item to="#">Services</Item>
           <Item to={ABOUT}>About Us</Item>
         </motion.div>

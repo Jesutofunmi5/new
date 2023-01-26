@@ -18,7 +18,7 @@ const LogoutModal = ({ setOpenModal }: LogoutModalProps) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black-10 bg-opacity-70 z-50 flex items-center justify-center p-5">
+    <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-5">
       <div className="h-[406px] w-[440px] bg-white pb-4 flex flex-col gap-8 rounded-lg">
         <div className="bg-gray-50 flex items-center justify-center rounded-t-lg h-48">
           <img src={logoutimg} className="h-28 w-28 text-center" />

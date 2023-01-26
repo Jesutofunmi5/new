@@ -46,7 +46,6 @@ const Actions = () => {
       {isLoading && <CenterLoader />}
       {openModal === meetingModalEnum.INSTANT && (
         <Modal
-          size="md:h-[666px] h-full md:w-[653px] w-full"
           content={<NewMeetingForm />}
           title="Schedule a Meeting"
           setOpenModal={() => setOpenModal(null)}
@@ -54,7 +53,6 @@ const Actions = () => {
       )}
       {openModal === meetingModalEnum.JOIN && (
         <Modal
-          size="md:h-[666px] h-full md:w-[653px] w-full"
           content={<JoinMeetingForm />}
           title="Join Meeting"
           setOpenModal={() => setOpenModal(null)}
@@ -63,7 +61,6 @@ const Actions = () => {
 
       {openModal === meetingModalEnum.LATER && (
         <Modal
-          size="md:h-[666px] h-full md:w-[653px] w-full"
           content={<PlanMeetingForm />}
           title="Schedule for Later"
           setOpenModal={() => setOpenModal(null)}
@@ -72,7 +69,6 @@ const Actions = () => {
 
       {openModal === meetingModalEnum.LINK && (
         <Modal
-          size="md:h-[666px] h-full md:w-[653px] w-full"
           content={<MeetingLink />}
           title="Get a meeting Link"
           setOpenModal={() => setOpenModal(null)}

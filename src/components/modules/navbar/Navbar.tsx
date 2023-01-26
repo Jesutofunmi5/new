@@ -31,9 +31,9 @@ const Navbar = ({ transparent = false }: Props) => {
       animate={open ? "open" : "closed"}
       className={`${
         transparent && y <= 40 ? "bg-transparent" : "bg-black-100"
-      } fixed lg:relative top-0 left-0 right-0 text-white`}
+      } fixed lg:relative top-0 left-0 right-0 text-white z-50`}
     >
-      <div className="relative w-full h-[10vh] px-5 md:px-10 xl:px-20 flex items-center justify-between">
+      <div className="relative w-full h-[10vh] px-5 md:px-10 xl:px-20 flex items-center justify-between z-50">
         <Link to={HOME}>
           <img src={ZUimages.logo} alt="logo" />
         </Link>
