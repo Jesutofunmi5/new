@@ -70,7 +70,6 @@ const RouterConfig: FC = () => {
           <Route path={DASHBOARD} element={<DashboardHome />}></Route>
           <Route path={BROADCASTCHANNEL} element={<BroadcastChannel />} />
           <Route path={CALENDER} element={<Calender />} />
-          <Route path={REFER_A_FRIEND} element={<ReferAFriend />} />
           <Route path={SETTINGS} element={<Settings />} />
         </Route>
 
