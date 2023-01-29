@@ -6,13 +6,7 @@ const validation = (values: {
   subject: string;
   message: string;
 }) => {
-  const errors = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    subject: "",
-    message: ""
-  };
+  const errors: any = {};
   if (!values.firstName) {
     errors.firstName = "First Name is required";
   } else if (values.firstName.length < 3) {
@@ -38,6 +32,7 @@ const validation = (values: {
   } else if (values.message.length < 10) {
     errors.message = "Invalid Message";
   }
+  console.log({ errors });
   return errors;
 };
 export default validation;
