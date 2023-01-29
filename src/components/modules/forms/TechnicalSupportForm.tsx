@@ -21,13 +21,19 @@ const TechnicalSupportForm = () => {
     subject: "",
     message: ""
   };
-  const handleSubmit = (values: FormValues) => {
+
+  interface FormikBag {
+    setSubmitting: (isSubmitting: boolean) => void;
+    resetForm: () => void;
+  }
+
+  const handleSubmit = (values: FormValues, FormikBag: FormikBag) => {
     const formData: any = new FormData();
     Object.keys(values).forEach((key) => {
       formData.append(key, values[key]);
       if (file != null) formData.append("file", file);
     });
-
+    // FormikBag.setSubmitting(false); uncomment after submitting
     // Make async request here - later reset form with {{resetForm}}
     // Remove below line after integration -  Just for debug
     for (const value of formData.values()) {
