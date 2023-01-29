@@ -74,8 +74,9 @@ const RouterConfig: FC = () => {
           <Route path={SETTINGS} element={<Settings />} />
         </Route>
 
-        <Route path="/" element={<ProtectedRoute />}>
+        <Route path="/" element={<ProtectedRoute navigate={SIGNUP} />}>
           {/* Protected routes should be placed in here */}
+          <Route path={`${REFER_A_FRIEND}/*`} element={<ReferAFriend />} />
         </Route>
 
         {/* 404 page */}

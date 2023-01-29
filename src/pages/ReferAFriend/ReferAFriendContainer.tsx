@@ -7,7 +7,9 @@ export const ReferAFriendContainer = () => {
   Trust me, you won't regret it!`;
   const refId = userData?.refId as string;
 
-  const url = window.location.href + "/" + refId;
+  const url = window.location.href.includes(refId)
+    ? window.location.href
+    : window.location.href + "/" + refId;
 
   return (
     <Dashboard>

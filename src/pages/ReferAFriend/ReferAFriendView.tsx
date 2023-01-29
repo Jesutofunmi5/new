@@ -30,38 +30,42 @@ export interface IRefer {
   refId: string;
 }
 
-const handleCopy = (referral: string) => {
-  type CopyFn = (text: string) => Promise<boolean>; // Return success
-  const copy: CopyFn = async (text) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      console.log("TEXT COPIED!!!");
-      return true;
-    } catch (error) {
-      console.warn("Copy failed", error);
-      return false;
-    }
-  };
-  void copy(referral);
-};
-
-const handleSend = (emails: string[]) => {
-  emails.map((email) => {
-    const details: IRefer = {
-      firstName: userData?.name?.firstName,
-      lastName: userData?.name?.lastName,
-      email,
-      refId: userData?.refId
-    };
-    sendReferral(details)
-      .then(() => toast.success("Referral Sent"))
-      .catch(() => toast.error("Unable to send referral"));
-    return true;
-  });
-};
-
 const ReferAFriendView: FC<{ referral: string; title: string }> = ({ referral, title }) => {
   const [emails, setEmails] = useState<string[]>([]);
+  const [copyState, setCopyState] = useState<string>("COPY");
+  const error = copyState.includes("NOT COPIED!");
+
+  const handleCopy = (referral: string) => {
+    type CopyFn = (text: string) => Promise<boolean>; // Return success
+    const copy: CopyFn = async (text) => {
+      try {
+        await navigator.clipboard.writeText(text);
+        setCopyState("COPIED!");
+        setTimeout(() => setCopyState("COPY"), 5000);
+        return true;
+      } catch (error) {
+        setCopyState("NOT COPIED!");
+        setTimeout(() => setCopyState("COPY"), 5000);
+        return false;
+      }
+    };
+    void copy(referral);
+  };
+
+  const handleSend = (emails: string[]) => {
+    emails.map((email) => {
+      const details: IRefer = {
+        firstName: userData?.name?.firstName,
+        lastName: userData?.name?.lastName,
+        email,
+        refId: userData?.refId
+      };
+      sendReferral(details)
+        .then(() => toast.success("Referral Sent"))
+        .catch(() => toast.error("Unable to send referral"));
+      return true;
+    });
+  };
   return (
     <div>
       <div>
@@ -72,13 +76,19 @@ const ReferAFriendView: FC<{ referral: string; title: string }> = ({ referral, t
       </div>
       <div className="mt-10">
         <p>Copy your referral code and invite them directly</p>
-        <div className="flex border-green bg-white rounded-md lg:max-w-[978px] max-w-full h-[54px] border-[1px] items-center justify-between px-4 mt-2">
+        <div
+          className={`flex ${
+            error ? "border-red-400" : "border-green"
+          } bg-white rounded-md lg:max-w-[978px] max-w-full h-[54px] border-[1px] items-center justify-between px-4 mt-2`}
+        >
           <p className="w-4/5 overflow-hidden mr-2">{referral}</p>
           <button
-            className="border-primary rounded-md border-[1px] h-[34px] text-green w-[102px]"
+            className={`${
+              error ? "border-red-400 text-red-400" : "border-primary text-green"
+            } rounded-md border-[1px] h-[34px] w-[102px]`}
             onClick={() => handleCopy(referral)}
           >
-            COPY
+            {copyState}
           </button>
         </div>
       </div>
