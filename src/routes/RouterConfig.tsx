@@ -70,12 +70,12 @@ const RouterConfig: FC = () => {
           <Route path={DASHBOARD} element={<DashboardHome />}></Route>
           <Route path={BROADCASTCHANNEL} element={<BroadcastChannel />} />
           <Route path={CALENDER} element={<Calender />} />
-          <Route path={REFER_A_FRIEND} element={<ReferAFriend />} />
           <Route path={SETTINGS} element={<Settings />} />
         </Route>
 
-        <Route path="/" element={<ProtectedRoute />}>
+        <Route path="/" element={<ProtectedRoute navigate={SIGNUP} />}>
           {/* Protected routes should be placed in here */}
+          <Route path={`${REFER_A_FRIEND}/*`} element={<ReferAFriend />} />
         </Route>
 
         {/* 404 page */}
