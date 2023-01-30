@@ -46,3 +46,8 @@ Contact
 */
 
 export const TECHNICAL_SUPPORT = "/technical-support";
+
+// Request Status
+
+export const RESPONSE_SUCCESS = "SUCCESS";
+export const RESPONSE_ERROR = "FAILURE";

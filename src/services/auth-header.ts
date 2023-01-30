@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { ZUMARIDI_USER_DATA } from "./CONSTANTS";
 
 interface IUser {

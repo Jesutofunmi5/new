@@ -43,7 +43,22 @@ module.exports = {
         },
         citrus: "#F26D21",
         background: "#F7F7F7",
-        orange: "#F26D21"
+        orange: "#F26D21",
+        alerts: {
+          success: {
+            color: "#20a020",
+            bgColor: "#E0FFE0"
+          },
+          info: {
+            color: "#FFFFFF",
+            bgColor: "#4299e1"
+          },
+          error: {
+            color: "#C5302E",
+            bgColor: "#fff5f5",
+            border: "#cbd5e0"
+          }
+        }
       }
     },
     container: {

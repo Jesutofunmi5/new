@@ -4,9 +4,13 @@ import { technicalSupportSchema } from "validations";
 import InputFormGroup from "./InputFormGroup";
 import TextareaFormGroup from "./TextAreaFormGroup";
 // import { paperclip, volume, rotateRight, vectorOne, vectorTwo, vectorThree } from "assets/icons";
-import { paperclip } from "assets/icons";
+import { paperclip, timesCircle } from "assets/icons";
 import { requestTechnicalSupport } from "services/contact.service";
 import { toast } from "react-toastify";
+import useAlertMessage from "hooks/useAlertMessage";
+import { RESPONSE_ERROR, RESPONSE_SUCCESS, ZUMARIDI_USER_DATA } from "services/CONSTANTS";
+import isEmptyObject from "utils/isEmptyObject";
+import { Loader } from "components/widgets";
 interface FormValues {
   firstName: string;
   lastName: string;
@@ -16,10 +20,15 @@ interface FormValues {
 }
 
 const TechnicalSupportForm = () => {
+  const { AlertMessage, setMessage } = useAlertMessage();
+
+  const data = JSON.parse(localStorage.getItem(ZUMARIDI_USER_DATA) as string);
+  const successMessage = "Your request has been received!";
+
   const formikInitialValues = {
-    firstName: "",
-    lastName: "",
-    email: "",
+    firstName: isEmptyObject(data.user) ? "" : data.user.name?.firstName,
+    lastName: isEmptyObject(data.user) ? "" : data.user.name?.lastName,
+    email: isEmptyObject(data.user) ? "" : data.user.email,
     subject: "",
     message: ""
   };
@@ -36,16 +45,23 @@ const TechnicalSupportForm = () => {
     });
     if (file != null) formData.append("file", file);
     requestTechnicalSupport(formData)
-      .then((resp: any) => {
-        if (resp?.STATUS === "SUCCESS") {
-          toast.success(resp?.MESSAGE);
+      .then((response: any) => {
+        let responseMessage = {
+          status: response?.STATUS,
+          content: response?.MESSAGE
+        };
+        if (response?.STATUS === RESPONSE_SUCCESS) {
+          toast.success(response?.MESSAGE);
           FormikBag.resetForm();
           FormikBag.setSubmitting(false);
+          responseMessage = { ...responseMessage, content: successMessage };
           setFile(undefined);
         }
+        setMessage({ ...responseMessage });
       })
-      .catch((err) => {
-        toast.error(err?.MESSAGE);
+      .catch((error) => {
+        toast.error(error?.MESSAGE);
+        setMessage({ ...{}, status: RESPONSE_ERROR, content: error });
       });
   };
 
@@ -73,62 +89,68 @@ const TechnicalSupportForm = () => {
       >
         {({ isSubmitting }) => {
           return (
-            <Form className="flex flex-col gap-6">
-              <div className="flex justify-between items-center gap-2 h-40px]">
-                <InputFormGroup
-                  nameAndId="firstName"
-                  label="First Name"
-                  placeholder=""
-                  type="text"
-                  labelClassName="text-black font-medium text-[14px]"
-                  className="border-[#D1D1D6] border-2 w-full rounded-lg placeholder-[#D1D1D6] text-black px-4 py-2"
-                />
-                <InputFormGroup
-                  nameAndId="lastName"
-                  label="Last Name"
-                  placeholder=""
-                  type="text"
-                  labelClassName="text-black font-medium text-[14px]"
-                  className="border-[#D1D1D6] border-2 w-full rounded-lg placeholder-[#D1D1D6] text-black px-4 py-2"
-                />
-              </div>
-              <InputFormGroup
-                nameAndId="email"
-                label="Email Address"
-                placeholder=""
-                type="email"
-                labelClassName="text-black font-medium text-[14px]"
-                className="border-[#D1D1D6] border-2 w-full rounded-lg placeholder-[#D1D1D6] text-black px-4 py-2"
-              />
-              <InputFormGroup
-                nameAndId="subject"
-                label="Subject"
-                placeholder=""
-                type="text"
-                labelClassName="text-black font-medium text-[14px]"
-                className="border-[#D1D1D6] border-2 w-full rounded-lg placeholder-[#D1D1D6] text-black px-4 py-2"
-              />
-              <TextareaFormGroup nameAndId="message" label="Message" placeholder="" />
-              <label className="flex justify-between w-[27%] text-lg text-green border-2 border-green p-2 rounded-md  mt-[-30px] cursor-pointer">
-                <img src={paperclip} />
-                Attach file
-                <input type="file" name="file" className="hidden" onChange={fileHandler} />
-                <div className="flex flex-wrap absolute ml-[7em] w-[100%]">
-                  <button
-                    onClick={onClose}
-                    className="mx-2 font-[400] text-[18px] leading-[150%] text-[#F26021]"
-                  >
-                    {file != null ? "Remove File" : null}
-                  </button>
-                  <p className="flex text-[24px] font-[400] text-[rgba(37, 55, 63, 0.5)]">
-                    {file != null ? file.name : null}
-                  </p>
+            <div>
+              <AlertMessage />
+              <Form className="flex flex-col gap-6">
+                <div className="flex justify-between items-center gap-2 h-40px]">
+                  <InputFormGroup
+                    nameAndId="firstName"
+                    label="First Name"
+                    placeholder=""
+                    type="text"
+                    labelClassName="text-black font-medium text-[14px]"
+                    className="border-[#D1D1D6] border-2 w-full rounded-lg placeholder-[#D1D1D6] text-black px-4 py-2"
+                  />
+                  <InputFormGroup
+                    nameAndId="lastName"
+                    label="Last Name"
+                    placeholder=""
+                    type="text"
+                    labelClassName="text-black font-medium text-[14px]"
+                    className="border-[#D1D1D6] border-2 w-full rounded-lg placeholder-[#D1D1D6] text-black px-4 py-2"
+                  />
                 </div>
-              </label>
-              {/* <div className="flex">
-                <label className="text-[20px] mr-6 leading-[175.4%] tracking-[-0.3px] font-[500] text-[#25373F] border-2 border-[#25373F] bg-[#FFCA85] p-2 w-[140px] h-[70px] mt-[10px]">
-                  <input type="text" name="file" className="hidden" />
-                </label>
+                <InputFormGroup
+                  nameAndId="email"
+                  label="Email Address"
+                  placeholder=""
+                  type="email"
+                  labelClassName="text-black font-medium text-[14px]"
+                  className="border-[#D1D1D6] border-2 w-full rounded-lg placeholder-[#D1D1D6] text-black px-4 py-2"
+                />
+                <InputFormGroup
+                  nameAndId="subject"
+                  label="Subject"
+                  placeholder=""
+                  type="text"
+                  labelClassName="text-black font-medium text-[14px]"
+                  className="border-[#D1D1D6] border-2 w-full rounded-lg placeholder-[#D1D1D6] text-black px-4 py-2"
+                />
+                <TextareaFormGroup nameAndId="message" label="Message" placeholder="" />
+
+                {file ? (
+                  <div className="flex flex-wrap w-full items-center gap-5 cursor-pointer">
+                    <span
+                      onClick={onClose}
+                      className="inline-flex font-base  gap-1 text-lg leading-[150%] text-[#F26021]"
+                    >
+                      <img src={timesCircle} /> Remove File
+                    </span>
+                    <span className="text-xl text-[rgba(37, 55, 63, 0.5)]">
+                      {file != null ? file.name : null}
+                    </span>
+                  </div>
+                ) : (
+                  <div>
+                    <label className="flex justify-between w-max items-center gap-1 text-lg text-green border-2 border-green p-2 rounded-md cursor-pointer">
+                      <img src={paperclip} />
+                      Attach file
+                      <input type="file" name="file" className="hidden" onChange={fileHandler} />
+                    </label>
+                  </div>
+                )}
+
+                {/* <div className="flex">
                 <div className="mr-8">
                   <div className="border p-[3px] mt-3">
                     <img src={volume} alt="" />
@@ -155,7 +177,7 @@ const TechnicalSupportForm = () => {
                   </div>
                 </div>
               </div> */}
-              {/* <InputFormGroup
+                {/* <InputFormGroup
                 nameAndId="code"
                 label="Enter the code here:"
                 placeholder=""
@@ -163,16 +185,19 @@ const TechnicalSupportForm = () => {
                 labelClassName="text-[#25373F] font-medium text-[20px]"
                 className="border-[#D1D1D6] block border-2 w-[8em] rounded-lg placeholder-[#D1D1D6] text-black px-4 py-2"
               /> */}
-              <div className="flex md:justify-end ">
-                <button
-                  disabled={isSubmitting}
-                  type="submit"
-                  className="bg-green p-2 md:w-[20%] w-full text-white rounded-md"
-                >
-                  Submit
-                </button>
-              </div>
-            </Form>
+
+                <div className="flex md:justify-end ">
+                  <button
+                    disabled={isSubmitting}
+                    type="submit"
+                    className={`flex justify-center bg-green py-4 px-8 md:w-[20%] w-full text-white rounded-md
+                    `}
+                  >
+                    {isSubmitting ? <Loader /> : "Submit"}
+                  </button>
+                </div>
+              </Form>
+            </div>
           );
         }}
       </Formik>

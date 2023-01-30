@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import Select, { Props as SelectProp } from "./Select";
 
 type Props = {

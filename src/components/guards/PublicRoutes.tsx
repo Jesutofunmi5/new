@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { useAppSelector } from "hooks";
 import { DASHBOARD } from "routes/CONSTANTS";
 import { Navigate, Outlet } from "react-router-dom";

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import Input, { Props as InputProp } from "./Input";
 
 type Props = {

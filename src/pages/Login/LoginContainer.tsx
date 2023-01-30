@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import * as Yup from "yup";
 import { useEffect } from "react";
 import { useFormik } from "formik";

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { FormikProps } from "formik";
 
 import { LOGIN } from "routes/CONSTANTS";

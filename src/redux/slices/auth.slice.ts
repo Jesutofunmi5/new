@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 import { toast } from "react-toastify";

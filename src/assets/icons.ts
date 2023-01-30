@@ -12,6 +12,7 @@ export const link = `${ICON_PATH}/link.png`;
 export const play = `${SVG_PATH}/play.svg`;
 export const close = `${ICON_PATH}/close.svg`;
 export const paperclip = `${SVG_PATH}/paperclip.svg`;
+export const timesCircle = `${SVG_PATH}/timesCircle.svg`;
 export const volume = `${SVG_PATH}/volume.svg`;
 export const rotateRight = `${SVG_PATH}/rotateright.svg`;
 export const vectorOne = `${SVG_PATH}/vector-one.svg`;

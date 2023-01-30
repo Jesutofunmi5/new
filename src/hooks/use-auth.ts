@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
-
 export const useAuth = () => {
   // get item from localstorage
   let user: any;

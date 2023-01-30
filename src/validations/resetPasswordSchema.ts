@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 const validation = (values: { password: string; confirmPassword: string }) => {
   const errors = {
     password: "",

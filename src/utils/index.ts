@@ -7,3 +7,4 @@ export * from "./meetingsList";
 export * from "./meetingActions";
 export * from "./aboutCardData";
 export * from "./industriesList";
+export * from "./isEmptyObject";
