@@ -1,4 +1,4 @@
-import { TECHNICAL_SUPPORT } from "./CONSTANTS";
+import { TECHNICAL_SUPPORT, PUBLIC_REQUEST_KEY } from "./CONSTANTS";
 import fetchInstance from "./utils/FetchInterceptor";
 
 export async function requestTechnicalSupport(supportParams: FormData) {
@@ -7,7 +7,7 @@ export async function requestTechnicalSupport(supportParams: FormData) {
       url: TECHNICAL_SUPPORT,
       method: "post",
       data: supportParams,
-      headers: { "Content-Type": "multipart/form-data" }
+      headers: { "Content-Type": "multipart/form-data", [PUBLIC_REQUEST_KEY]: true }
     });
     return response;
   } catch (err) {
