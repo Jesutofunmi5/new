@@ -33,8 +33,8 @@ const TechnicalSupportForm = () => {
     const formData: any = new FormData();
     Object.keys(values).forEach((key) => {
       formData.append(key, values[key]);
-      if (file != null) formData.append("file", file);
     });
+    if (file != null) formData.append("file", file);
     requestTechnicalSupport(formData)
       .then((resp: any) => {
         if (resp?.STATUS === "SUCCESS") {
