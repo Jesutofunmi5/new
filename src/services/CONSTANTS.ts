@@ -40,3 +40,9 @@ export const PUBLIC_REQUEST_KEY = "public-request";
  */
 
 export const CREATE_NEW_MEETING = "/meetings/new-meeting";
+
+/*
+Contact
+*/
+
+export const TECHNICAL_SUPPORT = "/technical-support";
