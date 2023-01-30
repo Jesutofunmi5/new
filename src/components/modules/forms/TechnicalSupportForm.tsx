@@ -5,6 +5,8 @@ import InputFormGroup from "./InputFormGroup";
 import TextareaFormGroup from "./TextAreaFormGroup";
 // import { paperclip, volume, rotateRight, vectorOne, vectorTwo, vectorThree } from "assets/icons";
 import { paperclip } from "assets/icons";
+import { requestTechnicalSupport } from "services/contact.service";
+import { toast } from "react-toastify";
 interface FormValues {
   firstName: string;
   lastName: string;
@@ -31,14 +33,20 @@ const TechnicalSupportForm = () => {
     const formData: any = new FormData();
     Object.keys(values).forEach((key) => {
       formData.append(key, values[key]);
-      if (file != null) formData.append("file", file);
     });
-    // FormikBag.setSubmitting(false); uncomment after submitting
-    // Make async request here - later reset form with {{resetForm}}
-    // Remove below line after integration -  Just for debug
-    for (const value of formData.values()) {
-      console.log(value);
-    }
+    if (file != null) formData.append("file", file);
+    requestTechnicalSupport(formData)
+      .then((resp: any) => {
+        if (resp?.STATUS === "SUCCESS") {
+          toast.success(resp?.MESSAGE);
+          FormikBag.resetForm();
+          FormikBag.setSubmitting(false);
+          setFile(undefined);
+        }
+      })
+      .catch((err) => {
+        toast.error(err?.MESSAGE);
+      });
   };
 
   const [file, setFile] = useState<File | undefined>(undefined);

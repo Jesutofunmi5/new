@@ -32,7 +32,6 @@ const validation = (values: {
   } else if (values.message.length < 10) {
     errors.message = "Invalid Message";
   }
-  console.log({ errors });
   return errors;
 };
 export default validation;
