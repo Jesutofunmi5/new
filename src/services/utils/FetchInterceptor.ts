@@ -1,5 +1,7 @@
 import axios from "axios";
 import env from "configs";
+import { logout } from "redux/slices/auth.slice";
+import { store } from "redux/store";
 import { LOGIN } from "routes/CONSTANTS";
 import authHeader from "services/auth-header";
 import { PUBLIC_REQUEST_KEY } from "services/CONSTANTS";
@@ -18,8 +20,7 @@ service.interceptors.request.use(
     if (auth?.Authorization) {
       Object.assign(config.headers, auth);
     } else if (!config.headers[PUBLIC_REQUEST_KEY]) {
-      localStorage.clear();
-      window.location.href = LOGIN;
+      void store.dispatch(logout());
     }
     return config;
   },
