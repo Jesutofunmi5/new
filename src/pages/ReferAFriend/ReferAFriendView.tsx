@@ -22,9 +22,7 @@ import { toast } from "react-toastify";
 import { sendReferral, userData } from "services/users.service";
 import { ReactMultiEmail } from "react-multi-email";
 import "react-multi-email/dist/style.css";
-import useAlertMessage from "hooks/useAlertMessage";
 import { Loader } from "components/widgets";
-import { RESPONSE_ERROR, RESPONSE_SUCCESS } from "services/CONSTANTS";
 
 export interface IRefer {
   firstName: string;
@@ -37,7 +35,6 @@ const ReferAFriendView: FC<{ referral: string; title: string }> = ({ referral, t
   const [emails, setEmails] = useState<string[]>([]);
   const [copyState, setCopyState] = useState<string>("COPY");
   const [isLoading, setIsLoading] = useState<boolean>();
-  const { AlertMessage, setMessage } = useAlertMessage();
   const error = copyState.includes("NOT COPIED!");
 
   const handleCopy = (referral: string) => {
@@ -58,8 +55,6 @@ const ReferAFriendView: FC<{ referral: string; title: string }> = ({ referral, t
   };
 
   const handleSend = (emails: string[]) => {
-    const successMessage = "Referral Sent";
-
     if (emails.length) {
       setIsLoading(true);
       const result = emails.map(async (email) => {
@@ -73,8 +68,7 @@ const ReferAFriendView: FC<{ referral: string; title: string }> = ({ referral, t
         try {
           const response: any = await sendReferral(details);
           toast.success((response?.MESSAGE as string) + ` to ${email}`);
-          throw new Error("");
-          // return response;
+          return response;
         } catch (error: any) {
           toast.error((error?.MESSAGE as string) + ` to ${email}`);
         }
@@ -82,12 +76,10 @@ const ReferAFriendView: FC<{ referral: string; title: string }> = ({ referral, t
 
       Promise.all(result)
         .then(() => {
-          setMessage({ ...{}, status: RESPONSE_SUCCESS, content: successMessage });
           setIsLoading(false);
           setEmails([]);
         })
-        .catch((error) => {
-          setMessage({ ...{}, status: RESPONSE_ERROR, content: error });
+        .catch(() => {
           setIsLoading(false);
         });
     }
@@ -120,7 +112,6 @@ const ReferAFriendView: FC<{ referral: string; title: string }> = ({ referral, t
       </div>
       <div className="mt-10">
         <div className="lg:max-w-[978px] max-w-full">
-          <AlertMessage />
           <p>Enter their email address and we send them your referral code</p>
         </div>
         <div className="flex border-green bg-white rounded-md w-full lg:max-w-[978px] max-w-full h-[54px] border-[1px] items-center justify-between px-4 mt-2">
