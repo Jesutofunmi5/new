@@ -19,7 +19,8 @@ export const getUserById = async (id: string) => {
 export const sendReferral = async (body: IRefer) => {
   const id = userData?._id as string;
   try {
-    await fetch.post(`${env.API_BASE_URL}/users/${id}/invite`, body);
+    const response = await fetch.post(`${env.API_BASE_URL}/users/${id}/invite`, body);
+    return response;
   } catch (err) {
     return err;
   }

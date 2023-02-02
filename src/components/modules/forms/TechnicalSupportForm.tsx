@@ -26,9 +26,9 @@ const TechnicalSupportForm = () => {
   const successMessage = "Your request has been received!";
 
   const formikInitialValues = {
-    firstName: isEmptyObject(data.user) ? "" : data.user.name?.firstName,
-    lastName: isEmptyObject(data.user) ? "" : data.user.name?.lastName,
-    email: isEmptyObject(data.user) ? "" : data.user.email,
+    firstName: isEmptyObject(data?.user) ? "" : data.user.name?.firstName,
+    lastName: isEmptyObject(data?.user) ? "" : data.user.name?.lastName,
+    email: isEmptyObject(data?.user) ? "" : data.user.email,
     subject: "",
     message: ""
   };

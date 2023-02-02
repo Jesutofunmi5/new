@@ -22,6 +22,9 @@ import { toast } from "react-toastify";
 import { sendReferral, userData } from "services/users.service";
 import { ReactMultiEmail } from "react-multi-email";
 import "react-multi-email/dist/style.css";
+import useAlertMessage from "hooks/useAlertMessage";
+import { Loader } from "components/widgets";
+import { RESPONSE_ERROR, RESPONSE_SUCCESS } from "services/CONSTANTS";
 
 export interface IRefer {
   firstName: string;
@@ -33,6 +36,8 @@ export interface IRefer {
 const ReferAFriendView: FC<{ referral: string; title: string }> = ({ referral, title }) => {
   const [emails, setEmails] = useState<string[]>([]);
   const [copyState, setCopyState] = useState<string>("COPY");
+  const [isLoading, setIsLoading] = useState<boolean>();
+  const { AlertMessage, setMessage } = useAlertMessage();
   const error = copyState.includes("NOT COPIED!");
 
   const handleCopy = (referral: string) => {
@@ -53,18 +58,39 @@ const ReferAFriendView: FC<{ referral: string; title: string }> = ({ referral, t
   };
 
   const handleSend = (emails: string[]) => {
-    emails.map((email) => {
-      const details: IRefer = {
-        firstName: userData?.name?.firstName,
-        lastName: userData?.name?.lastName,
-        email,
-        refId: userData?.refId
-      };
-      sendReferral(details)
-        .then(() => toast.success("Referral Sent"))
-        .catch(() => toast.error("Unable to send referral"));
-      return true;
-    });
+    const successMessage = "Referral Sent";
+
+    if (emails.length) {
+      setIsLoading(true);
+      const result = emails.map(async (email) => {
+        const details: IRefer = {
+          firstName: userData?.name?.firstName,
+          lastName: userData?.name?.lastName,
+          email,
+          refId: userData?.refId
+        };
+
+        try {
+          const response: any = await sendReferral(details);
+          toast.success((response?.MESSAGE as string) + ` to ${email}`);
+          throw new Error("");
+          // return response;
+        } catch (error: any) {
+          toast.error((error?.MESSAGE as string) + ` to ${email}`);
+        }
+      });
+
+      Promise.all(result)
+        .then(() => {
+          setMessage({ ...{}, status: RESPONSE_SUCCESS, content: successMessage });
+          setIsLoading(false);
+          setEmails([]);
+        })
+        .catch((error) => {
+          setMessage({ ...{}, status: RESPONSE_ERROR, content: error });
+          setIsLoading(false);
+        });
+    }
   };
   return (
     <div>
@@ -93,12 +119,15 @@ const ReferAFriendView: FC<{ referral: string; title: string }> = ({ referral, t
         </div>
       </div>
       <div className="mt-10">
-        <p>Enter their email address and we send them your referral code</p>
+        <div className="lg:max-w-[978px] max-w-full">
+          <AlertMessage />
+          <p>Enter their email address and we send them your referral code</p>
+        </div>
         <div className="flex border-green bg-white rounded-md w-full lg:max-w-[978px] max-w-full h-[54px] border-[1px] items-center justify-between px-4 mt-2">
           <ReactMultiEmail
             placeholder="Enter emails"
             emails={emails}
-            className="w-5/6 mr-2 -ml-3 border-none"
+            className="flex flex-col w-5/6 mr-2 -ml-3  h-4/5 border-none no-scrollbar overflow-x-auto overflow-y-hidden"
             onChange={(_emails: string[]) => {
               setEmails(_emails);
             }}
@@ -117,7 +146,13 @@ const ReferAFriendView: FC<{ referral: string; title: string }> = ({ referral, t
             className="bg-green border-green text-white rounded-md border-[1px] h-[34px] w-[102px]"
             onClick={() => handleSend(emails)}
           >
-            SEND
+            {isLoading ? (
+              <div className="flex justify-center">
+                <Loader />
+              </div>
+            ) : (
+              "SEND"
+            )}
           </button>
         </div>
       </div>
