@@ -115,8 +115,8 @@ export const logout = createAsyncThunk("auth/logout", async () => {
 });
 
 const initialState = user
-  ? { isLoggedIn: true, user, isLoading: false }
-  : { isLoggedIn: false, user: null, isLoading: false };
+  ? { isLoggedIn: true, user, isLoading: false, passwordReset: false }
+  : { isLoggedIn: false, user: null, isLoading: false, passwordReset: false };
 
 const authSlice = createSlice({
   name: "auth",
@@ -168,8 +168,10 @@ const authSlice = createSlice({
     builder.addCase(forgotPassword.pending, (state) => {
       state.isLoading = true;
     });
-    builder.addCase(forgotPassword.fulfilled, (state) => {
+    builder.addCase(forgotPassword.fulfilled, (state, action) => {
       state.isLoading = false;
+      state.passwordReset = true;
+      state.user = action.payload;
     });
     builder.addCase(forgotPassword.rejected, (state) => {
       state.isLoading = false;

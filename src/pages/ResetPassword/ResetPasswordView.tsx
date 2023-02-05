@@ -41,7 +41,7 @@ const ResetPasswordView = ({ formik, loading }: Props) => {
         />
 
         <Button size="lg" className="w-full flex items-center justify-center bg-green">
-          {loading ? <Loader /> : "Resend Email"}
+          {loading ? <Loader /> : "Reset Password"}
         </Button>
         <Button to={LOGIN} size="lg" variant="outline" className="mt-5 w-full">
           Back To Login
