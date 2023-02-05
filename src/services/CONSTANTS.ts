@@ -11,8 +11,8 @@ export const LINKED_IN_END_POINT = `${env.API_BASE_URL}/auth/linkedin`;
 export const MICROSOFT_END_POINT = `${env.API_BASE_URL}/auth/microsoft`;
 
 export const GET_USER = "/user";
-export const FORGOT_PASSWORD = "user/forgot-password";
-export const RESET_PASSWORD = "user/reset-password";
+export const FORGOT_PASSWORD = "users/forgot-password";
+export const RESET_PASSWORD = "users/reset-password";
 
 export const UPDATE_USER = "/update_user";
 export const DELETE_USER = "/delete_user";
