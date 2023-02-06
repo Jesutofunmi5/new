@@ -14,8 +14,9 @@ export const register = createAsyncThunk(
       firstName,
       lastName,
       email,
-      password
-    }: { firstName: string; lastName: string; email: string; password: string },
+      password,
+      refId
+    }: { firstName: string; lastName: string; email: string; password: string; refId: string },
     thunkAPI
   ) => {
     try {
@@ -23,7 +24,8 @@ export const register = createAsyncThunk(
         firstName,
         lastName,
         email,
-        password
+        password,
+        refId
       });
       toast.success(MESSAGE);
       return { userId: DATA.id, email: DATA.email };
@@ -115,13 +117,17 @@ export const logout = createAsyncThunk("auth/logout", async () => {
 });
 
 const initialState = user
-  ? { isLoggedIn: true, user, isLoading: false, passwordReset: false }
-  : { isLoggedIn: false, user: null, isLoading: false, passwordReset: false };
+  ? { isLoggedIn: true, user, isLoading: false, passwordReset: false, refId: "" }
+  : { isLoggedIn: false, user: null, isLoading: false, passwordReset: false, refId: "" };
 
 const authSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {},
+  reducers: {
+    setRefId: (state, action) => {
+      return { ...state, refId: action.payload };
+    }
+  },
   extraReducers: (builder) => {
     // register actions
     builder.addCase(register.pending, (state) => {
@@ -203,5 +209,7 @@ const authSlice = createSlice({
   }
 });
 
-const { reducer } = authSlice;
+const { reducer, actions } = authSlice;
+
+export const { setRefId } = actions;
 export default reducer;

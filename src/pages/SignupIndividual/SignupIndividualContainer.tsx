@@ -11,13 +11,14 @@ import SignupIndividualView from "./SignupIndividualView";
 
 export const SignupIndividualContainer = () => {
   const dispatch = useAppDispatch();
-  const { isLoading } = useAppSelector((state) => state.auth);
+  const { isLoading, refId } = useAppSelector((state) => state.auth);
 
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
       fullname: "",
+      refId: refId || "",
       terms: false
     },
     validationSchema: Yup.object().shape({
@@ -29,6 +30,7 @@ export const SignupIndividualContainer = () => {
           /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
           "Weak Password. Password must have at least: 1 upper case, 1 digit, 1 special character, Minimum eight in length"
         ),
+      refId: Yup.string(),
       terms: Yup.boolean().isTrue("Terms and condition not accepted")
     }),
 
@@ -38,7 +40,8 @@ export const SignupIndividualContainer = () => {
           email: details.email,
           password: details.password,
           firstName: details.fullname.split(" ")[0],
-          lastName: details.fullname.split(" ")[1]
+          lastName: details.fullname.split(" ")[1],
+          refId: details.refId
         })
       )
         .unwrap()
@@ -54,13 +57,13 @@ export const SignupIndividualContainer = () => {
   });
 
   const googleLogin = () => {
-    window.open(GOOGLE_END_POINT, "_self");
+    window.open(`${GOOGLE_END_POINT}?refId=${refId as string}`, "_self");
   };
   const microsoftLogin = () => {
-    window.open(MICROSOFT_END_POINT, "_self");
+    window.open(`${MICROSOFT_END_POINT}?refId = ${refId as string}`, "_self");
   };
   const linkedLogin = () => {
-    window.open(LINKED_IN_END_POINT, "_self");
+    window.open(`${LINKED_IN_END_POINT}?refId=${refId as string}`, "_self");
   };
   return (
     <Auth>

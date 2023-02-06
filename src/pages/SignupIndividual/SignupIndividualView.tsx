@@ -10,7 +10,13 @@ interface Props {
   linkedLogin: () => void;
   googleLogin: () => void;
   microsoftLogin: () => void;
-  formik: FormikProps<{ fullname: string; email: string; password: string; terms: boolean }>;
+  formik: FormikProps<{
+    fullname: string;
+    email: string;
+    password: string;
+    refId: string;
+    terms: boolean;
+  }>;
 }
 
 const SignupIndividualView = ({
@@ -73,6 +79,19 @@ const SignupIndividualView = ({
             placeholder="Enter password"
             errors={formik.errors.password}
             touched={formik.touched.password}
+            onChange={formik.handleChange}
+          />
+          <FormInput
+            disabled={!!formik.values.refId}
+            size="lg"
+            type="text"
+            id="refId"
+            name="refId"
+            label="Referral Id"
+            placeholder="Referral"
+            value={formik.values.refId}
+            errors={formik.errors.refId}
+            touched={formik.touched.refId}
             onChange={formik.handleChange}
           />
           <div>

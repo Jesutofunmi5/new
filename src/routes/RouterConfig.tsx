@@ -38,7 +38,8 @@ import {
   PRIVACY,
   PRICING,
   SIGNUP_INDIVIDUAL,
-  SIGNUP_BUSINESS
+  SIGNUP_BUSINESS,
+  SEND_INVITE
 } from "./CONSTANTS";
 
 import type { FC } from "react";
@@ -71,11 +72,12 @@ const RouterConfig: FC = () => {
           <Route path={BROADCASTCHANNEL} element={<BroadcastChannel />} />
           <Route path={CALENDER} element={<Calender />} />
           <Route path={SETTINGS} element={<Settings />} />
+          <Route path={REFER_A_FRIEND} element={<ReferAFriend />} />
         </Route>
 
         <Route path="/" element={<ProtectedRoute navigate={SIGNUP} />}>
           {/* Protected routes should be placed in here */}
-          <Route path={`${REFER_A_FRIEND}/*`} element={<ReferAFriend />} />
+          <Route path={SEND_INVITE} element={<DashboardHome />} />
         </Route>
 
         {/* 404 page */}
