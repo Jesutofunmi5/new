@@ -17,5 +17,5 @@ export const DASHBOARD = "/dashboard";
 export const BROADCASTCHANNEL = "/dashboard/broadcast-channel";
 export const CALENDER = "/dashboard/calender";
 export const REFER_A_FRIEND = "/dashboard/invites";
-export const SEND_INVITE = "/dashboard/invites/:refId";
+export const SIGNUP_INVITE = `${REFER_A_FRIEND}/:refId`;
 export const SETTINGS = "/dashboard/settings";

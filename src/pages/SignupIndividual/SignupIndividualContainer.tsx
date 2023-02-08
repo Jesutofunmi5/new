@@ -1,6 +1,7 @@
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
+import { useParams } from "react-router-dom";
 
 import { Auth } from "components";
 import { register } from "redux/slices/auth.slice";
@@ -11,14 +12,15 @@ import SignupIndividualView from "./SignupIndividualView";
 
 export const SignupIndividualContainer = () => {
   const dispatch = useAppDispatch();
-  const { isLoading, refId } = useAppSelector((state) => state.auth);
+  const { isLoading } = useAppSelector((state) => state.auth);
+  const { refId } = useParams();
 
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
       fullname: "",
-      refId: refId || "",
+      refId: refId ?? "",
       terms: false
     },
     validationSchema: Yup.object().shape({

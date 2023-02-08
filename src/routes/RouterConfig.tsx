@@ -39,7 +39,7 @@ import {
   PRICING,
   SIGNUP_INDIVIDUAL,
   SIGNUP_BUSINESS,
-  SEND_INVITE
+  SIGNUP_INVITE
 } from "./CONSTANTS";
 
 import type { FC } from "react";
@@ -65,6 +65,7 @@ const RouterConfig: FC = () => {
           <Route path={SIGNUP_INDIVIDUAL} element={<SignupIndividual />} />
           <Route path={RESET_PASSWORD} element={<ResetPassword />} />
           <Route path={FORGOT_PASSWORD} element={<ForgetPassword />} />
+          <Route path={SIGNUP_INVITE} element={<SignupIndividual />} />
         </Route>
         {/* dashboard routes should be placed in here */}
         <Route>
@@ -77,7 +78,6 @@ const RouterConfig: FC = () => {
 
         <Route path="/" element={<ProtectedRoute navigate={SIGNUP} />}>
           {/* Protected routes should be placed in here */}
-          <Route path={SEND_INVITE} element={<DashboardHome />} />
         </Route>
 
         {/* 404 page */}

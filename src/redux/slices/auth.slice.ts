@@ -123,11 +123,7 @@ const initialState = user
 const authSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {
-    setRefId: (state, action) => {
-      return { ...state, refId: action.payload };
-    }
-  },
+  reducers: {},
   extraReducers: (builder) => {
     // register actions
     builder.addCase(register.pending, (state) => {
@@ -209,7 +205,6 @@ const authSlice = createSlice({
   }
 });
 
-const { reducer, actions } = authSlice;
+const { reducer } = authSlice;
 
-export const { setRefId } = actions;
 export default reducer;
