@@ -117,8 +117,8 @@ export const logout = createAsyncThunk("auth/logout", async () => {
 });
 
 const initialState = user
-  ? { isLoggedIn: true, user, isLoading: false, passwordReset: false, refId: "" }
-  : { isLoggedIn: false, user: null, isLoading: false, passwordReset: false, refId: "" };
+  ? { isLoggedIn: true, user, isLoading: false, passwordReset: false }
+  : { isLoggedIn: false, user: null, isLoading: false, passwordReset: false };
 
 const authSlice = createSlice({
   name: "auth",
