@@ -67,7 +67,7 @@ export const register = async (details: {
   lastName: string;
   email: string;
   password: string;
-  refId?: string;
+  refId: string;
 }) => {
   const response = await axios.post(`${env.API_BASE_URL}/${REGISTER}`, details);
   return response.data;

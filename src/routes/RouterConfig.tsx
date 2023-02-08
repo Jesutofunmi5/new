@@ -38,7 +38,8 @@ import {
   PRIVACY,
   PRICING,
   SIGNUP_INDIVIDUAL,
-  SIGNUP_BUSINESS
+  SIGNUP_BUSINESS,
+  SIGNUP_INVITE
 } from "./CONSTANTS";
 
 import type { FC } from "react";
@@ -64,6 +65,7 @@ const RouterConfig: FC = () => {
           <Route path={SIGNUP_INDIVIDUAL} element={<SignupIndividual />} />
           <Route path={RESET_PASSWORD} element={<ResetPassword />} />
           <Route path={FORGOT_PASSWORD} element={<ForgetPassword />} />
+          <Route path={SIGNUP_INVITE} element={<SignupIndividual />} />
         </Route>
         {/* dashboard routes should be placed in here */}
         <Route>
@@ -71,11 +73,11 @@ const RouterConfig: FC = () => {
           <Route path={BROADCASTCHANNEL} element={<BroadcastChannel />} />
           <Route path={CALENDER} element={<Calender />} />
           <Route path={SETTINGS} element={<Settings />} />
+          <Route path={REFER_A_FRIEND} element={<ReferAFriend />} />
         </Route>
 
         <Route path="/" element={<ProtectedRoute navigate={SIGNUP} />}>
           {/* Protected routes should be placed in here */}
-          <Route path={`${REFER_A_FRIEND}/*`} element={<ReferAFriend />} />
         </Route>
 
         {/* 404 page */}

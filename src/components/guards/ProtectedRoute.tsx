@@ -7,7 +7,6 @@ interface INavigate {
 
 const ProtectedRoute = ({ navigate }: INavigate) => {
   const { isLoggedIn } = useAppSelector((state) => state.auth);
-
   return isLoggedIn ? <Outlet /> : <Navigate to={navigate} replace />;
 };
 

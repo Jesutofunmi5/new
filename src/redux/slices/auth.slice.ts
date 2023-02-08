@@ -14,8 +14,9 @@ export const register = createAsyncThunk(
       firstName,
       lastName,
       email,
-      password
-    }: { firstName: string; lastName: string; email: string; password: string },
+      password,
+      refId
+    }: { firstName: string; lastName: string; email: string; password: string; refId: string },
     thunkAPI
   ) => {
     try {
@@ -23,7 +24,8 @@ export const register = createAsyncThunk(
         firstName,
         lastName,
         email,
-        password
+        password,
+        refId
       });
       toast.success(MESSAGE);
       return { userId: DATA.id, email: DATA.email };
@@ -204,4 +206,5 @@ const authSlice = createSlice({
 });
 
 const { reducer } = authSlice;
+
 export default reducer;
